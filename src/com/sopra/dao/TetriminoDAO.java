@@ -1,5 +1,6 @@
 package com.sopra.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.sopra.model.Tetrimino;
@@ -7,6 +8,7 @@ import com.sopra.model.Tetrimino;
 public class TetriminoDAO implements ITetriminoDAO {
 
 	public Tetrimino add(Tetrimino obj) {
+		List myTetriminoList = new ArrayList();
 		return null;
 	}
 	
@@ -18,8 +20,8 @@ public class TetriminoDAO implements ITetriminoDAO {
 		return null;
 	}
 
-	public List<Tetrimino> list() {
+	public List<Tetrimino> list(List<Tetrimino> obj) {
 		
-		return null;
+		return obj;
 	}
 }
