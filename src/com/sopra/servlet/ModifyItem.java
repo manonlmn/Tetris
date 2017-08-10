@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ModifyItem")
 public class ModifyItem extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoModif.jsp").forward(req, resp);
 	}
 
 }

@@ -22,11 +22,12 @@
 	</nav>
 	
 	<ul class="collection with-header">
-        <li class="collection-header"><h4>List of the Tetriminos available</h4></li>
-        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+        <li class="collection-header"><h4>List of the available Tetriminos</h4></li>
+        
+        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
+        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
+        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></a></div></li>
+        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></a></div></li>
       </ul>
 </body>
 <script src="jquery-3.2.1.min.js"></script>

@@ -18,11 +18,11 @@ public class Filter implements javax.servlet.Filter {
 		HttpServletResponse response = (HttpServletResponse)resp;
 		
 		
-		if(request.getSession().getAttribute("username")==null && request.getRequestURI().equals("/tp1/home")) {
+		if(request.getSession().getAttribute("username")==null && request.getRequestURI().equals("/Tetris/home")) {
 			chain.doFilter(request, response);
 		}
-		else if(request.getSession().getAttribute("username")==null && !request.getRequestURI().equals("/tp1/home")){
-			response.sendRedirect("/tp1/home");
+		else if(request.getSession().getAttribute("username")==null && !request.getRequestURI().equals("/Tetris/home")){
+			response.sendRedirect("/Tetris/home");
 		}
 		else if(request.getSession().getAttribute("username")!=null) {
 			chain.doFilter(request, response);
