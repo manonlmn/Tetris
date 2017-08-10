@@ -24,15 +24,16 @@ public class AddItem extends HttpServlet {
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		myTetriminoList = (List<Tetrimino>)request.getSession().getAttribute("myTetriminoList");
 
 		// Création d'un Tétrimino en récupérant les attributs de formulaire
 		Tetrimino myNewTetrimino = new Tetrimino();
+		myTetriminoList = (List<Tetrimino>)request.getServletContext().getAttribute("myTetriminoList");
 		myNewTetrimino.setNameTetrimino((String)request.getSession().getAttribute("nameNewTetrimino"));
 		myNewTetrimino.setColourTetrimino((String)request.getSession().getAttribute("colourNewTetrimino"));
 		
 		// Envoi du tétrimino à la DAO
 		TetriminoDAO myTetriminoDAO = new TetriminoDAO();
+		myTetriminoDAO.list(myTetriminoList);
 		myTetriminoDAO.add(myNewTetrimino);
 	}
 

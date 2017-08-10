@@ -1,5 +1,7 @@
 package com.sopra.dao;
 
+import java.util.List;
+
 import com.sopra.model.Player;
 
 public class PlayerDAO implements IPlayerDAO {
@@ -14,6 +16,10 @@ public class PlayerDAO implements IPlayerDAO {
 	}
 
 	public Player delete(Player obj) {
+		return null;
+	}
+
+	public List<Player> list() {
 		return null;
 	}
 }
