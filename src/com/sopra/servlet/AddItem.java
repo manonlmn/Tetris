@@ -15,13 +15,13 @@ import com.sopra.model.Tetrimino;
 public class AddItem extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// Récupération de la liste mise à jour des tétriminos
+		List<Tetrimino> myTetriminoList = (List<Tetrimino>)request.getSession().getAttribute("myTetriminoList");
 	}
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Récupération de la liste mise à jour des tétriminos
-		List<Tetrimino> myTetriminoList = (List<Tetrimino>)request.getSession().getAttribute("myTetriminoList");
+
 
 		// Création d'un Tétrimino en récupérant les attributs de formulaire
 		Tetrimino myNewTetrimino = new Tetrimino();
