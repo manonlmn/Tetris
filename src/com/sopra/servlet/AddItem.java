@@ -2,13 +2,11 @@ package com.sopra.servlet;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.sopra.dao.TetriminoDAO;
 import com.sopra.model.Tetrimino;
 
@@ -18,10 +16,6 @@ public class AddItem extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//
-		TetriminoDAO myTetriminoDAOUpdated = new TetriminoDAO();
-		
-		// 
-		
 	}
 	
 	
@@ -33,11 +27,9 @@ public class AddItem extends HttpServlet {
 		myNewTetrimino.setColourTetrimino((String)request.getSession().getAttribute("colourNewTetrimino"));
 		
 		// Envoi du tétrimino à la DAO
-		TetriminoDAO myTetriminoDAO = new TetriminoDAO();
+		TetriminoDAO myTetriminoDAO = (TetriminoDAO)this.getServletContext().getAttribute("myTetriminoDAO");
 		myTetriminoDAO.add(myNewTetrimino);
 		
-		// Appel de la fonction doGet
-		this.doGet(request, response);
 	}
 
 }

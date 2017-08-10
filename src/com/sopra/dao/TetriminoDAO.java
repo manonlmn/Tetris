@@ -11,10 +11,9 @@ public class TetriminoDAO implements ITetriminoDAO {
 	int cpt = 1;
 	
 	public Tetrimino add(Tetrimino obj) {
-
+		// on applique un ID incrémenté pour le nouvel objet ajouté et on l'ajoute dans la liste
 		obj.setIdTetrimino(cpt++);
 		myTetriminoList.add(obj);
-		
 		return obj;
 	}
 	
