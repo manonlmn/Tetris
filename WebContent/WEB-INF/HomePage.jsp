@@ -6,7 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!--Import materialize.css-->
 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+ <link rel="stylesheet" href="materialize/css/materialize.min.css">
+
 
 <title>Homepage</title>
 </head>
@@ -25,43 +26,22 @@
   <div class="row">
     <form class="col s12">
       <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+        <div class="input-field col s12">
+          <input id="username" type="text" class="validate" name="username">
+          <label for="username">Username</label>
         </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
+       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" class="validate" name="password">
           <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email" type="email" class="validate">
-            <label for="email" data-error="wrong" data-success="right">Email</label>
-          </div>
         </div>
       </div>
     </form>
   </div>
 </body>
+
+ <script src="jquery-3.2.1.min.js"></script>
+ <script src="materialize/js/materialize.min.js"></script>
+
 </html>
