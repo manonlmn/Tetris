@@ -11,11 +11,5 @@
 <body>
 <h1>Welcome</h1>
 
-<form>
-<h2>Please connect</h2>
-
-
-
-</form>
 </body>
 </html>
