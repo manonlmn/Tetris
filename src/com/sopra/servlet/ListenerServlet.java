@@ -17,6 +17,7 @@ public class ListenerServlet implements ServletContextListener {
     	// Initialising empty Tetriminos' list and adding as Attribute
     	List<Tetrimino> myTetriminoList = new ArrayList<Tetrimino>();
 		sce.getServletContext().setAttribute("myTetriminoList", myTetriminoList);
+		
     }
 	
     public void contextDestroyed(ServletContextEvent sce)  { 
