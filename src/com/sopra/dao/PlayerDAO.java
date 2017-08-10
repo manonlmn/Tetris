@@ -1,24 +1,19 @@
 package com.sopra.dao;
 
-import com.sopra.model.Tetrimino;
+import com.sopra.model.Player;
 
 public class PlayerDAO implements IPlayerDAO {
 
-	public Tetrimino save(Tetrimino obj) {
+
+	public Player add(Player obj) {
+		return null;
+	}
+	
+	public Player modify(Player obj) {
 		return null;
 	}
 
-	public Tetrimino modify(Tetrimino obj) {
+	public Player delete(Player obj) {
 		return null;
 	}
-
-	public Tetrimino add(Tetrimino obj) {
-		return null;
-	}
-
-	public Tetrimino delete(Tetrimino obj) {
-		return null;
-	}
-
-
 }
