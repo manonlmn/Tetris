@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/displaytetrimino")
 public class DisplayTetrimino extends HttpServlet {
        
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoDisplay.jsp").forward(req, resp);
 	}
 
 }
