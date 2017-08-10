@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="materialize/css/materialize.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<title>Insert title here</title>
+<title>Display of the Tetriminos</title>
 </head>
 <body>
 <nav>
@@ -20,15 +20,39 @@
 		</ul>
 	</div>
 	</nav>
-	
-	<ul class="collection with-header">
-        <li class="collection-header"><h4>List of the available Tetriminos</h4></li>
-        
-        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></a></div></li>
-        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></a></div></li>
-      </ul>
+	<h5>List of the Tetriminos</h5>
+	<table>
+        <thead>
+          <tr>
+              <th>Id</th>
+              <th>Tetrimino's Name</th>
+              <th>Color</th>
+              <th></th>
+              <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>id1</td>
+            <td>nom1</td>
+            <td>coleur1</td>
+            <td><a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a></td>
+            <td><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+            <td><a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a></td>
+            <td><a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></td>
+          </tr>
+       
+        </tbody>
+      </table>
+      <div class="fixed-action-btn left">
+      	<a class="btn-floating btn-large waves-effect waves-light red"><i class="medium material-icons">add</i></a>
+      </div>
 </body>
 <script src="jquery-3.2.1.min.js"></script>
 <script src="materialize/js/materialize.min.js"></script>
