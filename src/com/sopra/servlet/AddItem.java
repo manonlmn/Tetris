@@ -32,7 +32,8 @@ public class AddItem extends HttpServlet {
 		myNewTetrimino.setColourTetrimino((String)request.getSession().getAttribute("colourNewTetrimino"));
 		
 		// Envoi du tétrimino à la DAO
-		TetriminoDAO.add(myNewTetrimino);
+		TetriminoDAO myTetriminoDAO = new TetriminoDAO();
+		myTetriminoDAO.add(myNewTetrimino);
 	}
 
 }
