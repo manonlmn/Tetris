@@ -16,15 +16,12 @@
 	<nav>
 	<div class="nav-wrapper  cyan darken-4">
 		<a href="#" class="brand-logo">Home Page</a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="sass.html">Players' list</a></li>
-			<li><a href="badges.html">Tetriminos' list</a></li>
-		</ul>
+		
 	</div>
 	</nav>
 
 	<div class="row">
-		<form class="col s12">
+		<form class="col s12" method="post">
 			<div class="row">
 				<div class="input-field col s5">
 					<input id="username" type="text" class="validate" name="username">
@@ -36,7 +33,7 @@
 						name="password"> <label for="password">Password</label>
 				</div>
 				<div class="input-field col s2">
-					<button class="btn waves-effect waves-light" type="submit" name="action">
+					<button class="btn waves-effect waves-light" type="submit">
 						Submit <i class="material-icons right">send</i>
 					</button>
 				</div>
