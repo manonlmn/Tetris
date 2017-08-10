@@ -33,8 +33,9 @@ public class AddItem extends HttpServlet {
 		
 		// Envoi du tétrimino à la DAO
 		TetriminoDAO myTetriminoDAO = new TetriminoDAO();
-		myTetriminoDAO.list(myTetriminoList);
 		myTetriminoDAO.add(myNewTetrimino);
+		
+		// ENVOI DE LA LISTE A LA DAO
 	}
 
 }

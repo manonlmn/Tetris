@@ -3,6 +3,7 @@ package com.sopra.model;
 public class Tetrimino {
 	
 	// Tetrimino's attributes
+	int idTetrimino;
 	String nameTetrimino;
 	String colourTetrimino;
 	
@@ -22,5 +23,12 @@ public class Tetrimino {
 	}
 	public void setColourTetrimino(String colourTetrimino) {
 		this.colourTetrimino = colourTetrimino;
+	}
+	
+	public int getIdTetrimino() {
+		return idTetrimino;
+	}
+	public void setIdTetrimino(int colourTetrimino) {
+		this.idTetrimino = idTetrimino;
 	}
 }
