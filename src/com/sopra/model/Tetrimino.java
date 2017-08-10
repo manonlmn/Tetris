@@ -2,13 +2,13 @@ package com.sopra.model;
 
 public class Tetrimino {
 	
-	// Attributs de tetrimino
+	// Tetrimino's attributes
 	String nomTetrimino;
 	String couleurTetrimino;
 	
 	
 	
-	// Get/Setters
+	// Tereimino's get/setters
 	public String getNomTetrimino() {
 		return nomTetrimino;
 	}
