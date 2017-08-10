@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Homepage</title>
 </head>
 <body>
+<h1>Welcome</h1>
 
+<form>
+<h2>Please connect</h2>
+
+
+</form>
 </body>
 </html>

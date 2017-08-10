@@ -1,5 +1,5 @@
 package com.sopra.model;
 
-public class Joueur {
+public class Player {
 
 }
