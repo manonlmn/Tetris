@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/home")
 public class Home extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher("/WEB-INF/HomePage.jsp").forward(req, resp);
 	}
 
 }
