@@ -15,11 +15,13 @@ import com.sopra.model.Tetrimino;
 @WebServlet("/newitem")
 public class AddItem extends HttpServlet {
 	
-	List<Tetrimino> myTetriminoList;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Récupération de la liste mise à jour des tétriminos
-		myTetriminoList = (List<Tetrimino>)request.getSession().getAttribute("myTetriminoList");
+		//
+		TetriminoDAO myTetriminoDAOUpdated = new TetriminoDAO();
+		
+		// 
+		
 	}
 	
 	
@@ -27,7 +29,6 @@ public class AddItem extends HttpServlet {
 
 		// Création d'un Tétrimino en récupérant les attributs de formulaire
 		Tetrimino myNewTetrimino = new Tetrimino();
-		myTetriminoList = (List<Tetrimino>)request.getServletContext().getAttribute("myTetriminoList");
 		myNewTetrimino.setNameTetrimino((String)request.getSession().getAttribute("nameNewTetrimino"));
 		myNewTetrimino.setColourTetrimino((String)request.getSession().getAttribute("colourNewTetrimino"));
 		
@@ -35,7 +36,8 @@ public class AddItem extends HttpServlet {
 		TetriminoDAO myTetriminoDAO = new TetriminoDAO();
 		myTetriminoDAO.add(myNewTetrimino);
 		
-		// ENVOI DE LA LISTE A LA DAO
+		// Appel de la fonction doGet
+		this.doGet(request, response);
 	}
 
 }

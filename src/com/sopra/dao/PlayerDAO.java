@@ -19,7 +19,7 @@ public class PlayerDAO implements IPlayerDAO {
 		return null;
 	}
 
-	public List<Player> list(List<Player> obj) {
+	public List<Player> list() {
 		return null;
 	}
 }

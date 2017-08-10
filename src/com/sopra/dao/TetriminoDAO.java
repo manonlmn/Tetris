@@ -7,8 +7,24 @@ import com.sopra.model.Tetrimino;
 
 public class TetriminoDAO implements ITetriminoDAO {
 
+	List myTetriminoList = new ArrayList();
+	// int cpt = 0;
+	
 	public Tetrimino add(Tetrimino obj) {
-		List myTetriminoList = new ArrayList();
+		// incrémentation du compteur d'ID
+		// cpt++;
+		
+		// récupération du nom et de la couleur du tétrimino à ajouter
+		Tetrimino myTetrimino = new Tetrimino();
+		myTetrimino.setNameTetrimino(obj.getNameTetrimino());
+		myTetrimino.setColourTetrimino(obj.getColourTetrimino());
+		
+		// attribution de l'ID du tétrimino à ajouter
+		
+		
+		// ajout du tétrimino complet à la liste
+		myTetriminoList.add(obj);
+		
 		return null;
 	}
 	
@@ -20,8 +36,8 @@ public class TetriminoDAO implements ITetriminoDAO {
 		return null;
 	}
 
-	public List<Tetrimino> list(List<Tetrimino> obj) {
+	public List<Tetrimino> list() {
 		
-		return obj;
+		return null;
 	}
 }
