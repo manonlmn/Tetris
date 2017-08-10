@@ -1,8 +1,9 @@
-CREE PAR Guillaume
-"myTetriminoList" : attribut de la liste des Tetriminos (ServletListener)
+"colourNewTetrimino" :	attribut couleur de Session de l'ajout d'un Tetrimino
+			(AddItem)
 
+"myTetriminoList" : 	attribut de la liste des Tetriminos
+			(ServletListener)
+			(AddItem)
 
-
-
-
-CREE PAR Manon
+"nameNewTetrimino" :	attribut nom de Session de l'ajout d'un Tetrimino
+			(AddItem)

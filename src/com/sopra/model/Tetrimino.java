@@ -3,24 +3,24 @@ package com.sopra.model;
 public class Tetrimino {
 	
 	// Tetrimino's attributes
-	String nomTetrimino;
-	String couleurTetrimino;
+	String nameTetrimino;
+	String colourTetrimino;
 	
 	
 	
 	// Tereimino's get/setters
-	public String getNomTetrimino() {
-		return nomTetrimino;
+	public String getNameTetrimino() {
+		return nameTetrimino;
 	}
 	
-	public void setNomTetrimino(String nomTetrimino) {
-		this.nomTetrimino = nomTetrimino;
+	public void setNameTetrimino(String nameTetrimino) {
+		this.nameTetrimino = nameTetrimino;
 	}
 	
-	public String getCouleurTetrimino() {
-		return couleurTetrimino;
+	public String getColourTetrimino() {
+		return colourTetrimino;
 	}
-	public void setCouleurTetrimino(String couleurTetrimino) {
-		this.couleurTetrimino = couleurTetrimino;
+	public void setColourTetrimino(String colourTetrimino) {
+		this.colourTetrimino = colourTetrimino;
 	}
 }
