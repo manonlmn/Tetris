@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,10 +7,10 @@
 <link rel="stylesheet" href="Resources/materialize/css/materialize.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<title>Modification of the Tetrimino</title>
+<title>Deleting a Tetrimino</title>
 </head>
 <body>
-	<nav>
+<nav>
 	<div class="nav-wrapper  cyan darken-4">
 		<a href="#" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -39,6 +37,7 @@
 			</div>
 		</form>
 	</div>
+
 </body>
 <script src="Resources/jquery-3.2.1.min.js"></script>
 <script src="Resources/materialize/js/materialize.min.js"></script>
