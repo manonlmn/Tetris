@@ -15,7 +15,7 @@ import com.sopra.dao.TetriminoDAO;
 public class DisplayTetrimino extends HttpServlet {
        
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		TetriminoDAO TetriDAO = (TetriminoDAO) req.getAttribute("myTetriminoDAO");
+		TetriminoDAO TetriDAO = (TetriminoDAO) this.getServletContext().getAttribute("myTetriminoDAO");
 		List newList = TetriDAO.list();
 		req.setAttribute("TetriminoList", newList);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoDisplay.jsp").forward(req, resp);

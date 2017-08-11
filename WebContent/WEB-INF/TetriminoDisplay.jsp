@@ -34,7 +34,7 @@
 		</thead>
 
 		<tbody>
-			<c:forEach items="TetriminoList" var="Tetrimino">
+			<c:forEach items="${TetriminoList}" var="Tetrimino">
 				<tr>
 					<td>${Tetrimino.idTetrimino}</td>
 					<td>${Tetrimino.nameTetrimino }</td>
