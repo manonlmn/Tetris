@@ -16,22 +16,6 @@ public class DeleteItem extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Création d'un Tétrimino en récupérant les attributs de formulaire
-		Tetrimino myTetriminoToDelete = new Tetrimino();
-		myTetriminoToDelete.setIdTetrimino(Integer.parseInt(request.getParameter("id")));				
-		myTetriminoToDelete.setNameTetrimino(request.getParameter("name"));
-		myTetriminoToDelete.setColourTetrimino(request.getParameter("colour"));
-		
-		// Envoi du tétrimino à la DAO
-		TetriminoDAO myTetriminoDAO = (TetriminoDAO)this.getServletContext().getAttribute("myTetriminoDAO");
-		myTetriminoDAO.delete(myTetriminoToDelete);
-		
-		this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
-		
-		response.sendRedirect("displaytetrimino");
-		
-		// Renvoyer vers la JSP
-		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoAdd.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,7 +27,7 @@ public class DeleteItem extends HttpServlet {
 				
 				// Envoi du tétrimino à la DAO
 				TetriminoDAO myTetriminoDAO = (TetriminoDAO)this.getServletContext().getAttribute("myTetriminoDAO");
-				myTetriminoDAO.add(myNewTetrimino);
+				myTetriminoDAO.delete(myNewTetrimino);
 				
 				this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
 				
