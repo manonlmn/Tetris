@@ -29,4 +29,9 @@ public class TetriminoDAO implements ITetriminoDAO {
 	public List<Tetrimino> list() {
 		return this.myTetriminoList;
 	}
+
+	public Tetrimino search(int id) {
+		//myTetriminoList.
+		return null;
+	}
 }

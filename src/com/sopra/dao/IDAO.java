@@ -8,5 +8,6 @@ public interface IDAO<T> {
 	public T modify(T obj);
 	public T delete(T obj);
 	public List<T> list();
+	public T search(int id);
 	
 }

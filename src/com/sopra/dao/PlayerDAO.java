@@ -22,4 +22,8 @@ public class PlayerDAO implements IPlayerDAO {
 	public List<Player> list() {
 		return null;
 	}
+
+	public Player search(int id) {
+		return null;
+	}
 }
