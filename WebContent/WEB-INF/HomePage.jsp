@@ -12,10 +12,10 @@
 
 <title>Homepage</title>
 </head>
-<body>
+<body class="green lighten-5">
 	<nav>
-	<div class="nav-wrapper  cyan darken-4">
-		<a href="#" class="brand-logo">Home Page</a>
+	<div class="nav-wrapper amber lighten-2">
+		<a href="home" class="brand-logo">Home Page</a>
 		
 	</div>
 	</nav>

@@ -6,14 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="Resources/materialize/css/materialize.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<title>Insert title here</title>
+<title>Players' List</title>
 </head>
-<body>
+<body class="green lighten-5">
 <nav>
-	<div class="nav-wrapper  cyan darken-4">
-		<a href="#" class="brand-logo">Home Page</a>
+	<div class="nav-wrapper amber lighten-2">
+		<a href="home" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="displayplayer">Players' list</a></li>
+			<li class="active"><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
 		</ul>
 	</div>

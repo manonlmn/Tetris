@@ -11,10 +11,10 @@
 	rel="stylesheet">
 <title>Modification of the Tetrimino</title>
 </head>
-<body>
+<body class="green lighten-5">
 	<nav>
-	<div class="nav-wrapper  cyan darken-4">
-		<a href="#" class="brand-logo">Modification</a>
+	<div class="nav-wrapper amber lighten-2">
+		<a href="home" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
@@ -29,15 +29,15 @@
 				</div>
 
 				<div class="input-field col s6">
-					<input id="name" type="text" name="name" value="${tetrimino.nameTetrimino}"> <label for="name">Name of the Tetrimino</label>
+					<input id="name" type="text" name="name" value="${tetrimino.nameTetrimino}" placeholder="${nameNewTetrimino.message}"> <label for="name">Name of the Tetrimino</label>
 				</div>
-				<div class="input-field col s4">
-					<input id="colour" type="color" name="colour"  value="${tetrimino.colourTetrimino}"> <label
+				<div class="input-field col s4 ">
+					<input id="colour" type="color" name="colour"  value="${tetrimino.colourTetrimino}" placeholder="${colourNewTetrimino.message}"> <label
 						for="colour">Colour of the Tetrimino</label>
 				</div>
 				<div class="input-field col s1"">
-				<button class="btn waves-effect waves-light" type="submit">
-						Modify <i class="material-icons right">send</i>
+				<button class="btn waves-effect waves-light teal darken-3" type="submit">
+						Modify <i class="material-icons right ">send</i>
 					</button>
 				</div>
 			</div>

@@ -9,10 +9,10 @@
 	rel="stylesheet">
 <title>Adding a Tetrimino</title>
 </head>
-<body>
+<body class="green lighten-5">
 <nav>
-	<div class="nav-wrapper  cyan darken-4">
-		<a href="#" class="brand-logo">Adding of a new Tetrimino</a>
+	<div class="nav-wrapper amber lighten-2">
+		<a href="home" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
@@ -30,7 +30,7 @@
 						for="color">Color of the Tetrimino</label>
 				</div>
 				<div class="input-field col s1">
-				<button class="btn waves-effect waves-light" type="submit">
+				<button class="btn waves-effect waves-light teal darken-3" type="submit">
 						Save <i class="material-icons right">send</i>
 					</button>
 				</div>

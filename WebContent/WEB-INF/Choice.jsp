@@ -11,10 +11,10 @@
 	rel="stylesheet">
 <title>Welcome</title>
 </head>
-<body>
+<body class="green lighten-5">
 	<nav>
-	<div class="nav-wrapper  cyan darken-4">
-		<a href="#" class="brand-logo">Home Page</a>
+	<div class="nav-wrapper amber lighten-2">
+		<a href="home" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
