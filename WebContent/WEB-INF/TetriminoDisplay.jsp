@@ -14,7 +14,7 @@
 <body>
 	<nav>
 	<div class="nav-wrapper  cyan darken-4">
-		<a href="#" class="brand-logo">Home Page</a>
+		<a href="#" class="brand-logo">Display of the Tetriminos</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
@@ -39,7 +39,7 @@
 					<td>${Tetrimino.idTetrimino}</td>
 					<td>${Tetrimino.nameTetrimino }</td>
 					<td>${Tetrimino.colourTetrimino}</td>
-					<td><a href="#!" class="secondary-content"><i
+					<td><a href="ModifyItem?id=${Tetrimino.idTetrimino}" class="secondary-content"><i
 							class="material-icons">mode_edit</i></a></td>
 					<td><a href="#!" class="secondary-content"><i
 							class="material-icons">delete</i></a></td>

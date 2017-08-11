@@ -14,7 +14,7 @@
 <body>
 	<nav>
 	<div class="nav-wrapper  cyan darken-4">
-		<a href="#" class="brand-logo">Home Page</a>
+		<a href="#" class="brand-logo">Modification</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
@@ -25,16 +25,20 @@
 		<form class="col s12" method="post">
 			<div class="row">
 				<div class="input-field col s2">
-					<input disabled id="id" type="number" min="0" class="validate"
-						name="id"> <label for="id">Id of the Tetrimino</label>
+					<input disabled id="id" type="number" name="id" value="${Tetrimino.idTetrimino}"> <label for="id">Id of the Tetrimino</label>
 				</div>
 
 				<div class="input-field col s6">
-					<input id="name" type="text" name="name"> <label for="name">Name of the Tetrimino</label>
+					<input id="name" type="text" name="name"> <label for="name"  value="${Tetrimino.nameTetrimino}">Name of the Tetrimino</label>
 				</div>
 				<div class="input-field col s4">
-					<input id="colour" type="text" name="colour"> <label
+					<input id="colour" type="text" name="colour"  value="${Tetrimino.colourTetrimino}"> <label
 						for="colour">Colour of the Tetrimino</label>
+				</div>
+				<div class="input-field col s3">
+				<button class="btn waves-effect waves-light" type="submit">
+						Modify <i class="material-icons right">send</i>
+					</button>
 				</div>
 			</div>
 		</form>

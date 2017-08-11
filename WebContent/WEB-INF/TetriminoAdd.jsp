@@ -12,7 +12,7 @@
 <body>
 <nav>
 	<div class="nav-wrapper  cyan darken-4">
-		<a href="#" class="brand-logo">Home Page</a>
+		<a href="#" class="brand-logo">Adding of a new Tetrimino</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
