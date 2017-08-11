@@ -20,15 +20,12 @@ public class DeleteItem extends HttpServlet {
 		this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
 		
 		Tetrimino myTetriminoToSearch = new Tetrimino();
-		myTetriminoToSearch = myTetriminoDAO.search(Integer.parseInt(request.getParameter("id")));
-
+		int idToSearch = Integer.parseInt(request.getParameter("id"));
+		myTetriminoToSearch = myTetriminoDAO.search(idToSearch);
 		myTetriminoDAO.delete(myTetriminoToSearch);
+		
 		this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
 		response.sendRedirect("displaytetrimino");
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	}
-
 }
