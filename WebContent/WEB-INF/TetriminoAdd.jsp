@@ -23,10 +23,10 @@
 		<form class="col s12" method="post">
 			<div class="row">
 				<div class="input-field col s6">
-					<input id="name" type="text" name="nameNewTetrimino"> <label for="name">Name of the Tetrimino</label>
+					<input id="name" type="text" name="nameNewTetrimino" placeholder="${nameNewTetrimino.message}" > <label for="name">Name of the Tetrimino</label>
 				</div>
 				<div class="input-field col s5">
-					<input id="color" type="color" name="colourNewTetrimino"> <label
+					<input id="color" type="color" name="colourNewTetrimino" placeholder="${colourNewTetrimino.message}"> <label
 						for="color">Color of the Tetrimino</label>
 				</div>
 				<div class="input-field col s1">
