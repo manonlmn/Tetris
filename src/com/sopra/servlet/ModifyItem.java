@@ -21,13 +21,12 @@ public class ModifyItem extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Création d'un Tétrimino en récupérant les attributs de formulaire
-				Tetrimino myNewTetrimino = new Tetrimino();
-				myNewTetrimino.setNameTetrimino(request.getParameter("nameNewTetrimino"));
-				myNewTetrimino.setColourTetrimino(request.getParameter("colourNewTetrimino"));
-				
+				Tetrimino myTetriminoToSearch = new Tetrimino();
+				myTetriminoToSearch.setIdTetrimino(Integer.parseInt(request.getParameter("id")));
+
 				// Envoi du tétrimino à la DAO
 				TetriminoDAO myTetriminoDAO = (TetriminoDAO)this.getServletContext().getAttribute("myTetriminoDAO");
-				myTetriminoDAO.add(myNewTetrimino);
+				myTetriminoDAO.modify(myTetriminoToSearch);
 				
 				this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
 				

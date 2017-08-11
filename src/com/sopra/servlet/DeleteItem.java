@@ -23,6 +23,7 @@ public class DeleteItem extends HttpServlet {
 		myTetriminoToSearch = myTetriminoDAO.search(Integer.parseInt(request.getParameter("id")));
 
 		myTetriminoDAO.delete(myTetriminoToSearch);
+		this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
 		response.sendRedirect("displaytetrimino");
 	}
 	
