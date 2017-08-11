@@ -25,14 +25,14 @@
 		<form class="col s12" method="post">
 			<div class="row">
 				<div class="input-field col s1">
-					<input disabled id="id" type="number" name="id" value="${Tetrimino.idTetrimino}"> <label for="id">Id</label>
+					<input disabled id="id" type="number" name="id" value="${MyTetriminoToSearch.idTetrimino}"> <label for="id">Id</label>
 				</div>
 
 				<div class="input-field col s6">
-					<input id="name" type="text" name="name"> <label for="name"  value="${Tetrimino.nameTetrimino}">Name of the Tetrimino</label>
+					<input id="name" type="text" name="name"> <label for="name"  value="${MyTetriminoToSearch.nameTetrimino}">Name of the Tetrimino</label>
 				</div>
 				<div class="input-field col s4">
-					<input id="colour" type="text" name="colour"  value="${Tetrimino.colourTetrimino}"> <label
+					<input id="colour" type="text" name="colour"  value="${MyTetriminoToSearch.colourTetrimino}"> <label
 						for="colour">Colour of the Tetrimino</label>
 				</div>
 				<div class="input-field col s1"">
