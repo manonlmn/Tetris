@@ -15,7 +15,7 @@ public class ListenerServlet implements ServletContextListener {
 	
     public void contextInitialized(ServletContextEvent sce)  { 
     	
-    	// Initialising empty Tetriminos' list and adding as Attribute
+    	// Initialising DAO and adding as Attribute
     	TetriminoDAO myTetriminoDAO = new TetriminoDAO();
 		sce.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
 		
