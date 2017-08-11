@@ -34,11 +34,11 @@
 		</thead>
 
 		<tbody>
-			<c:forEach items="myTetriminoList" var="Tetrimino">
+			<c:forEach items="TetriminoList" var="Tetrimino">
 				<tr>
-					<td>${Tetrimino.id}</td>
-					<td>${Tetrimino.nom }</td>
-					<td>${Tetrimino.couleur}</td>
+					<td>${Tetrimino.idTetrimino}</td>
+					<td>${Tetrimino.nameTetrimino }</td>
+					<td>${Tetrimino.colourTetrimino}</td>
 					<td><a href="#!" class="secondary-content"><i
 							class="material-icons">mode_edit</i></a></td>
 					<td><a href="#!" class="secondary-content"><i
