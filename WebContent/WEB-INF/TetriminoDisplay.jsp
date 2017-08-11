@@ -41,7 +41,7 @@
 					<td>${Tetrimino.colourTetrimino}</td>
 					<td><a href="ModifyItem?id=${Tetrimino.idTetrimino}" class="secondary-content"><i
 							class="material-icons">mode_edit</i></a></td>
-					<td><a href="#!" class="secondary-content"><i
+					<td><a href="DeleteItem?id=${Tetrimino.idTetrimino}" class="secondary-content"><i
 							class="material-icons">delete</i></a></td>
 				</tr>
 			</c:forEach>
