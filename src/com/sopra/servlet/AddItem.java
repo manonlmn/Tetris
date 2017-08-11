@@ -24,8 +24,8 @@ public class AddItem extends HttpServlet {
 
 		// Création d'un Tétrimino en récupérant les attributs de formulaire
 		Tetrimino myNewTetrimino = new Tetrimino();
-		myNewTetrimino.setNameTetrimino((String)request.getSession().getAttribute("nameNewTetrimino"));
-		myNewTetrimino.setColourTetrimino((String)request.getSession().getAttribute("colourNewTetrimino"));
+		myNewTetrimino.setNameTetrimino(request.getParameter("nameNewTetrimino"));
+		myNewTetrimino.setColourTetrimino(request.getParameter("colourNewTetrimino"));
 		
 		// Envoi du tétrimino à la DAO
 		TetriminoDAO myTetriminoDAO = (TetriminoDAO)this.getServletContext().getAttribute("myTetriminoDAO");
