@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="materialize/css/materialize.min.css">
+<link rel="stylesheet" href="Resources/materialize/css/materialize.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>Insert title here</title>
 </head>
@@ -21,6 +21,6 @@
 	
 </body>
 
-<script src="jquery-3.2.1.min.js"></script>
-<script src="materialize/js/materialize.min.js"></script>
+<script src="Resources/jquery-3.2.1.min.js"></script>
+<script src="Resources/materialize/js/materialize.min.js"></script>
 </html>
