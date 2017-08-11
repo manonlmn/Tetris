@@ -31,7 +31,17 @@ public class TetriminoDAO implements ITetriminoDAO {
 	}
 
 	public Tetrimino search(int id) {
-		//myTetriminoList.
-		return null;
+
+		
+		Tetrimino obj = new Tetrimino();
+		obj.setIdTetrimino(id);
+		
+		for(Tetrimino tetrimino : myTetriminoList) {
+			if(obj.getIdTetrimino() == tetrimino.getIdTetrimino()) {
+				obj.setNameTetrimino(tetrimino.getNameTetrimino());
+				obj.setColourTetrimino(tetrimino.getColourTetrimino());
+			}
+		}
+		return obj;
 	}
 }
