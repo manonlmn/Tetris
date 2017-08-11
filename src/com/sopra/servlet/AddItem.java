@@ -30,6 +30,9 @@ public class AddItem extends HttpServlet {
 		// Envoi du tétrimino à la DAO
 		TetriminoDAO myTetriminoDAO = (TetriminoDAO)this.getServletContext().getAttribute("myTetriminoDAO");
 		myTetriminoDAO.add(myNewTetrimino);
+		
+		this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoDisplay.jsp").forward(request, response);
 		
 	}
