@@ -18,6 +18,14 @@ public class TetriminoDAO implements ITetriminoDAO {
 	}
 	
 	public Tetrimino modify(Tetrimino obj) {
+	
+		for(Tetrimino tetrimino : myTetriminoList) {
+			if(obj.getIdTetrimino() == tetrimino.getIdTetrimino()) {
+				tetrimino.setNameTetrimino(obj.getNameTetrimino());
+				tetrimino.setColourTetrimino(obj.getColourTetrimino());
+				return tetrimino;
+			}
+		}
 		return null;
 	}
 
