@@ -7,7 +7,7 @@ import com.sopra.model.Tetrimino;
 
 public class TetriminoDAO implements ITetriminoDAO {
 	// Initialisation stockée dans le context. Uniquement les méthodes sont appelées, donc initialisation = une unique fois.
-	List myTetriminoList = new ArrayList();
+	List<Tetrimino> myTetriminoList = new ArrayList<Tetrimino>();
 	int cpt = 1;
 	
 	public Tetrimino add(Tetrimino obj) {
@@ -23,7 +23,7 @@ public class TetriminoDAO implements ITetriminoDAO {
 
 	public Tetrimino delete(Tetrimino obj) {
 		myTetriminoList.remove(obj);
-		return null;
+		return obj;
 	}
 
 	public List<Tetrimino> list() {
