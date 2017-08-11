@@ -28,7 +28,7 @@ public class Tetrimino {
 	public int getIdTetrimino() {
 		return idTetrimino;
 	}
-	public void setIdTetrimino(int colourTetrimino) {
+	public void setIdTetrimino(int idTetrimino) {
 		this.idTetrimino = idTetrimino;
 	}
 }
