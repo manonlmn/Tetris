@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="Resources/materialize/css/materialize.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<title>Add</title>
+<title>Adding a Tetrimino</title>
 </head>
 <body>
 <nav>
@@ -22,19 +22,14 @@
 	<div class="row">
 		<form class="col s12" method="post">
 			<div class="row">
-				<div class="input-field col s1">
-					<input disabled id="id" type="number" min="0" class="validate"
-						name="id"> <label for="id">Id of the Tetrimino</label>
-				</div>
-
 				<div class="input-field col s5">
-					<input id="name" type="text" name="name"> <label for="name">Name of the Tetrimino</label>
+					<input id="name" type="text" name="nameNewTetrimino"> <label for="name">Name of the Tetrimino</label>
 				</div>
 				<div class="input-field col s4">
-					<input id="color" type="text" name="color"> <label
+					<input id="color" type="text" name="colourNewTetrimino"> <label
 						for="color">Color of the Tetrimino</label>
 				</div>
-				<div class="input-field col s2">
+				<div class="input-field col s3">
 				<button class="btn waves-effect waves-light" type="submit">
 						Save <i class="material-icons right">send</i>
 					</button>
