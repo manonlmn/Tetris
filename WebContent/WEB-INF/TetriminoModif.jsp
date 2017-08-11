@@ -24,8 +24,8 @@
 	<div class="row">
 		<form class="col s12" method="post">
 			<div class="row">
-				<div class="input-field col s2">
-					<input disabled id="id" type="number" name="id" value="${Tetrimino.idTetrimino}"> <label for="id">Id of the Tetrimino</label>
+				<div class="input-field col s1">
+					<input disabled id="id" type="number" name="id" value="${Tetrimino.idTetrimino}"> <label for="id">Id</label>
 				</div>
 
 				<div class="input-field col s6">
@@ -35,7 +35,7 @@
 					<input id="colour" type="text" name="colour"  value="${Tetrimino.colourTetrimino}"> <label
 						for="colour">Colour of the Tetrimino</label>
 				</div>
-				<div class="input-field col s3">
+				<div class="input-field col s1"">
 				<button class="btn waves-effect waves-light" type="submit">
 						Modify <i class="material-icons right">send</i>
 					</button>

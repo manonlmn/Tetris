@@ -22,14 +22,14 @@
 	<div class="row">
 		<form class="col s12" method="post">
 			<div class="row">
-				<div class="input-field col s5">
+				<div class="input-field col s6">
 					<input id="name" type="text" name="nameNewTetrimino"> <label for="name">Name of the Tetrimino</label>
 				</div>
-				<div class="input-field col s4">
+				<div class="input-field col s5">
 					<input id="color" type="text" name="colourNewTetrimino"> <label
 						for="color">Color of the Tetrimino</label>
 				</div>
-				<div class="input-field col s3">
+				<div class="input-field col s1">
 				<button class="btn waves-effect waves-light" type="submit">
 						Save <i class="material-icons right">send</i>
 					</button>
