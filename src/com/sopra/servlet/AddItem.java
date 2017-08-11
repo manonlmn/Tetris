@@ -33,7 +33,7 @@ public class AddItem extends HttpServlet {
 		
 		this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoDisplay.jsp").forward(request, response);
+		response.sendRedirect("displaytetrimino");
 		
 	}
 
