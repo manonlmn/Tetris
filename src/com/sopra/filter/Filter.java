@@ -18,7 +18,7 @@ public class Filter implements javax.servlet.Filter {
 		HttpServletResponse response = (HttpServletResponse)resp;
 		
 		
-		if(request.getSession().getAttribute("username")==null && request.getRequestURI().equals("/Tetris/home")) {
+		if(request.getSession().getAttribute("username")==null && (request.getRequestURI().equals("/Tetris/home") || request.getRequestURI().contains("materialize"))) {
 			chain.doFilter(request, response);
 		}
 		else if(request.getSession().getAttribute("username")==null && !request.getRequestURI().equals("/Tetris/home")){
