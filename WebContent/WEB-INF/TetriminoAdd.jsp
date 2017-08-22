@@ -14,6 +14,7 @@
 	<div class="nav-wrapper amber lighten-2">
 		<a href="home" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="displayGamesList">Games list</a></li>
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
 		</ul>

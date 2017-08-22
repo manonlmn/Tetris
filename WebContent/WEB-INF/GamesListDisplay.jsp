@@ -18,7 +18,7 @@
 <body class="green lighten-5">
 	<nav>
 	<div class="nav-wrapper amber lighten-2">
-		<a href="displayGamesList" class="brand-logo">Games List</a>
+		<a href="home" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li class="active"><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
@@ -43,11 +43,13 @@
 				<tr>
 					<td>${Game.idGame}</td>
 					<td>
-					<c:when test="${Game.idPlayer2 == null}">Solo</c:when>
-					<c:otherwise>VS</c:otherwise>
+						<c:if test="${empty Game.Player2}">Solo</c:if>
+						<c:if test="${not empty Game.Player2}">VS</c:if>
 					</td>
-					<td>${Game.idPlayer1}</td>
-					<td>${Game.idPlayer2}</td>
+					<td>${Game.Player1.getUsername()}</td>
+					<td>
+						<c:if test="${not empty Game.Player2.getUsername()}">${Game.Player2.getUsername()}</c:if>
+					</td>
 					<td>${Game.score}</td>
 					<td></td>
 				</tr>
