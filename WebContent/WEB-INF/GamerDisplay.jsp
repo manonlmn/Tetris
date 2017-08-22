@@ -13,11 +13,35 @@
 	<div class="nav-wrapper amber lighten-2">
 		<a href="home" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="displayGamesList">Games list</a></li>
 			<li class="active"><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
 		</ul>
 	</div>
 	</nav>
+	
+	<h5>List of Players</h5>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Username</th>
+				<th>First name</th>
+				<th>Last name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${GamesList}" var="Player">
+				<tr>
+					<td>${Player.idPerson}</td>
+					<td>${Player.username}</td>
+					<td>${Player.nom}</td>
+					<td>${Player.prenom}</td>
+				</tr>
+			</c:forEach>
+
+		</tbody>
+	</table>
 	
 </body>
 
