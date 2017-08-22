@@ -2,12 +2,14 @@ package com.sopra.dao.hibernate;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.sopra.dao.IPlayerDAO;
 import com.sopra.model.Player;
 
+@Stateless
 public class PlayerDaoHibernate implements IPlayerDAO {
 
 	@PersistenceContext(unitName="NomPersistenceUnit")

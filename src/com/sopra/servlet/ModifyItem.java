@@ -1,6 +1,8 @@
 package com.sopra.servlet;
 
 import java.io.IOException;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,23 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sopra.dao.TetriminoDAO;
+import com.sopra.dao.hibernate.TetriminoDaoHibernate;
 import com.sopra.exception.FormValidationException;
 import com.sopra.model.Tetrimino;
 
 @WebServlet("/ModifyItem")
 public class ModifyItem extends HttpServlet {
-
-	//******************A MODIFIER EN MODIFY*******************
+	@EJB
+	TetriminoDaoHibernate TetriDAO;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// Création d'un Tétrimino en récupérant les attributs de formulaire
-		TetriminoDAO myTetriminoDAO = (TetriminoDAO)this.getServletContext().getAttribute("myTetriminoDAO");
-		this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
-		
 		Tetrimino myTetriminoToSearch = new Tetrimino();
 		int idToSearch = Integer.parseInt(request.getParameter("id"));
-		myTetriminoToSearch = myTetriminoDAO.search(idToSearch);
-		request.setAttribute("tetrimino", myTetriminoToSearch);
+		myTetriminoToSearch = TetriDAO.search(idToSearch);
 		
 		// Renvoyer vers la JSP
 		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoModif.jsp").forward(request, response);
@@ -54,12 +54,9 @@ public class ModifyItem extends HttpServlet {
 		}
 		if(error==false) {
 		// Envoi du tétrimino à la DAO
-		TetriminoDAO myTetriminoDAO = (TetriminoDAO)this.getServletContext().getAttribute("myTetriminoDAO");
-		myTetriminoDAO.modify(myNewTetrimino);
 		
-		this.getServletContext().setAttribute("myTetriminoDAO", myTetriminoDAO);
-		
-		response.sendRedirect("displaytetrimino");
+			TetriDAO.modify(myNewTetrimino);
+			response.sendRedirect("displaytetrimino");
 		}
 		else {
 			doGet(request, response);

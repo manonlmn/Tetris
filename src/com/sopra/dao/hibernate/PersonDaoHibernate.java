@@ -5,6 +5,7 @@ package com.sopra.dao.hibernate;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -16,6 +17,7 @@ import com.sopra.model.Person;
  * @author mlemonnier
  *
  */
+@Stateless
 public class PersonDaoHibernate implements IPersonDAO {
 	@PersistenceContext(unitName="NomPersistenceUnit")
 	private EntityManager em; 

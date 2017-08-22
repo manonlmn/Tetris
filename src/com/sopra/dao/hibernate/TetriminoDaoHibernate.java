@@ -2,12 +2,13 @@ package com.sopra.dao.hibernate;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.model.Tetrimino;
-
+@Stateless
 public class TetriminoDaoHibernate implements ITetriminoDAO {
 	@PersistenceContext(unitName="NomPersistenceUnit")
 	private EntityManager em; 
