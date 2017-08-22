@@ -2,39 +2,43 @@ package com.sopra.dao.hibernate;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+
 import com.sopra.dao.IAdminDAO;
 import com.sopra.model.Admin;
 
+@Stateless
 public class adminDaoHibernate implements IAdminDAO {
-
+	@PersistenceContext(unitName="NomPersistenceUnit")
+	private EntityManager em; 
+	
 	@Override
 	public Admin add(Admin obj) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.merge(obj);
 	}
 
 	@Override
 	public Admin modify(Admin obj) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.add(obj);
 	}
 
 	@Override
-	public Admin delete(Admin obj) {
-		// TODO Auto-generated method stub
-		return null;
+	public void delete(Admin obj) {
+		Admin admin = this.search(obj.getIdPerson());
+		em.remove(admin);		
 	}
 
 	@Override
 	public List<Admin> list() {
-		// TODO Auto-generated method stub
-		return null;
+		return em.createQuery("select a from Admin a").getResultList();
 	}
 
 	@Override
 	public Admin search(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Admin.class, id);
 	}
 
 }
