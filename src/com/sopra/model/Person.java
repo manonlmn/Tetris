@@ -20,10 +20,10 @@ public class Person implements Serializable{
 	private String password;
 	
 	@Column(name="PER_LASTNAME")
-	private String nom;
+	private String lastName;
 	
 	@Column(name="PER_NAME")
-	private String prenom;
+	private String name;
 
 	/**
 	 * @return the idPerson
@@ -68,31 +68,32 @@ public class Person implements Serializable{
 	}
 
 	/**
-	 * @return the nom
+	 * @return the lastName
 	 */
-	public String getNom() {
-		return nom;
+	public String getLastName() {
+		return lastName;
 	}
 
 	/**
-	 * @param nom the nom to set
+	 * @param lastName the lastName to set
 	 */
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	/**
-	 * @return the prenom
+	 * @return the name
 	 */
-	public String getPrenom() {
-		return prenom;
+	public String getName() {
+		return name;
 	}
 
 	/**
-	 * @param prenom the prenom to set
+	 * @param name the name to set
 	 */
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setName(String name) {
+		this.name = name;
 	}
+
 	
 }
