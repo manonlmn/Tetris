@@ -22,7 +22,7 @@ public class AddPlayer extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Renvoyer vers la JSP
-		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoAdd.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/PlayerRegistration.jsp").forward(request, response);
 	}
 	
 	

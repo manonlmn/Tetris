@@ -42,7 +42,6 @@
 
 		</tbody>
 	</table>
-	
 </body>
 
 <script src="Resources/jquery-3.2.1.min.js"></script>

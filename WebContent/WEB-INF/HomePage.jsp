@@ -40,6 +40,10 @@
 			</div>
 		</form>
 	</div>
+		<div class="fixed-action-btn left">
+		<a class="btn-floating btn-large waves-effect waves-light red"
+			href="newplayer"><i class="medium material-icons">add</i></a>
+	</div>
 </body>
 
 <script src="Resources/jquery-3.2.1.min.js"></script>
