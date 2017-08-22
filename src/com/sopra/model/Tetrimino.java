@@ -1,5 +1,7 @@
 package com.sopra.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="tetrimino")
-public class Tetrimino {
+public class Tetrimino implements Serializable {
 	
 	// Tetrimino's attributes
 	@Id
