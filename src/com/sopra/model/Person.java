@@ -10,19 +10,18 @@ public class Person implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="PER_ID")
-	int idPerson;
+	private int idPerson;
 	
 	@Column(name="PER_USERNAME")
-	String username;
+	private String username;
 	
 	@Column(name="PER_PWD")
-	String password;
+	private String password;
 	
 	@Column(name="PER_LASTNAME")
-	String nom;
+	private String nom;
 	
 	@Column(name="PER_NAME")
-	String prenom;
-	
+	private String prenom;
 	
 }
