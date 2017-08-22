@@ -8,22 +8,41 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="player")
+@PrimaryKeyJoinColumn(name="PLA_ID", referencedColumnName="PER_ID")
 public class Player extends Person{
 	
-	@OneToMany(mappedBy="game")
-	private List<Game> myGames;
+	@OneToMany(mappedBy="player1")
+	private List<Game> myGamesP1;
+
+	@OneToMany(mappedBy="player2")
+	private List<Game> myGamesP2;
 
 	/**
-	 * @return the myGames
+	 * @return the myGamesP1
 	 */
-	public List<Game> getMyGames() {
-		return myGames;
+	public List<Game> getMyGamesP1() {
+		return myGamesP1;
 	}
 
 	/**
-	 * @param myGames the myGames to set
+	 * @param myGamesP1 the myGamesP1 to set
 	 */
-	public void setMyGames(List<Game> myGames) {
-		this.myGames = myGames;
+	public void setMyGamesP1(List<Game> myGamesP1) {
+		this.myGamesP1 = myGamesP1;
 	}
+
+	/**
+	 * @return the myGamesP2
+	 */
+	public List<Game> getMyGamesP2() {
+		return myGamesP2;
+	}
+
+	/**
+	 * @param myGamesP2 the myGamesP2 to set
+	 */
+	public void setMyGamesP2(List<Game> myGamesP2) {
+		this.myGamesP2 = myGamesP2;
+	}
+	
 }

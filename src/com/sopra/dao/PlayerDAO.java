@@ -26,4 +26,10 @@ public class PlayerDAO implements IPlayerDAO {
 	public Player search(int id) {
 		return null;
 	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Person")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Person implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

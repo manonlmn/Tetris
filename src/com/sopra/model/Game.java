@@ -24,12 +24,57 @@ public class Game implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER1")
 	@NotNull
-	private Player Player1;
+	private Player player1;
 	
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER2")
-	private Player Player2;
+	private Player player2;
 	
 	@Column(name = "GAM_SCORE")
 	private int score;
+
+	/**
+	 * @return the player1
+	 */
+	public Player getPlayer1() {
+		return player1;
+	}
+
+	/**
+	 * @param player1 the player1 to set
+	 */
+	public void setPlayer1(Player player1) {
+		this.player1 = player1;
+	}
+
+	/**
+	 * @return the player2
+	 */
+	public Player getPlayer2() {
+		return player2;
+	}
+
+	/**
+	 * @param player2 the player2 to set
+	 */
+	public void setPlayer2(Player player2) {
+		this.player2 = player2;
+	}
+
+	/**
+	 * @return the score
+	 */
+	public int getScore() {
+		return score;
+	}
+
+	/**
+	 * @param score the score to set
+	 */
+	public void setScore(int score) {
+		this.score = score;
+	}
+	
+	
+	
 }

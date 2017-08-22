@@ -46,4 +46,10 @@ public class TetriminoDAO implements ITetriminoDAO {
 		}
 		return null;
 	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
 }
