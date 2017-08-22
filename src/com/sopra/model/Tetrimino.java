@@ -1,10 +1,29 @@
 package com.sopra.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="Tetrimino")
 public class Tetrimino {
 	
 	// Tetrimino's attributes
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="TET_ID")
 	int idTetrimino;
+	
+	@Column(name="TET_NAME")
+	@NotNull
 	String nameTetrimino;
+	
+	@Column(name="TET_COLOUR")
+	@NotNull
 	String colourTetrimino;
 	
 	
