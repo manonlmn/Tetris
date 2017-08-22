@@ -42,6 +42,7 @@ public class Filter implements javax.servlet.Filter {
 		if(request.getSession().getAttribute("username")==null && (request.getRequestURI().equals("/Tetris/home") || request.getRequestURI().contains("Resources"))) {
 			chain.doFilter(request, response);
 		}
+		// **************** MODIFIE ******************
 		else if(request.getSession().getAttribute("username")==null && (!request.getRequestURI().equals("/Tetris/home") && !request.getRequestURI().equals("/Tetris/newplayer"))){
 			response.sendRedirect("/Tetris/home");
 		}
