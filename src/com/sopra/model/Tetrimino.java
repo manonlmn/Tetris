@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="Tetrimino")
+@Table(name="tetrimino")
 public class Tetrimino {
 	
 	// Tetrimino's attributes
