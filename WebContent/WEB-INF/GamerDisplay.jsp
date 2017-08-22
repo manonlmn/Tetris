@@ -31,7 +31,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${GamesList}" var="Player">
+			<c:forEach items="${PlayersList}" var="Player">
 				<tr>
 					<td>${Player.idPerson}</td>
 					<td>${Player.username}</td>
