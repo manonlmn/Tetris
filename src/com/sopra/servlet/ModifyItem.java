@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sopra.dao.ITetriminoDAO;
 import com.sopra.dao.TetriminoDAO;
 import com.sopra.dao.hibernate.TetriminoDaoHibernate;
 import com.sopra.exception.FormValidationException;
@@ -17,7 +18,7 @@ import com.sopra.model.Tetrimino;
 @WebServlet("/ModifyItem")
 public class ModifyItem extends HttpServlet {
 	@EJB
-	TetriminoDaoHibernate TetriDAO;
+	private ITetriminoDAO TetriDAO;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
