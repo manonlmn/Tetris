@@ -19,18 +19,17 @@ public class Game implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "GAM_ID")
-	int idGame;
+	private int idGame;
 	
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER1")
 	@NotNull
-	int idPlayer1;
+	private Player Player1;
 	
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER2")
-	@NotNull
-	int idPlayer2;
+	private Player Player2;
 	
 	@Column(name = "GAM_SCORE")
-	int score;
+	private int score;
 }
