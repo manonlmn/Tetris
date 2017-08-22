@@ -1,43 +1,49 @@
+/**
+ * 
+ */
 package com.sopra.dao.hibernate;
 
 import java.util.List;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-
-import com.sopra.dao.IAdminDAO;
+import com.sopra.dao.IPersonDAO;
 import com.sopra.model.Admin;
+import com.sopra.model.Person;
 
-@Stateless
-public class AdminDaoHibernate implements IAdminDAO {
+/**
+ * @author mlemonnier
+ *
+ */
+public class PersonDaoHibernate implements IPersonDAO {
 	@PersistenceContext(unitName="NomPersistenceUnit")
 	private EntityManager em; 
-	
+	 
 	@Override
-	public Admin add(Admin obj) {
+	public Person add(Person obj) {
 		return em.merge(obj);
 	}
 
 	@Override
-	public Admin modify(Admin obj) {
+	public Person modify(Person obj) {
 		return this.add(obj);
 	}
 
+	 
 	@Override
 	public void delete(int id) {
-		Admin admin = this.search(id);
-		em.remove(admin);		
+		Person person = this.search(id);
+		em.remove(person);
 	}
-
+ 
 	@Override
-	public List<Admin> list() {
-		return em.createQuery("select a from admin a").getResultList();
+	public List<Person> list() {
+		return em.createQuery("select p from Person p").getResultList();
 	}
-
+ 
 	@Override
-	public Admin search(int id) {
+	public Person search(int id) {
 		return em.find(Admin.class, id);
 	}
 
