@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.sopra.exception.FormValidationException;
+import com.sopra.dao.ITetriminoDAO;
 import com.sopra.dao.TetriminoDAO;
 import com.sopra.dao.hibernate.TetriminoDaoHibernate;
 import com.sopra.model.Tetrimino;
@@ -17,7 +18,7 @@ import com.sopra.model.Tetrimino;
 @WebServlet("/newitem")
 public class AddItem extends HttpServlet {
 	@EJB
-	TetriminoDaoHibernate TetriDAO;
+	private ITetriminoDAO TetriDAO;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Renvoyer vers la JSP
@@ -49,8 +50,9 @@ public class AddItem extends HttpServlet {
 		
 		if(error==false) {
 		
-			TetriDAO.add(myNewTetrimino);
-		
+			Tetrimino newTetri = new Tetrimino();
+			newTetri = TetriDAO.add(myNewTetrimino);
+			//request.setAttribute("TetriminoList", TetriDAO.list());
 			response.sendRedirect("displaytetrimino");
 		}
 		else {

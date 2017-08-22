@@ -3,21 +3,30 @@ package com.sopra.servlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.ejb.EJB;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sopra.dao.ITetriminoDAO;
 import com.sopra.dao.TetriminoDAO;
+import com.sopra.dao.hibernate.TetriminoDaoHibernate;
+import com.sopra.model.Tetrimino;
 
 @WebServlet("/displaytetrimino")
 public class DisplayTetrimino extends HttpServlet {
-       
+
+	private static final long serialVersionUID = 1L;
+	
+	@EJB
+	private ITetriminoDAO TetriDAO;
+	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		TetriminoDAO TetriDAO = (TetriminoDAO) this.getServletContext().getAttribute("myTetriminoDAO");
-		List newList = TetriDAO.list();
-		req.setAttribute("TetriminoList", newList);
+		req.setAttribute("TetriminoList", TetriDAO.list());
 		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoDisplay.jsp").forward(req, resp);
 		
 	}

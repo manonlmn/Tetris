@@ -32,7 +32,7 @@ public class TetriminoDaoHibernate implements ITetriminoDAO {
 
 	@Override
 	public List<Tetrimino> list() {
-		return em.createQuery("select t from tetrimino t").getResultList();
+		return em.createQuery("select t from Tetrimino t").getResultList();
 	}
 
 	@Override
