@@ -11,7 +11,7 @@ import com.sopra.dao.IAdminDAO;
 import com.sopra.model.Admin;
 
 @Stateless
-public class adminDaoHibernate implements IAdminDAO {
+public class AdminDaoHibernate implements IAdminDAO {
 	@PersistenceContext(unitName="NomPersistenceUnit")
 	private EntityManager em; 
 	
