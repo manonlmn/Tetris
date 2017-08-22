@@ -1,32 +1,17 @@
 package com.sopra.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import java.util.List;
+
+import javax.persistence.*;
+
+
 
 @Entity
 @Table(name="player")
-public class Player {
+public class Player extends Person{
 	
-	// Player's attributes
-	int idPlayer;
-	String pseudoPlayer;
-
+	@OneToMany(mappedBy="game")
+	private List<Game> myGames;
 	
 	
-	// Player's get/setters
-	public String getPseudoPlayer() {
-		return pseudoPlayer;
-	}
-
-	public void setPseudoPlayer(String pseudoPlayer) {
-		this.pseudoPlayer = pseudoPlayer;
-	}
-	
-	public int getIdPlayer() {
-		return idPlayer;
-	}
-
-	public void setIdPlayer(int pseudoPlayer) {
-		this.idPlayer = idPlayer;
-	}
 }
