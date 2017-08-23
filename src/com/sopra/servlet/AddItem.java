@@ -37,8 +37,8 @@ public class AddItem extends HttpServlet {
 		}catch(FormValidationException fve) {
 			request.setAttribute("nameNewTetrimino", fve);		
 			error =true;
-			
 		}
+		
 		myNewTetrimino.setColourTetrimino(request.getParameter("colourNewTetrimino"));
 		try {
 			validationColour(myNewTetrimino.getColourTetrimino());
@@ -46,8 +46,7 @@ public class AddItem extends HttpServlet {
 			request.setAttribute("colourNewTetrimino", fve);		
 			error =true;
 		}
-		
-		
+				
 		if(error==false) {
 		
 			Tetrimino newTetri = new Tetrimino();
