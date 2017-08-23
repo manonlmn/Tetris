@@ -109,7 +109,7 @@ public class AddPlayer extends HttpServlet {
 		}
 	}
 	private void confirmPwd(String pwd, String confPwd) throws FormValidationException{
-		if(pwd.equals(confPwd)) {
+		if(!pwd.equals(confPwd)) {
 			throw new FormValidationException("Your password and confirmation do not match!");
 		}	
 	}
