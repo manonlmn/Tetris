@@ -51,7 +51,7 @@
 					<td>
 						<c:if test="${not empty Game.player2.username}">${Game.player2.username}</c:if>
 					</td>
-					<td>${Game.score}</td>
+					<td>${Game.score.points}</td>
 					<td>${Game.status}</td>
 				</tr>
 			</c:forEach>
