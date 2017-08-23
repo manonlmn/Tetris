@@ -10,12 +10,17 @@ import javax.persistence.*;
 @Table(name="player")
 @PrimaryKeyJoinColumn(name="PLA_ID", referencedColumnName="PER_ID")
 public class Player extends Person{
-	
+
+	private static final long serialVersionUID = 1L;
+
 	@OneToMany(mappedBy="player1")
 	private List<Game> myGamesP1;
 
 	@OneToMany(mappedBy="player2")
 	private List<Game> myGamesP2;
+	
+	@OneToMany(mappedBy="player")
+	private List<Score> myScore;
 
 	/**
 	 * @return the myGamesP1
@@ -43,6 +48,20 @@ public class Player extends Person{
 	 */
 	public void setMyGamesP2(List<Game> myGamesP2) {
 		this.myGamesP2 = myGamesP2;
+	}
+
+	/**
+	 * @return the myScore
+	 */
+	public List<Score> getMyScore() {
+		return myScore;
+	}
+
+	/**
+	 * @param myScore the myScore to set
+	 */
+	public void setMyScore(List<Score> myScore) {
+		this.myScore = myScore;
 	}
 	
 }

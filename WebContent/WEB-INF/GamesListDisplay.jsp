@@ -35,7 +35,7 @@
 				<th>Player1</th>
 				<th>VS</th>
 				<th>Player2</th>
-				<th>Score</th>
+				<th>Winning Score</th>
 				<th>Status</th>
 			</tr>
 		</thead>
@@ -43,14 +43,13 @@
 			<c:forEach items="${GamesList}" var="Game">
 				<tr>
 					<td>${Game.idGame}</td>
-					<td>${Game.Player1.username}</td>
+					<td>${Game.player1.username}</td>
 					<td>
-						<c:if test="${empty Game.Player2}"></c:if>
-						<c:if test="${not empty Game.Player2}">VS</c:if>
+						<c:if test="${empty Game.player2}"></c:if>
+						<c:if test="${not empty Game.player2}">VS</c:if>
 					</td>
-					
 					<td>
-						<c:if test="${not empty Game.Player2.username}">${Game.Player2.username}</c:if>
+						<c:if test="${not empty Game.player2.username}">${Game.player2.username}</c:if>
 					</td>
 					<td>${Game.score}</td>
 					<td>${Game.status}</td>

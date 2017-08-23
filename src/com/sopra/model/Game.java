@@ -30,8 +30,9 @@ public class Game implements Serializable{
 	@JoinColumn(name = "GAM_ID_PLAYER2")
 	private Player player2;
 	
-	@Column(name = "GAM_SCORE")
-	private int score;
+	@OneToOne
+	@JoinColumn(name = "GAM_SCORE")
+	private Score score;
 	
 	@Column(name ="GAM_STATUS")
 	private String status;
@@ -64,18 +65,48 @@ public class Game implements Serializable{
 		this.player2 = player2;
 	}
 
+	
+
 	/**
 	 * @return the score
 	 */
-	public int getScore() {
+	public Score getScore() {
 		return score;
 	}
 
 	/**
 	 * @param score the score to set
 	 */
-	public void setScore(int score) {
+	public void setScore(Score score) {
 		this.score = score;
+	}
+
+	/**
+	 * @return the idGame
+	 */
+	public int getIdGame() {
+		return idGame;
+	}
+
+	/**
+	 * @param idGame the idGame to set
+	 */
+	public void setIdGame(int idGame) {
+		this.idGame = idGame;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	

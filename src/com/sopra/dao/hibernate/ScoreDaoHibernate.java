@@ -1,0 +1,44 @@
+package com.sopra.dao.hibernate;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import com.sopra.dao.IScoreDAO;
+import com.sopra.model.Score;
+
+@Stateless
+public class ScoreDaoHibernate implements IScoreDAO {
+
+	@PersistenceContext(unitName="NomPersistenceUnit")
+	private EntityManager em;
+	
+	@Override
+	public Score add(Score obj) {
+		return em.merge(obj);
+	}
+
+	@Override
+	public Score modify(Score obj) {
+		return this.add(obj);
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Score> list() {
+		return em.createQuery("select sc from Score sc").getResultList();
+	}
+
+	@Override
+	public Score search(int id) {
+		return em.find(Score.class, id);
+	}
+
+}
