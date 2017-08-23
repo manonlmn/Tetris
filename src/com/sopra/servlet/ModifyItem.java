@@ -26,7 +26,7 @@ public class ModifyItem extends HttpServlet {
 		Tetrimino myTetriminoToSearch = new Tetrimino();
 		int idToSearch = Integer.parseInt(request.getParameter("id"));
 		myTetriminoToSearch = TetriDAO.search(idToSearch);
-		
+		request.setAttribute("myTetri", myTetriminoToSearch);
 		// Renvoyer vers la JSP
 		this.getServletContext().getRequestDispatcher("/WEB-INF/TetriminoModif.jsp").forward(request, response);
 	}
