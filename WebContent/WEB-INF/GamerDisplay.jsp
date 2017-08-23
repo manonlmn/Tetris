@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,18 +26,18 @@
 		<thead>
 			<tr>
 				<th>Id</th>
-				<th>Username</th>
 				<th>First name</th>
 				<th>Last name</th>
+				<th>Username</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${PlayersList}" var="Player">
+			<c:forEach items="${PlayersList}" var="player">
 				<tr>
-					<td>${Player.idPerson}</td>
-					<td>${Player.username}</td>
-					<td>${Player.nom}</td>
-					<td>${Player.prenom}</td>
+					<td>${player.idPerson}</td>
+					<td>${player.lastName}</td>
+					<td>${player.name}</td>
+					<td>${player.username}</td>
 				</tr>
 			</c:forEach>
 
