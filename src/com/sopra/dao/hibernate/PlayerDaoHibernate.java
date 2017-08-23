@@ -34,7 +34,7 @@ public class PlayerDaoHibernate implements IPlayerDAO {
 
 	@Override
 	public List<Player> list() {
-		return em.createQuery("select pl from player pl").getResultList();
+		return em.createQuery("select pl from Player pl").getResultList();
 	}
 
 	@Override
