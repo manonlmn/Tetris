@@ -74,6 +74,7 @@ public class AddPlayer extends HttpServlet {
 			this.doGet(request, response);
 		}
 		
+		
 	}
 
 	private void validationName(String nom) throws FormValidationException{
