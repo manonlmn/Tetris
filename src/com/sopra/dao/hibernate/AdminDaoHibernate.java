@@ -33,7 +33,7 @@ public class AdminDaoHibernate implements IAdminDAO {
 
 	@Override
 	public List<Admin> list() {
-		return em.createQuery("select a from admin a").getResultList();
+		return em.createQuery("select a from Admin a").getResultList();
 	}
 
 	@Override
