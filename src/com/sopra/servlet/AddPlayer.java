@@ -76,7 +76,7 @@ public class AddPlayer extends HttpServlet {
 			Player newPlayer = new Player();
 			newPlayer = PlayerDAO.add(myNewPlayer);
 			int idPlayer = newPlayer.getIdPerson();
-			response.sendRedirect("WelcomePlayer?id="+idPlayer);
+			response.sendRedirect("home");
 		}
 		else {
 			//response.sendRedirect("newitem");

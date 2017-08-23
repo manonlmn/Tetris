@@ -27,8 +27,8 @@ public class ScoreDaoHibernate implements IScoreDAO {
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-
+		Score score = this.search(id);
+		em.remove(score);
 	}
 
 	@Override
