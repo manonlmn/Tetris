@@ -1,5 +1,6 @@
 package com.sopra.dao.hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -38,6 +39,13 @@ public class GameDaoHibernate implements IGameDAO {
 	@Override
 	public Game search(int id) {
 		return em.find(Game.class, id);
+	}
+	
+	
+	public List<Game> listWithScore() {
+		List<Game> myGames = new ArrayList<Game>();
+		myGames =(List<Game>) em.createQuery("select distinct g from Game g left join fetch g.myScores").getResultList();
+		return myGames;
 	}
 
 }

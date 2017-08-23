@@ -37,8 +37,8 @@
 						for="colour">Colour of the Tetrimino</label>
 				</div>
 				<div class="input-field col s2">
-				<button class="btn waves-effect waves-light teal darken-3" type="submit">
-						Modify<i class="material-icons right ">send</i>
+				<button class="btn waves-effect waves-light" type="submit">
+						Modify<i class="material-icons right ">save</i>
 					</button>
 				</div>
 			</div>

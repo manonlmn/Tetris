@@ -26,13 +26,13 @@
 				<div class="input-field col s6">
 					<input id="name" type="text" name="nameNewTetrimino" placeholder="${nameNewTetrimino.message}" > <label for="name">Name of the Tetrimino</label>
 				</div>
-				<div class="input-field col s5">
+				<div class="input-field col s4">
 					<input id="color" type="color" name="colourNewTetrimino" placeholder="${colourNewTetrimino.message}"> <label
 						for="color">Color of the Tetrimino</label>
 				</div>
-				<div class="input-field col s1">
-				<button class="btn waves-effect waves-light teal darken-3" type="submit">
-						Save <i class="material-icons right">send</i>
+				<div class="input-field col s2">
+				<button class="btn waves-effect waves-light" type="submit">
+						Save<i class="material-icons right">save</i>
 					</button>
 				</div>
 			</div>

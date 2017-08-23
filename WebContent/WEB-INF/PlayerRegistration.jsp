@@ -46,7 +46,7 @@
 						</div>
 				
 						<div class="input-field col s6 offset-s5">
-							<button class="btn waves-effect waves-light teal darken-3" type="submit">Register<i class="material-icons right">save</i></button>
+							<button class="btn waves-effect waves-light" type="submit">Register<i class="material-icons right">save</i></button>
 						</div>
 			
 		</form>

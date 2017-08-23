@@ -45,7 +45,7 @@
 				<tr>
 					<td>${Game.idGame}</td>
 					<td>${Game.player1.username}</td>
-					<td>${Game.player1.score.points}</td>
+					<td>${Game.scoreA.points}</td>
 					<td>
 						<c:if test="${empty Game.player2}"></c:if>
 						<c:if test="${not empty Game.player2}">VS</c:if>
@@ -54,7 +54,7 @@
 						<c:if test="${not empty Game.player2.username}">${Game.player2.username}</c:if>
 					</td>
 					<td>
-						<c:if test="${not empty Game.player2.username}">${Game.player2.score.points}</c:if>
+						<c:if test="${not empty Game.player2.username}">${Game.scoreB.points}</c:if>
 					</td>
 					<td>${Game.status}</td>
 				</tr>

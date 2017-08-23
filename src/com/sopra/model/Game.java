@@ -4,6 +4,7 @@
 package com.sopra.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author mlemonnier
@@ -11,6 +12,8 @@ import java.io.Serializable;
  */
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
+import com.sopra.dao.PlayerDAO;
 
 
 @Entity
@@ -20,20 +23,19 @@ public class Game implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "GAM_ID")
 	private int idGame;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER1")
 	@NotNull
 	private Player player1;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER2")
 	private Player player2;
-	
-	@OneToOne
-	@JoinColumn(name = "GAM_SCORE")
-	private Score score;
-	
+
+	@OneToMany(mappedBy="game")
+	private List<Score> myScores;
+
 	@Column(name ="GAM_STATUS")
 	private String status;
 
@@ -65,20 +67,21 @@ public class Game implements Serializable{
 		this.player2 = player2;
 	}
 
-	
+
+
 
 	/**
-	 * @return the score
+	 * @return the myScores
 	 */
-	public Score getScore() {
-		return score;
+	public List<Score> getMyScores() {
+		return myScores;
 	}
 
 	/**
-	 * @param score the score to set
+	 * @param myScores the myScores to set
 	 */
-	public void setScore(Score score) {
-		this.score = score;
+	public void setMyScores(List<Score> myScores) {
+		this.myScores = myScores;
 	}
 
 	/**
@@ -108,7 +111,28 @@ public class Game implements Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
-	
+
+
+
+
+	public Score getScoreA() {
+		for (Score score : myScores) {
+			if (score.getPlayer().getIdPerson() == player1.getIdPerson()) {
+				return score;
+			}
+		}
+
+		return null;
+	}
+
+	public Score getScoreB() {
+		for (Score score : myScores) {
+			if (score.getPlayer().getIdPerson() == player2.getIdPerson()) {
+				return score;
+			}
+		}
+		return null;
+	}
+
+
 }

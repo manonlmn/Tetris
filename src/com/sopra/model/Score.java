@@ -31,7 +31,7 @@ public class Score implements Serializable {
 	@Column(name="SCO_LEVEL")
 	private int level;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="SCO_GAME")
 	private Game game;
 	

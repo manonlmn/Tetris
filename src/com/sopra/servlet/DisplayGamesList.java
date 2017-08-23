@@ -20,7 +20,7 @@ public class DisplayGamesList extends HttpServlet {
 	private IGameDAO gameDAO;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("GamesList", gameDAO.list());
+		request.setAttribute("GamesList", gameDAO.listWithScore());
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/GamesListDisplay.jsp").forward(request, response);
 	}
