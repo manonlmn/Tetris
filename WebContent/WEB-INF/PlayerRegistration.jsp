@@ -21,27 +21,27 @@
 		<form class="col s12" method="post">
 			
 						<div class="input-field col s6 offset-s3">
-							<input type="text" name="usernameField" id="usernameField">
+							<input type="text" name="usernameField" id="usernameField" placeholder="${usernameField.message}">
 								<label for="usernameField">Your Username</label>
 						</div>
 				
 						<div class="input-field col s6 offset-s3">
-							<input type="password" name="passwordField" id="passwordField">
+							<input type="password" name="passwordField" id="passwordField" placeholder="${passwordField.message}">
 							<label for="passwordField">Your Password</label>
 						</div>
 					
 						<div class="input-field col s6 offset-s3">
-							<input type="password" name="confirmPasswordField" id="confirmPasswordField">
+							<input type="password" name="confirmPasswordField" id="confirmPasswordField" placeholder="${confirmPasswordField.message}">
 							<label for="confirmPasswordField">Confirm your password</label>
 						</div>
 					
 						<div class="input-field col s6 offset-s3">
-							<input type="text" name="firstNameField" id="firstNameField">
+							<input type="text" name="firstNameField" id="firstNameField" placeholder="${firstNameField.message}">
 							<label for="firstNameField">Your first name</label>
 						</div>
 					
 						<div class="input-field col s6 offset-s3">
-							<input type="text" name="lastNameField" id="lastNameField">
+							<input type="text" name="lastNameField" id="lastNameField" placeholder="${lastNameField.message}">
 							<label for="lastNameField">Your last name</label>
 						</div>
 				

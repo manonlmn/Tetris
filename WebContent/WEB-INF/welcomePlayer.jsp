@@ -17,8 +17,11 @@
 	</div>
 	</nav>
 
-Welcome !!!! 
+<div>
+		<h5>Welcome ${player.username} !</h5>
+	</div> 
 
+<a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Nouvelle Partie</a>
 </body>
 
 <script src="Resources/jquery-3.2.1.min.js"></script>

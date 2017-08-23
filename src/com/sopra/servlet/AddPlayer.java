@@ -73,10 +73,9 @@ public class AddPlayer extends HttpServlet {
 		}
 		
 		if(error==false) {
-		
 			Player newPlayer = new Player();
 			newPlayer = PlayerDAO.add(myNewPlayer);
-			response.sendRedirect("displayplayer");
+			response.sendRedirect("welcomePlayer");
 		}
 		else {
 			//response.sendRedirect("newitem");
