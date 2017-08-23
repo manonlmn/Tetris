@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
+import javax.persistence.Query;
 
 import com.sopra.dao.IAdminDAO;
 import com.sopra.model.Admin;
@@ -40,5 +40,19 @@ public class AdminDaoHibernate implements IAdminDAO {
 	public Admin search(int id) {
 		return em.find(Admin.class, id);
 	}
+
+	@Override
+	public Admin searchbyUNandPWd(String username, String password) {
+		Query myQuery = em.createQuery("select a from Admin a where a.username= :username and a.password= :password");
+		
+		//On insère les paramètres
+		myQuery.setParameter("username", username);
+		myQuery.setParameter("password", password);
+		
+		return (Admin) myQuery.getSingleResult();
+
+	}
+	
+	
 
 }

@@ -1,14 +1,29 @@
 package com.sopra.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sopra.dao.IAdminDAO;
+import com.sopra.dao.IPlayerDAO;
+import com.sopra.model.Admin;
+
 @WebServlet("/home")
 public class Home extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	@EJB
+	private IAdminDAO adminDAO;
+
+
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
@@ -16,21 +31,27 @@ public class Home extends HttpServlet {
 			this.getServletContext().getRequestDispatcher("/WEB-INF/HomePage.jsp").forward(req, resp);
 		}
 		else {
-			resp.sendRedirect("/Tetris/welcome");
+			
+				resp.sendRedirect("/Tetris/welcome");
+		
 		}
 
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+
 		String myUserName = req.getParameter("username");
 		String myPwd = req.getParameter("password");
 		
-		if(myUserName.equals("admin") && myPwd.equals("admin")) {
+		Admin admin = adminDAO.searchbyUNandPWd(myUserName, myPwd);
+		
+		
+		if(myUserName.equals(admin.getUsername()) && myPwd.equals(admin.getPassword())) {
 			req.getSession().setAttribute("username", myUserName);
 			req.getSession().setAttribute("password", myPwd);
 		}
+
 
 		this.doGet(req, resp);
 	}
