@@ -17,14 +17,15 @@
 	</div>
 	</nav>
 
-<div class="row col s12"></div>
+	<div class="row col s12"></div>
 	<div class="col s8">
 		<h5>Welcome ${player.username} !</h5>
-	</div> 
-<div class="col s6">
-<a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Nouvelle Partie</a>
-</div>
-</div>
+	</div>
+	<div class="col s6">
+		<a class="waves-effect waves-light btn-large">New Game <i
+			class="material-icons left">fiber_new</i></a>
+	</div>
+	</div>
 </body>
 
 <script src="Resources/jquery-3.2.1.min.js"></script>
