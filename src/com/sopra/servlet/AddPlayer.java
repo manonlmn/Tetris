@@ -31,35 +31,35 @@ public class AddPlayer extends HttpServlet {
 
 		// Creation d'un Joueur
 		Player myNewPlayer = new Player();
-		myNewPlayer.setLastName(request.getParameter("lastNamePlayer"));
+		myNewPlayer.setLastName(request.getParameter("lastNameField"));
 		try {
 			validationLastName(myNewPlayer.getLastName());
 		}catch(FormValidationException fve) {
-			request.setAttribute("lastNamePlayer", fve);		
+			request.setAttribute("lastNameField", fve);		
 			error =true;
 			
 		}
-		myNewPlayer.setName(request.getParameter("namePlayer"));
+		myNewPlayer.setName(request.getParameter("firstNameField"));
 		try {
 			validationName(myNewPlayer.getName());
 		}catch(FormValidationException fve) {
-			request.setAttribute("namePlayer", fve);		
+			request.setAttribute("firstNameField", fve);		
 			error =true;
 		}
 		
-		myNewPlayer.setPassword(request.getParameter("passwordPlayer"));
+		myNewPlayer.setPassword(request.getParameter("passwordField"));
 		try {
 			validationPwd(myNewPlayer.getPassword());
 		}catch(FormValidationException fve) {
-			request.setAttribute("passwordPlayer", fve);		
+			request.setAttribute("passwordField", fve);		
 			error =true;
 		}
 		
-		myNewPlayer.setUsername(request.getParameter("username"));
+		myNewPlayer.setUsername(request.getParameter("usernameField"));
 		try {
 			validationUsername(myNewPlayer.getUsername());
 		}catch(FormValidationException fve) {
-			request.setAttribute("username", fve);
+			request.setAttribute("usernameField", fve);
 			error = true;
 		}
 		

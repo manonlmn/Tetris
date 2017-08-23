@@ -42,7 +42,7 @@
 					
 						<div class="input-field col s6 offset-s3">
 							<input type="text" name="lastNameField" id="lastNameField">
-							<label for="lastNameField">Your first name</label>
+							<label for="lastNameField">Your last name</label>
 						</div>
 				
 						<div class="input-field col s6 offset-s5">
