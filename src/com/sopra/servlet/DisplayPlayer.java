@@ -13,6 +13,9 @@ import com.sopra.dao.IPlayerDAO;
 
 @WebServlet("/displayplayer")
 public class DisplayPlayer extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	
 	@EJB 
 	private IPlayerDAO playerDAO;
 	

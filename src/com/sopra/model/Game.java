@@ -32,6 +32,9 @@ public class Game implements Serializable{
 	
 	@Column(name = "GAM_SCORE")
 	private int score;
+	
+	@Column(name ="GAM_STATUS")
+	private String status;
 
 	/**
 	 * @return the player1

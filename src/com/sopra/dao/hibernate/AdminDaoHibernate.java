@@ -14,7 +14,7 @@ import com.sopra.model.Admin;
 public class AdminDaoHibernate implements IAdminDAO {
 	@PersistenceContext(unitName="NomPersistenceUnit")
 	private EntityManager em; 
-	
+
 	@Override
 	public Admin add(Admin obj) {
 		return em.merge(obj);
@@ -44,15 +44,20 @@ public class AdminDaoHibernate implements IAdminDAO {
 	@Override
 	public Admin searchbyUNandPWd(String username, String password) {
 		Query myQuery = em.createQuery("select a from Admin a where a.username= :username and a.password= :password");
-		
+
 		//On insère les paramètres
 		myQuery.setParameter("username", username);
 		myQuery.setParameter("password", password);
-		
-		return (Admin) myQuery.getSingleResult();
+
+		try {
+			return (Admin) myQuery.getSingleResult();
+		}
+		catch(Exception e) {
+			return null;
+		}
 
 	}
-	
-	
+
+
 
 }

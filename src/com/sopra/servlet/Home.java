@@ -31,9 +31,9 @@ public class Home extends HttpServlet {
 			this.getServletContext().getRequestDispatcher("/WEB-INF/HomePage.jsp").forward(req, resp);
 		}
 		else {
-			
-				resp.sendRedirect("/Tetris/welcome");
-		
+
+			resp.sendRedirect("/Tetris/welcome");
+
 		}
 
 	}
@@ -43,15 +43,14 @@ public class Home extends HttpServlet {
 
 		String myUserName = req.getParameter("username");
 		String myPwd = req.getParameter("password");
-		
+
 		Admin admin = adminDAO.searchbyUNandPWd(myUserName, myPwd);
-		
-		
-		if(myUserName.equals(admin.getUsername()) && myPwd.equals(admin.getPassword())) {
+
+		if(admin!=null) {
 			req.getSession().setAttribute("username", myUserName);
 			req.getSession().setAttribute("password", myPwd);
-		}
 
+		}
 
 		this.doGet(req, resp);
 	}
