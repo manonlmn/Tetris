@@ -31,6 +31,7 @@ public class AddPlayer extends HttpServlet {
 
 		// Creation d'un Joueur
 		Player myNewPlayer = new Player();
+		
 		myNewPlayer.setLastName(request.getParameter("lastNameField"));
 		try {
 			validationLastName(myNewPlayer.getLastName());
@@ -55,6 +56,14 @@ public class AddPlayer extends HttpServlet {
 			error =true;
 		}
 		
+		// Confirmer password
+		try {
+			confirmPwd(myNewPlayer.getPassword(), (String)request.getParameter("confirmPasswordField"));
+		}catch(FormValidationException fve) {
+			request.setAttribute("confirmPasswordField", fve);		
+			error =true;
+		}
+		
 		myNewPlayer.setUsername(request.getParameter("usernameField"));
 		try {
 			validationUsername(myNewPlayer.getUsername());
@@ -73,7 +82,6 @@ public class AddPlayer extends HttpServlet {
 			//response.sendRedirect("newitem");
 			this.doGet(request, response);
 		}
-		
 		
 	}
 
@@ -96,10 +104,15 @@ public class AddPlayer extends HttpServlet {
 	private void validationPwd(String pwd) throws FormValidationException{
 		if(pwd.equals("")) {
 			throw new FormValidationException("Please enter a password !");
-		}
+		}	
 		else if(pwd.length()<6) {
 			throw new FormValidationException("Your password must have at least 6 letters or Symbols");
 		}
+	}
+	private void confirmPwd(String pwd, String confPwd) throws FormValidationException{
+		if(pwd.equals(confPwd)) {
+			throw new FormValidationException("Your password and confirmation do not match!");
+		}	
 	}
 }
 
