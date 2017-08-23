@@ -18,56 +18,37 @@
 	</nav>
 
 	<div class="row">
-		<form class="col s4" method="post">
-			<table>
-				<tr>
-					<td>
-						<div class="input-field col s12">
+		<form class="col s12" method="post">
+			
+						<div class="input-field col s6 offset-s3">
 							<input type="text" name="usernameField" id="usernameField">
 								<label for="usernameField">Your Username</label>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="input-field col s12">
+				
+						<div class="input-field col s6 offset-s3">
 							<input type="password" name="passwordField" id="passwordField">
 							<label for="passwordField">Your Password</label>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="input-field col s12">
+					
+						<div class="input-field col s6 offset-s3">
 							<input type="password" name="confirmPasswordField" id="confirmPasswordField">
 							<label for="confirmPasswordField">Confirm your password</label>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="input-field col s12">
+					
+						<div class="input-field col s6 offset-s3">
 							<input type="text" name="firstNameField" id="firstNameField">
 							<label for="firstNameField">Your first name</label>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="input-field col s12">
+					
+						<div class="input-field col s6 offset-s3">
 							<input type="text" name="lastNameField" id="lastNameField">
 							<label for="lastNameField">Your first name</label>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="input-field col s12">
-							<button class="btn waves-effect waves-light teal darken-3" type="submit">Save <i class="material-icons right">Register</i></button>
+				
+						<div class="input-field col s6 offset-s5">
+							<button class="btn waves-effect waves-light teal darken-3" type="submit">Register<i class="material-icons right">save</i></button>
 						</div>
-					</td>
-				</tr>
-			</table>
+			
 		</form>
 	</div>
 
