@@ -19,8 +19,7 @@
 		
 	</div>
 	</nav>
-
-	<div class="row">
+	<div class="row" style="margin-left: auto; margin-right: auto; width: 900px">
 		<form class="col s12" method="post">
 			<div class="row">
 				<div class="input-field col s5">

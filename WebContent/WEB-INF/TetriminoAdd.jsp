@@ -17,22 +17,22 @@
 			<li><a href="displayGamesList">Games list</a></li>
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
-			<li><a class="waves-effect waves-light btn z-depth-4" href="disconnect">Quit</a></li>
+			<li><a class="waves-effect waves-light btn z-depth-4" href="disconnect">Quit<i class="material-icons right">exit_to_app</i></a></li>
 		</ul>
 	</div>
 	
 	</nav>
-	<div class="row">
+	<div class="row" style="margin-left: auto; margin-right: auto; width: 900px">
 		<form class="col s12" method="post">
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s5">
 					<input id="name" type="text" name="nameNewTetrimino" placeholder="${nameNewTetrimino.message}" > <label for="name">Name of the Tetrimino</label>
 				</div>
 				<div class="input-field col s4">
 					<input id="color" type="color" name="colourNewTetrimino" placeholder="${colourNewTetrimino.message}"> <label
 						for="color">Color of the Tetrimino</label>
 				</div>
-				<div class="input-field col s2">
+				<div class="input-field col s3">
 				<button class="btn waves-effect waves-light" type="submit">
 						Save<i class="material-icons right">save</i>
 					</button>

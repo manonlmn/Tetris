@@ -17,13 +17,14 @@
 			<li><a href="displayGamesList">Games list</a></li>
 			<li class="active"><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>			
-			<li><a class="waves-effect waves-light btn z-depth-4" href="disconnect">Quit</a></li>
+			<li><a class="waves-effect waves-light btn z-depth-4" href="disconnect">Quit<i class="material-icons right">exit_to_app</i></a></li>
 		</ul>
 	</div>
 	<div class="nav-content amber lighten-2">
 		<span class="nav-title">List of Players</span>
 	</div>
 	</nav>
+		<div style="margin-left: auto; margin-right: auto; width: 900px">
 	<table>
 		<thead>
 			<tr>
@@ -59,6 +60,7 @@
 
 		</tbody>
 	</table>
+	</div>
 </body>
 
 <script src="Resources/jquery-3.2.1.min.js"></script>
