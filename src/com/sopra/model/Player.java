@@ -12,6 +12,9 @@ import javax.persistence.*;
 public class Player extends Person{
 
 	private static final long serialVersionUID = 1L;
+	
+	@Column(name="PLA_BANNED")
+	private boolean banned;
 
 	@OneToMany(mappedBy="player1")
 	private List<Game> myGamesP1;
@@ -62,6 +65,14 @@ public class Player extends Person{
 	 */
 	public void setMyScore(List<Score> myScore) {
 		this.myScore = myScore;
+	}
+
+	public boolean isBanned() {
+		return banned;
+	}
+
+	public void setBanned(boolean banned) {
+		this.banned = banned;
 	}
 	
 }
