@@ -12,50 +12,51 @@
 <title>Display of the Tetriminos</title>
 </head>
 <body class="green lighten-5">
-	<nav class="nav-extended ">
-	<div class="nav-wrapper amber lighten-2">
+	<nav class="nav-extended z-depth-4 ">
+	<div class="nav-wrapper amber lighten-2 ">
 		<a href="home" class="brand-logo">Home Page</a>
 		<ul class="right hide-on-med-and-down">
 			<li><a href="displayGamesList">Games list</a></li>
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
-			<li><a class="waves-effect waves-light btn" href="disconnect">Quit</a></li>
+			<li><a class="waves-effect waves-light btn z-depth-4" href="disconnect">Quit</a></li>
 		</ul>
 	</div>
 	<div class="nav-content amber lighten-2">
 		<span class="nav-title">List of the Tetriminos</span> <a
-			class="btn-floating btn-large halfway-fab waves-effect waves-light teal"
+			class="btn-floating btn-large halfway-fab waves-effect waves-light z-depth-3 teal"
 			href="newitem" type="submit"> <i class="material-icons">add</i>
 		</a>
 	</div>
 	</nav>
-
-	<table>
+	<div style="margin : 0 auto">
+	<table style="width : 1000px;">
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>Tetrimino's Name</th>
-				<th>Color</th>
-				<th></th>
-				<th></th>
+				<th style="text-align: center;">Id</th>
+				<th style="text-align: center;">Tetrimino's Name</th>
+				<th style="text-align: center;">Color</th>
+				<th style="text-align: center;"></th>
+				<th style="text-align: center;"></th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<c:forEach items="${TetriminoList}" var="Tetrimino">
 				<tr>
-					<td>${Tetrimino.idTetrimino}</td>
-					<td>${Tetrimino.nameTetrimino }</td>
-					<td>${Tetrimino.colourTetrimino}</td>
-					<td><a href="ModifyItem?id=${Tetrimino.idTetrimino}"
+					<td style="text-align: center;">${Tetrimino.idTetrimino}</td>
+					<td style="text-align: center;">${Tetrimino.nameTetrimino }</td>
+					<td style="text-align: center;"><div class="chip z-depth-2" style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
+					<td style="text-align: center;"><a href="ModifyItem?id=${Tetrimino.idTetrimino}"
 						class="secondary-content"><i class="material-icons">mode_edit</i></a></td>
-					<td><a href="DeleteItem?id=${Tetrimino.idTetrimino}"
+					<td style="text-align: center;"><a href="DeleteItem?id=${Tetrimino.idTetrimino}"
 						class="secondary-content"><i class="material-icons">delete</i></a></td>
 				</tr>
 			</c:forEach>
 
 		</tbody>
 	</table>
+	</div>
 </body>
 <script src="Resources/jquery-3.2.1.min.js"></script>
 <script src="Resources/materialize/js/materialize.min.js"></script>

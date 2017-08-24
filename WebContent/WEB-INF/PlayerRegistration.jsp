@@ -11,7 +11,7 @@
 <title>Registration</title>
 </head>
 <body class="green lighten-5">
-	<nav>
+	<nav class="z-depth-4">
 	<div class="nav-wrapper amber lighten-2">
 		<a href="home" class="brand-logo">Home Page</a>
 	</div>
