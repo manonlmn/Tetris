@@ -17,8 +17,10 @@
 			<li><a href="displayGamesList">Games list</a></li>
 			<li><a href="displayplayer">Players' list</a></li>
 			<li><a href="displaytetrimino">Tetriminos' list</a></li>
+			<li><a class="waves-effect waves-light btn" href="disconnect">Quit</a></li>
 		</ul>
 	</div>
+	
 	</nav>
 	<div class="row">
 		<form class="col s12" method="post">

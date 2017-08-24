@@ -1,8 +1,7 @@
 package com.sopra.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sopra.dao.IAdminDAO;
-import com.sopra.dao.IPlayerDAO;
 import com.sopra.model.Admin;
 
 @WebServlet("/home")

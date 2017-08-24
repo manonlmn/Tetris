@@ -39,19 +39,16 @@ public class Filter implements javax.servlet.Filter {
 		HttpServletResponse response = (HttpServletResponse)resp;
 		
 		
-		if(request.getSession().getAttribute("username")==null && (request.getRequestURI().equals("/Tetris/home") || request.getRequestURI().contains("Resources"))) {
+		if(request.getSession().getAttribute("username")==null && (request.getRequestURI().equals("/Tetris/home") || request.getRequestURI().equals("/Tetris/newplayer") || request.getRequestURI().contains("Resources"))) {
 			chain.doFilter(request, response);
 		}
-		// **************** MODIFIE ******************
 		else if(request.getSession().getAttribute("username")==null && (!request.getRequestURI().equals("/Tetris/home") && !request.getRequestURI().equals("/Tetris/newplayer"))){
 			response.sendRedirect("/Tetris/home");
 		}
 		else if(request.getSession().getAttribute("username")!=null) {
 			chain.doFilter(request, response);
 		}
-		if(request.getSession().getAttribute("username")==null && (request.getRequestURI().equals("/Tetris/newplayer") || request.getRequestURI().contains("Resources"))) {
-			chain.doFilter(request, response);
-		}
+		
 	}
 
 }

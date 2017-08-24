@@ -12,17 +12,24 @@
 <title>Display of the Tetriminos</title>
 </head>
 <body class="green lighten-5">
-	<nav>
+	<nav class="nav-extended ">
 	<div class="nav-wrapper amber lighten-2">
 		<a href="home" class="brand-logo">Home Page</a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
+		<ul class="right hide-on-med-and-down">
 			<li><a href="displayGamesList">Games list</a></li>
 			<li><a href="displayplayer">Players' list</a></li>
-			<li class="active"><a href="displaytetrimino">Tetriminos' list</a></li>
+			<li><a href="displaytetrimino">Tetriminos' list</a></li>
+			<li><a class="waves-effect waves-light btn" href="disconnect">Quit</a></li>
 		</ul>
 	</div>
+	<div class="nav-content amber lighten-2">
+		<span class="nav-title">List of the Tetriminos</span> <a
+			class="btn-floating btn-large halfway-fab waves-effect waves-light teal"
+			href="newitem" type="submit"> <i class="material-icons">add</i>
+		</a>
+	</div>
 	</nav>
-	<h5>List of the Tetriminos</h5>
+
 	<table>
 		<thead>
 			<tr>
@@ -40,19 +47,15 @@
 					<td>${Tetrimino.idTetrimino}</td>
 					<td>${Tetrimino.nameTetrimino }</td>
 					<td>${Tetrimino.colourTetrimino}</td>
-					<td><a href="ModifyItem?id=${Tetrimino.idTetrimino}" class="secondary-content"><i
-							class="material-icons">mode_edit</i></a></td>
-					<td><a href="DeleteItem?id=${Tetrimino.idTetrimino}" class="secondary-content"><i
-							class="material-icons">delete</i></a></td>
+					<td><a href="ModifyItem?id=${Tetrimino.idTetrimino}"
+						class="secondary-content"><i class="material-icons">mode_edit</i></a></td>
+					<td><a href="DeleteItem?id=${Tetrimino.idTetrimino}"
+						class="secondary-content"><i class="material-icons">delete</i></a></td>
 				</tr>
 			</c:forEach>
 
 		</tbody>
 	</table>
-	<div class="fixed-action-btn left">
-		<a class="btn-floating btn-large waves-effect waves-light red"
-			href="newitem"><i class="medium material-icons">add</i></a>
-	</div>
 </body>
 <script src="Resources/jquery-3.2.1.min.js"></script>
 <script src="Resources/materialize/js/materialize.min.js"></script>
