@@ -68,11 +68,14 @@ public class Player extends Person{
 	}
 
 	public boolean isBanned() {
-		return banned;
+		return this.banned;
 	}
 
 	public void setBanned(boolean banned) {
 		this.banned = banned;
 	}
 	
+	public void modifyBanned() {
+		this.banned = !banned;
+	}
 }
