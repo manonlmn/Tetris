@@ -1,0 +1,43 @@
+package com.sopra.dao.hibernate;
+
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+import com.sopra.dao.IFigureDAO;
+import com.sopra.model.Figure;
+
+@Repository
+@Transactional
+public class FigureDAOHibernate implements IFigureDAO {
+	
+	@PersistenceContext
+	private EntityManager em; 
+	
+	@Override
+	public Figure add(Figure obj) {
+		return em.merge(obj);
+	}
+
+	@Override
+	public Figure modify(Figure obj) {
+		return this.add(obj);
+	}
+
+	@Override
+	public void delete(int id) {
+		Figure figure = this.search(id);
+		em.remove(figure);
+	}
+
+	@Override
+	public List<Figure> list() {
+		return em.createQuery("select g from Figure g").getResultList();
+	}
+
+	@Override
+	public Figure search(int id) {
+		return em.find(Figure.class, id);
+	}
+}

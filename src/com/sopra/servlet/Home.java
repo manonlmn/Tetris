@@ -23,8 +23,6 @@ public class Home extends ServletInChief {
 	@Autowired
 	private IAdminDAO adminDAO;
 
-
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
 		if(req.getSession().getAttribute("username")==null) {
