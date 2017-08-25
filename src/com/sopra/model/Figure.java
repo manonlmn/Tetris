@@ -67,6 +67,20 @@ public class Figure implements Serializable{
 	public void setRotationNumber(int rotationNumber) {
 		this.rotationNumber = rotationNumber;
 	}
+
+	/**
+	 * @return the tetrimino
+	 */
+	public Tetrimino getTetrimino() {
+		return tetrimino;
+	}
+
+	/**
+	 * @param tetrimino the tetrimino to set
+	 */
+	public void setTetrimino(Tetrimino tetrimino) {
+		this.tetrimino = tetrimino;
+	}
 	
 	
 
