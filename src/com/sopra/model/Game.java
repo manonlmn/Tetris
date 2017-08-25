@@ -6,19 +6,16 @@ package com.sopra.model;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * @author mlemonnier
- *
- */
 import javax.persistence.*;
 import javax.validation.constraints.*;
-
-import com.sopra.dao.PlayerDAO;
 
 
 @Entity
 @Table(name="game")
 public class Game implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "GAM_ID")
