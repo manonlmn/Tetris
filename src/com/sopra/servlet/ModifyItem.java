@@ -41,14 +41,23 @@ public class ModifyItem extends ServletInChief {
 		Tetrimino myNewTetrimino = new Tetrimino();
 		boolean error = false;
 		myNewTetrimino.setIdTetrimino(Integer.parseInt(request.getParameter("id")));
+		
 		myNewTetrimino.setNameTetrimino(request.getParameter("name"));
 		try {
 			validationNom(myNewTetrimino.getNameTetrimino());
 		}catch(FormValidationException fve) {
 			request.setAttribute("nameNewTetrimino", fve);		
 			error = true;
-			
 		}
+		
+		try {
+			validationCoef(request.getParameter("coef"));
+			myNewTetrimino.setCoef(Integer.parseInt(request.getParameter("coef")));
+		}catch(FormValidationException fve) {
+			request.setAttribute("coefNewTetrimino", fve);		
+			error = true;
+		}
+		
 		myNewTetrimino.setColourTetrimino(request.getParameter("colour"));
 		try {
 			validationColour(myNewTetrimino.getColourTetrimino());
@@ -70,6 +79,12 @@ public class ModifyItem extends ServletInChief {
 	private void validationNom(String nom) throws FormValidationException{
 		if(nom.equals("")) {
 			throw new FormValidationException("Please give a name to your tetrimino !");
+		}
+	}
+	
+	private void validationCoef(String coef) throws FormValidationException{
+		if(coef.equals("")) {
+			throw new FormValidationException("Please give a coef to your Tetrimino !");
 		}
 	}
 	

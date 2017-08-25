@@ -35,6 +35,7 @@
 				<tr>
 					<th style="text-align: center;">Id</th>
 					<th style="text-align: center;">Tetrimino's Name</th>
+					<th style="text-align: center;">Coefficient</th>
 					<th style="text-align: center;">Color</th>
 					<th style="text-align: center;"></th>
 					<th style="text-align: center;"></th>
@@ -47,6 +48,7 @@
 					<tr>
 						<td style="text-align: center;">${Tetrimino.idTetrimino}</td>
 						<td style="text-align: center;">${Tetrimino.nameTetrimino }</td>
+						<td style="text-align: center;">${Tetrimino.coef }</td>
 						<td style="text-align: center;"><div class="chip z-depth-2"
 								style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
 						<td style="text-align: center;"><a

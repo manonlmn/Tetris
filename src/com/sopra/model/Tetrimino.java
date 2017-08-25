@@ -33,7 +33,7 @@ public class Tetrimino implements Serializable {
 	private String colourTetrimino;
 	
 	@Column(name="TET_COEF")
-	private int coef;
+	private Integer coef;
 	
 	@OneToMany(mappedBy="tetrimino")
 	List<Figure> myFigures;
@@ -61,11 +61,11 @@ public class Tetrimino implements Serializable {
 		this.idTetrimino = idTetrimino;
 	}
 
-	public int getCoef() {
+	public Integer getCoef() {
 		return coef;
 	}
 	
-	public void setCoef(int coef) {
+	public void setCoef(Integer coef) {
 		this.coef = coef;
 	}
 

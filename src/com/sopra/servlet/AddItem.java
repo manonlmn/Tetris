@@ -15,9 +15,9 @@ import com.sopra.model.Tetrimino;
 
 @WebServlet("/newitem")
 public class AddItem extends ServletInChief {
-	//numéro de série pour éviter les warnings
+	//numï¿½ro de sï¿½rie pour ï¿½viter les warnings
 	private static final long serialVersionUID = 1L;
-	
+
 	@Autowired
 	private ITetriminoDAO TetriDAO;
 
@@ -32,11 +32,21 @@ public class AddItem extends ServletInChief {
 
 		// CrÃ©ation d'un TÃ©trimino en rÃ©cupÃ©rant les attributs de formulaire
 		Tetrimino myNewTetrimino = new Tetrimino();
+
+
 		myNewTetrimino.setNameTetrimino(request.getParameter("nameNewTetrimino"));
 		try {
 			validationNom(myNewTetrimino.getNameTetrimino());
 		}catch(FormValidationException fve) {
 			request.setAttribute("nameNewTetrimino", fve);		
+			error =true;
+		}
+
+		try {
+			validationCoef(request.getParameter("coefNewTetrimino"));
+			myNewTetrimino.setCoef(Integer.parseInt(request.getParameter("coefNewTetrimino")));
+		}catch(FormValidationException fve) {
+			request.setAttribute("coefNewTetrimino", fve);		
 			error =true;
 		}
 
@@ -65,6 +75,12 @@ public class AddItem extends ServletInChief {
 	private void validationNom(String nom) throws FormValidationException{
 		if(nom.equals("")) {
 			throw new FormValidationException("Please give a name to your tetrimino !");
+		}
+	}
+
+	private void validationCoef(String coef) throws FormValidationException{
+		if(coef.equals("")) {
+			throw new FormValidationException("Please give a coef to your tetrimino !");
 		}
 	}
 
