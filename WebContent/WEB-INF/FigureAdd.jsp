@@ -23,33 +23,37 @@
 		</ul>
 	</div>
 	</nav>
-	<div class="row" style="margin-left: auto; margin-right: auto; width: 900px">
-	<table>
-	<thead>
-	<tr>
-	<th>Name of the Tetrimino</th>
-	<th>Colour of the Tetrimino</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td style="text-align: center;">${Tetrimino.nameTetrimino }</td>
-	<td style="text-align: center;"><div class="chip z-depth-2"
-								style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
-						
-	</tr>
-	</tbody>
-	</table>
+	<div class="row"
+		style="margin-left: auto; margin-right: auto; width: 900px">
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align: center;">Name of the Tetrimino</th>
+					<th style="text-align: center;">Colour of the Tetrimino</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center;">${Tetrimino.nameTetrimino }</td>
+					<td style="text-align: center;"><div class="chip z-depth-2"
+							style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
 		<form class="col s12" method="post">
 			<div class="row">
-				<div class="input-field col s5">
-					
-				</div>
-				<div class="input-field col s4">
-					
-				</div>
+				<c:forEach var ="i" begin="0" end="4">
+					<tr>
+						<c:forEach var ="j" begin="0" end="4">
+							<td>${i+j }</td>
+						</c:forEach>
+					</tr>
+				</c:forEach>
 				<div class="input-field col s3">
-				<button class="btn waves-effect waves-light" type="submit">
+					<button class="btn waves-effect waves-light" type="submit">
 						Save<i class="material-icons right">save</i>
 					</button>
 				</div>
