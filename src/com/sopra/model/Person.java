@@ -8,6 +8,9 @@ import javax.persistence.*;
 @Table(name="Person")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Person implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="PER_ID")
