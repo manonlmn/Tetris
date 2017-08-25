@@ -24,45 +24,70 @@
 		</ul>
 	</div>
 	</nav>
-	<div class="row"
-		style="margin-left: auto; margin-right: auto; width: 900px">
-		<table>
-			<thead>
-				<tr>
-					<th style="text-align: center;">Name of the Tetrimino</th>
-					<th style="text-align: center;">Colour of the Tetrimino</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="text-align: center;">${Tetrimino.nameTetrimino }</td>
-					<td style="text-align: center;"><div class="chip z-depth-2"
-							style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
+	<form method="POST">
+		<div class="row"
+			style="margin-left: auto; margin-right: auto; width: 900px">
+			<table>
+				<thead>
+					<tr>
+						<th style="text-align: center;">Name of the Tetrimino</th>
+						<th style="text-align: center;">Colour of the Tetrimino</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="text-align: center;">${Tetrimino.nameTetrimino }</td>
+						<td style="text-align: center;"><div class="chip z-depth-2"
+								style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
 
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="row"
-		style="margin-left: auto; margin-right: auto; width: 250px; height: 250px">
-		<table class="border">
-			<c:forEach var="x" begin="0" end="4">
-				<tr>
-					<c:forEach var="y" begin="0" end="4">
-					<td id="${x}_${y}"
-							style="text-align: center; border-style: solid; border-width: 1px; border-color: #bdbdbd; height: 50px; width: 50px; background-color: teal;"><a
-							href="AddFigure?x=${x}&y=${y}">${x}_${y}</a></td>
-						
-					</c:forEach>
-				</tr>
-			</c:forEach>
-		</table>
-		<div>
-			<button class="btn waves-effect waves-light" type="submit">
-				Save<i class="material-icons right">save</i>
-			</button>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-	</div>
+		<div class="row"
+			style="margin-left: auto; margin-right: auto; width: 250px;">
+			<div class="input-field col s12">
+				<input id="numberRotation" name="numberRotation" type="number" min="1" max="4" placeholder="${numberRotation.message}"
+					class="validate"> <label for="numberRotation">Order
+					of rotation</label></input>
+			</div>
+		</div>
+		<div class="row"
+			style="margin-left: auto; margin-right: auto; width: 250px; height: 250px">
+			<table class="border">
+				<c:forEach var="x" begin="0" end="4">
+					<tr>
+						<c:forEach var="y" begin="0" end="4">
+
+							<c:set var="color" value="red" />
+
+							<c:forEach items="${ListBlock}" var="blockExistant">
+								<c:if test="${blockExistant.x == x && blockExistant.y == y}">
+									<c:set var="color" value="blue" />
+								</c:if>
+							</c:forEach>
+
+
+							<td id="${x}_${y}"
+								style="text-align: center; border-style: solid; border-width: 1px; border-color: #bdbdbd; height: 50px; width: 50px; background-color: ${ color };"><a
+								href="AddBlock?x=${x}&y=${y}&id=${Tetrimino.idTetrimino}">${x}_${y}</a></td>
+
+						</c:forEach>
+					</tr>
+				</c:forEach>
+			</table>
+			<div>
+				<button class="btn waves-effect waves-light" type="submit">
+					Save<i class="material-icons right">save</i>
+				</button>
+			</div>
+			<div>
+				<button class="btn waves-effect waves-light" type="reset">
+					Reset<i class="material-icons right">clear_all</i>
+				</button>
+			</div>
+		</div>
+	</form>
 </body>
 
 <script src="Resources/jquery-3.2.1.min.js"></script>
