@@ -38,6 +38,7 @@
 					<th style="text-align: center;">Color</th>
 					<th style="text-align: center;"></th>
 					<th style="text-align: center;"></th>
+					<th style="text-align: center;"></th>
 				</tr>
 			</thead>
 
@@ -54,6 +55,10 @@
 						<td style="text-align: center;"><a
 							href="DeleteItem?id=${Tetrimino.idTetrimino}"
 							class="secondary-content"><i class="material-icons">delete</i></a></td>
+						<td style="text-align: center;">
+							<a href="AddFigure?id=${Tetrimino.idTetrimino}" class="secondary-content">
+							<i class="material-icons">add_to_photos</i></a>
+						</td>
 					</tr>
 				</c:forEach>
 
