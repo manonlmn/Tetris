@@ -1,27 +1,23 @@
 package com.sopra.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
-import javax.ejb.EJB;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.sopra.exception.FormValidationException;
 import com.sopra.dao.ITetriminoDAO;
-import com.sopra.dao.TetriminoDAO;
-import com.sopra.dao.hibernate.TetriminoDaoHibernate;
 import com.sopra.model.Tetrimino;
 
 @WebServlet("/newitem")
 public class AddItem extends ServletInChief {
+	//numéro de série pour éviter les warnings
+	private static final long serialVersionUID = 1L;
+	
 	@Autowired
 	private ITetriminoDAO TetriDAO;
 
@@ -54,8 +50,8 @@ public class AddItem extends ServletInChief {
 
 		if(error==false) {
 
-			Tetrimino newTetri = new Tetrimino();
-			newTetri = TetriDAO.add(myNewTetrimino);
+			Tetrimino newTetri;
+			newTetri= TetriDAO.add(myNewTetrimino);
 			//request.setAttribute("TetriminoList", TetriDAO.list());
 			response.sendRedirect("displaytetrimino");
 		}
