@@ -5,21 +5,20 @@ package com.sopra.dao.hibernate;
 
 import java.util.List;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sopra.dao.IPersonDAO;
 import com.sopra.model.Admin;
 import com.sopra.model.Person;
 
-/**
- * @author mlemonnier
- *
- */
-@Stateless
+@Repository
+@Transactional
 public class PersonDaoHibernate implements IPersonDAO {
-	@PersistenceContext(unitName="NomPersistenceUnit")
+	@PersistenceContext
 	private EntityManager em; 
 	 
 	@Override

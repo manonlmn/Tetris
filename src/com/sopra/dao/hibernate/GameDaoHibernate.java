@@ -3,16 +3,19 @@ package com.sopra.dao.hibernate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sopra.dao.IGameDAO;
 import com.sopra.model.Game;
 
-@Stateless
+@Repository
+@Transactional
 public class GameDaoHibernate implements IGameDAO {
-	@PersistenceContext(unitName="NomPersistenceUnit")
+	@PersistenceContext
 	private EntityManager em; 
 	
 	@Override

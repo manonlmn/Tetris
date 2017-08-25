@@ -2,17 +2,20 @@ package com.sopra.dao.hibernate;
 
 import java.util.List;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.sopra.dao.IAdminDAO;
 import com.sopra.model.Admin;
 
-@Stateless
+@Repository
+@Transactional
 public class AdminDaoHibernate implements IAdminDAO {
-	@PersistenceContext(unitName="NomPersistenceUnit")
+	@PersistenceContext
 	private EntityManager em; 
 
 	@Override
