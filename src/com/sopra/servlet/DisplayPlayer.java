@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.IPlayerDAO;
 
 @WebServlet("/displayplayer")
-public class DisplayPlayer extends HttpServlet {
+public class DisplayPlayer extends ServletInChief {
 
-	private static final long serialVersionUID = 1L;
-	
-	@EJB 
+	@Autowired
 	private IPlayerDAO playerDAO;
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

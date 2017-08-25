@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.IGameDAO;
 
 @WebServlet("/displayGamesList")
-public class DisplayGamesList extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
+public class DisplayGamesList extends ServletInChief {
 	
-	@EJB(name="gameDaoHibernate")
+	@Autowired
 	private IGameDAO gameDAO;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

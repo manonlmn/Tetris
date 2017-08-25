@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.dao.TetriminoDAO;
 import com.sopra.dao.hibernate.TetriminoDaoHibernate;
@@ -16,8 +18,9 @@ import com.sopra.exception.FormValidationException;
 import com.sopra.model.Tetrimino;
 
 @WebServlet("/ModifyItem")
-public class ModifyItem extends HttpServlet {
-	@EJB
+public class ModifyItem extends ServletInChief {
+	
+	@Autowired
 	private ITetriminoDAO TetriDAO;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

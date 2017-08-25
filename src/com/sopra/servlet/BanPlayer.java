@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.IPlayerDAO;
 import com.sopra.model.Player;
 
@@ -16,10 +18,9 @@ import com.sopra.model.Player;
  * Servlet implementation class BanPlayer
  */
 @WebServlet("/BanPlayer")
-public class BanPlayer extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class BanPlayer extends ServletInChief {
 	
-	@EJB
+	@Autowired
 	private IPlayerDAO playerDAO;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

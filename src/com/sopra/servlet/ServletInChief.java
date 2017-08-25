@@ -11,17 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-@WebServlet("/welcome")
-public class AdminWelcome extends ServletInChief {
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getSession().getAttribute("username"); 
-
-		this.getServletContext().getRequestDispatcher("/WEB-INF/Choice.jsp").forward(req, resp);
-
-
+@WebServlet("/ServletInChief")
+public class ServletInChief extends HttpServlet {
+	
+	public void init(ServletConfig config) {
+		try {
+			super.init(config);
+		}
+		catch (ServletException e) {
+			e.printStackTrace();
+		}
+		SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this, config.getServletContext());
 	}
-
-
 }

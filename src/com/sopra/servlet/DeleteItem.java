@@ -9,14 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.dao.TetriminoDAO;
 import com.sopra.dao.hibernate.TetriminoDaoHibernate;
 import com.sopra.model.Tetrimino;
 
 @WebServlet("/DeleteItem")
-public class DeleteItem extends HttpServlet {
-	@EJB
+public class DeleteItem extends ServletInChief {
+	
+	@Autowired
 	private ITetriminoDAO TetriDAO;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
