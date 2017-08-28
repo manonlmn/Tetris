@@ -33,30 +33,69 @@
 	</div>
 	</nav>
 	<div style="margin-left: auto; margin-right: auto; width: 900px">
+	
+	<table>
+			<thead>
+				<tr>
+					<th style="text-align: center;">Id</th>
+					<th style="text-align: center;">Tetrimino's Name</th>
+					<th style="text-align: center;">Coefficient</th>
+					<th style="text-align: center;">Color</th>
+				</tr>
+			</thead>
+
+			<tbody>
+					<tr>
+						<td style="text-align: center;">${Tetrimino.idTetrimino}</td>
+						<td style="text-align: center;">${Tetrimino.nameTetrimino }</td>
+						<td style="text-align: center;">${Tetrimino.coef }</td>
+						<td style="text-align: center;"><div class="chip z-depth-2"
+								style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+		
+		<c:if test="${empty FiguresList }">
+		No figure were assigned to this tetrimino.
+		</c:if>
+		<c:if test="${not empty FiguresList }">
+		
 		<table>
 			<tr>
-				<c:forEach items="${ListFigures }" var="figure">
+				<c:forEach items="${FiguresList }" var="figure">
 					<td>
-						<table>
+						Rotation No.${figure.rotationNumber }
+						<table style="padding:5px; width:200px; height:200px; border:solid 1px #c8e6c9">
+						
 							<c:forEach var="x" begin="0" end="4">
 								<tr>
 									<c:forEach var="y" begin="0" end="4">
-										<td>
-											<c:set var="color" value="#c8e6c9 " />
-											<c:forEach items="${Figure.myBlocks}" var="blockExistant">
-											<c:if test="${blockExistant.x == x && blockExistant.y == y}">
-											<c:set var="color" value="${Tetrimino.colourTetrimino}" />
-											</c:if>
+											<c:set var="color" value="#e8f5e9 " />
+											<c:forEach items="${figure.myBlocks}" var="blockExistant">
+												<c:if test="${blockExistant.x == x && blockExistant.y == y}">
+													<c:set var="color" value="${Tetrimino.colourTetrimino}" />
+												</c:if>
 											</c:forEach>
-										</td>
+												<td id="${x}_${y}" class="bloc a" style="background-color: ${ color }; width: 40px; height: 40px">
+												</td>
 									</c:forEach>
 								</tr>
 							</c:forEach>
+								<tr>
+									<td style="text-align: center;"><a href="modifyFigure?id=${figure.idFigure}"
+										class="secondary-content"><i class="material-icons">mode_edit</i></a></td>
+									<td style="text-align: center;"><a href="deleteFigure?id=${figure.idFigure}"
+										class="secondary-content"><i class="material-icons">delete</i></a></td>
+								</tr>
+							
 						</table>
 					</td>
 				</c:forEach>
 			</tr>
 		</table>
+		
+		</c:if>
 
 	</div>
 </body>
