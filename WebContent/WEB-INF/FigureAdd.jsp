@@ -45,16 +45,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="row"
-			style="margin-left: auto; margin-right: auto; width: 250px;">
-			<div class="input-field col s12">
-				<input id="numberRotation" name="numberRotation" type="number"
-					min="1" max="4" placeholder="${numberRotation.message}"
-					class="validate"> <label for="numberRotation">Order
-					of rotation</label>
-			</div>
-		</div>
-		
+				
 		<div class="figure" style="margin-left: auto; margin-right: auto;">
 				<c:forEach var="x" begin="0" end="4">
 					<c:forEach var="y" begin="0" end="4">
@@ -73,6 +64,15 @@
 						</div>
 					</c:forEach>
 				</c:forEach>
+		</div>
+		<div class="row"
+			style="margin-left: auto; margin-right: auto; width: 250px;">
+			<div class="input-field col s12">
+				<input id="numberRotation" name="numberRotation" type="number"
+					min="1" max="4" placeholder="${numberRotation.message}"
+					class="validate"> <label for="numberRotation">Order
+					of rotation</label>
+			</div>
 		</div>
 		<div class="row"
 			style="margin-left: auto; margin-right: auto; width: 350px;">
