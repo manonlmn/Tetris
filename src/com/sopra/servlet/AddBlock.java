@@ -12,48 +12,55 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sopra.dao.IBlockDAO;
-import com.sopra.dao.IFigureDAO;
 import com.sopra.model.Block;
 
 @WebServlet("/AddBlock")
 public class AddBlock extends ServletInChief {
-
+	//numéro de série
 	private static final long serialVersionUID = 1L;
-
+	//ajout de la DAO pour les blocks 
 	@Autowired 
 	private IBlockDAO blockDAO;
 
-	
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//l'id du tetrimino auquel on rajoute les formes 
 		int id = Integer.parseInt(req.getParameter("id"));
 		//création d'un block
 		Block block = new Block();
-		//set le block 
+		//donner les valeurs de X et Y au block
 		block.setX(Integer.parseInt(req.getParameter("x")));
 		block.setY(Integer.parseInt(req.getParameter("y")));
 
-		//ajout à la bdd
-		block = blockDAO.add(block);
-		
 		List<Block> myBlocks = (List<Block>) req.getSession().getAttribute("ListBlock");
-		
+
+		//si la liste est vide/nulle, on l'initialise
 		if (myBlocks == null) {
 			myBlocks = new ArrayList<Block>();
 		}
-				
-				
-		//ajout à une liste de block
-		myBlocks.add(block);
-		
+
+		boolean blockExist = false;
+		//Pour chaque bloc de la liste de bloc
+		for(Block bloc : myBlocks) {
+			//si le bloc existe déjà
+			if(bloc.getX() == block.getX() && bloc.getY() == block.getY()) {
+				//on le supprime de la liste via son index
+				myBlocks.remove(bloc);
+				blockExist=true;
+				break;
+			}
+		}
+		if(blockExist==false) {
+			//ajout à une liste de block
+			myBlocks.add(block);
+		}
+
 		//on met la liste de block en session
 		req.getSession().setAttribute("ListBlock", myBlocks);
-		
+		//on renvoie vers la servlet pour ajouter des figures
 		resp.sendRedirect("AddFigure?id="+id);
 	}
-	
-	
+
+
 
 }

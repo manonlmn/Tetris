@@ -53,7 +53,7 @@ public class AddFigure extends ServletInChief {
 		boolean error = false;
 
 		Figure figure = new Figure();
-		figure.setTetrimino(myTetri);
+		
 
 		try {
 			validationRotation(request.getParameter("numberRotation"));
@@ -62,13 +62,21 @@ public class AddFigure extends ServletInChief {
 			request.setAttribute("numberRotation", fve);        
 			error = true;
 		}
+		try {
+			RotationAlreadyExist(figure.getRotationNumber(), id);
+		}catch(FormValidationException fve) {
+			request.setAttribute("numberRotation", fve);        
+			error = true;
+		}
+		
+		figure.setTetrimino(myTetri);
 
 		if(error == false) {
 			figure = figDAO.add(figure);
 
 			for(Block block : blocks) {
 				block.setFigure(figure);
-				block = blockDAO.modify(block);
+				block = blockDAO.add(block);
 			}
 
 			//on vide la liste de blocks
@@ -83,6 +91,14 @@ public class AddFigure extends ServletInChief {
 	private void validationRotation(String parameter) throws FormValidationException {
 		if(parameter.equals("")) {
 			throw new FormValidationException("Please enter a number !");
+		}
+	}
+	
+	private void RotationAlreadyExist(int rotation, int idTetri) throws FormValidationException{
+		Figure figure;
+		figure = figDAO.searchByRotation(rotation, idTetri);
+		if(figure != null) {
+			throw new FormValidationException("Rotation already exists ! ");
 		}
 	}
 
