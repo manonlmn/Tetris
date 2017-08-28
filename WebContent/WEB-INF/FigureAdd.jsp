@@ -9,6 +9,7 @@
 	href="Resources/materialize/css/materialize.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
+<link href="Resources/div.css" rel="stylesheet">
 <title>Add a Figure</title>
 </head>
 <body class="green lighten-5">
@@ -47,45 +48,53 @@
 		<div class="row"
 			style="margin-left: auto; margin-right: auto; width: 250px;">
 			<div class="input-field col s12">
-				<input id="numberRotation" name="numberRotation" type="number" min="1" max="4" placeholder="${numberRotation.message}"
+				<input id="numberRotation" name="numberRotation" type="number"
+					min="1" max="4" placeholder="${numberRotation.message}"
 					class="validate"> <label for="numberRotation">Order
-					of rotation</label></input>
+					of rotation</label>
+			</div>
+		</div>
+		<div class="figure" style="margin-left: auto; margin-right: auto;">
+			<div class="border">
+				<c:forEach var="x" begin="0" end="4">
+					<c:forEach var="y" begin="0" end="4">
+
+						<c:set var="color" value="#c8e6c9" />
+
+						<c:forEach items="${ListBlock}" var="blockExistant">
+							<c:if test="${blockExistant.x == x && blockExistant.y == y}">
+								<c:set var="color" value="${Tetrimino.colourTetrimino}" />
+							</c:if>
+						</c:forEach>
+
+
+						<a href="AddBlock?x=${x}&y=${y}&id=${Tetrimino.idTetrimino}">
+							<div id="${x}_${y}" class="bloc a"
+								style="background-color: ${ color };"></div>
+						</a>
+
+					</c:forEach>
+
+				</c:forEach>
+
 			</div>
 		</div>
 		<div class="row"
-			style="margin-left: auto; margin-right: auto; width: 250px; height: 250px">
-			<table class="border">
-				<c:forEach var="x" begin="0" end="4">
-					<tr>
-						<c:forEach var="y" begin="0" end="4">
-
-							<c:set var="color" value="red" />
-
-							<c:forEach items="${ListBlock}" var="blockExistant">
-								<c:if test="${blockExistant.x == x && blockExistant.y == y}">
-									<c:set var="color" value="blue" />
-								</c:if>
-							</c:forEach>
-
-
-							<td id="${x}_${y}"
-								style="text-align: center; border-style: solid; border-width: 1px; border-color: #bdbdbd; height: 50px; width: 50px; background-color: ${ color };"><a
-								href="AddBlock?x=${x}&y=${y}&id=${Tetrimino.idTetrimino}">${x}_${y}</a></td>
-
-						</c:forEach>
-					</tr>
-				</c:forEach>
+			style="margin-left: auto; margin-right: auto; width: 350px;">
+			<table>
+				<tr>
+					<td style="width: 175px; text-align: center">
+						<button class="btn waves-effect waves-light" type="submit">
+							Save<i class="material-icons right">save</i>
+						</button>
+					</td>
+					<td style="width: 175px; text-align: center;"><a
+						href="resetFigure?id=${Tetrimino.idTetrimino}"><button
+								class="btn waves-effect waves-light" type="button">
+								Reset<i class="material-icons right">clear_all</i>
+							</button></a></td>
+				</tr>
 			</table>
-			<div>
-				<button class="btn waves-effect waves-light" type="submit">
-					Save<i class="material-icons right">save</i>
-				</button>
-			</div>
-			<div>
-				<button class="btn waves-effect waves-light" type="reset">
-					Reset<i class="material-icons right">clear_all</i>
-				</button>
-			</div>
 		</div>
 	</form>
 </body>
