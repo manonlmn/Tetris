@@ -55,7 +55,6 @@
 			</div>
 		</div>
 		<div class="figure" style="margin-left: auto; margin-right: auto;">
-			<div class="border">
 				<c:forEach var="x" begin="0" end="4">
 					<c:forEach var="y" begin="0" end="4">
 
@@ -67,17 +66,12 @@
 							</c:if>
 						</c:forEach>
 
-
-						<a href="AddBlock?x=${x}&y=${y}&id=${Tetrimino.idTetrimino}">
-							<div id="${x}_${y}" class="bloc a"
-								style="background-color: ${ color };"></div>
-						</a>
-
+						<div id="${x}_${y}" class="bloc a"
+							style="background-color: ${ color };">
+							<a href="AddBlock?x=${x}&y=${y}&id=${Tetrimino.idTetrimino}"></a>
+						</div>
 					</c:forEach>
-
 				</c:forEach>
-
-			</div>
 		</div>
 		<div class="row"
 			style="margin-left: auto; margin-right: auto; width: 350px;">
