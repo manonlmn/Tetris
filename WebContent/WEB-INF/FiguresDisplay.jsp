@@ -22,7 +22,8 @@
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="displayGamesList">Games list</a></li>
 			<li><a href="displayplayer">Players' list</a></li>
-			<li class="active"><a href="displaytetrimino">Tetriminos' list</a></li>
+			<li class="active"><a href="displaytetrimino">Tetriminos'
+					list</a></li>
 			<li><a class="waves-effect waves-light btn z-depth-4"
 				href="disconnect">Quit<i class="material-icons right">exit_to_app</i></a></li>
 		</ul>
@@ -34,17 +35,26 @@
 	<div style="margin-left: auto; margin-right: auto; width: 900px">
 		<table>
 			<tr>
-				<td>
-				</td>
-				
-				<td>
-				</td>
-				
-				<td>
-				</td>
-				
-				<td>
-				</td>
+				<c:forEach items="${ListFigures }" var="figure">
+					<td>
+						<table>
+							<c:forEach var="x" begin="0" end="4">
+								<tr>
+									<c:forEach var="y" begin="0" end="4">
+										<td>
+											<c:set var="color" value="#c8e6c9 " />
+											<c:forEach items="${Figure.myBlocks}" var="blockExistant">
+											<c:if test="${blockExistant.x == x && blockExistant.y == y}">
+											<c:set var="color" value="${Tetrimino.colourTetrimino}" />
+											</c:if>
+											</c:forEach>
+										</td>
+									</c:forEach>
+								</tr>
+							</c:forEach>
+						</table>
+					</td>
+				</c:forEach>
 			</tr>
 		</table>
 

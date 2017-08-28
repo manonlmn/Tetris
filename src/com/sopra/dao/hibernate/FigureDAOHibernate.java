@@ -1,5 +1,6 @@
 package com.sopra.dao.hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.sopra.dao.IFigureDAO;
 import com.sopra.model.Figure;
+import com.sopra.model.Game;
+import com.sopra.model.Tetrimino;
 
 @Repository
 @Transactional
@@ -33,7 +36,7 @@ public class FigureDAOHibernate implements IFigureDAO {
 
 	@Override
 	public List<Figure> list() {
-		return em.createQuery("select g from Figure g").getResultList();
+		return em.createQuery("select f from Figure f").getResultList();
 	}
 
 	@Override
