@@ -41,11 +41,14 @@ public class ModifyFigure extends ServletInChief {
 
 		Tetrimino tetri;
 		tetri = figure.getTetrimino();
+
+		
+		
 		
 		List<Block> myBlocks = (List<Block>) req.getSession().getAttribute("ListBlock");
 
 		//si la liste est vide/nulle, on l'initialise
-		if (myBlocks == null) {
+		if ((myBlocks == null) || (!req.getHeader("referer").contains("modifyFigure"))) {
 			myBlocks = figure.getMyBlocks();
 		}
 		
