@@ -30,6 +30,10 @@
 	</div>
 	<div class="nav-content amber lighten-2">
 		<span class="nav-title">List of Tetrimino Figures</span>
+		<c:if test="${FiguresList.size() < 4 }">
+		<a class="btn-floating btn-large halfway-fab waves-effect waves-light z-depth-3 teal" href="AddFigure?id=${Tetrimino.idTetrimino }" type="submit"> <i class="material-icons">add</i>
+		</c:if>
+		</a>
 	</div>
 	</nav>
 	<div style="margin-left: auto; margin-right: auto; width: 900px">
@@ -57,7 +61,7 @@
 		</table>
 
 		<c:if test="${empty FiguresList }">
-		No figures were assigned to this tetrimino yet.
+		No figures were assigned to this tetrimino yet.<br/>
 		</c:if>
 		<c:if test="${not empty FiguresList }">
 

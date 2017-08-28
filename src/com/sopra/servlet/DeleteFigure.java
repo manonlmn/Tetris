@@ -24,7 +24,6 @@ public class DeleteFigure extends ServletInChief {
 		
 		int idFigureToDelete = Integer.parseInt(request.getParameter("id"));
 		Figure figure = myFigureDAO.search(idFigureToDelete);
-		
 		myFigureDAO.delete(idFigureToDelete);
 		response.sendRedirect("ListFiguresTetrimino?id="+figure.getTetrimino().getIdTetrimino());
 	}
