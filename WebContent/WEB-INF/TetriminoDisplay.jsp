@@ -18,7 +18,7 @@
 		<ul class="right hide-on-med-and-down">
 			<li><a href="displayGamesList">Games list</a></li>
 			<li><a href="displayplayer">Players' list</a></li>
-			<li><a href="displaytetrimino">Tetriminos' list</a></li>
+			<li class="active"><a href="displaytetrimino">Tetriminos' list</a></li>
 			<li><a class="waves-effect waves-light btn z-depth-4" href="disconnect">Quit<i class="material-icons right">exit_to_app</i></a></li>
 		</ul>
 	</div>
@@ -37,6 +37,7 @@
 					<th style="text-align: center;">Tetrimino's Name</th>
 					<th style="text-align: center;">Coefficient</th>
 					<th style="text-align: center;">Color</th>
+					<th style="text-align: center;"></th>
 					<th style="text-align: center;"></th>
 					<th style="text-align: center;"></th>
 					<th style="text-align: center;"></th>
@@ -60,6 +61,9 @@
 						<td style="text-align: center;">
 							<a href="AddFigure?id=${Tetrimino.idTetrimino}" class="secondary-content">
 							<i class="material-icons">add_to_photos</i></a>
+						<td style="text-align: center;">
+							<a href="ListFiguresTetrimino?id=${Tetrimino.idTetrimino}" class="secondary-content">
+							<i class="material-icons">library_books</i></a>
 						</td>
 					</tr>
 				</c:forEach>
