@@ -18,8 +18,10 @@
 		<ul class="right hide-on-med-and-down">
 			<li><a href="displayGamesList">Games list</a></li>
 			<li><a href="displayplayer">Players' list</a></li>
-			<li class="active"><a href="displaytetrimino">Tetriminos' list</a></li>
-			<li><a class="waves-effect waves-light btn z-depth-4" href="disconnect">Quit<i class="material-icons right">exit_to_app</i></a></li>
+			<li class="active"><a href="displaytetrimino">Tetriminos'
+					list</a></li>
+			<li><a class="waves-effect waves-light btn z-depth-4"
+				href="disconnect">Quit<i class="material-icons right">exit_to_app</i></a></li>
 		</ul>
 	</div>
 	<div class="nav-content amber lighten-2">
@@ -58,12 +60,19 @@
 						<td style="text-align: center;"><a
 							href="DeleteItem?id=${Tetrimino.idTetrimino}"
 							class="secondary-content"><i class="material-icons">delete</i></a></td>
-						<td style="text-align: center;">
-							<a href="AddFigure?id=${Tetrimino.idTetrimino}" class="secondary-content">
-							<i class="material-icons">add_to_photos</i></a>
-						<td style="text-align: center;">
-							<a href="ListFiguresTetrimino?id=${Tetrimino.idTetrimino}" class="secondary-content">
-							<i class="material-icons">library_books</i></a>
+
+						<c:if test="${Tetrimino.myFigures.size() < 4 }">
+							<td style="text-align: center;"><a
+								href="AddFigure?id=${Tetrimino.idTetrimino}"
+								class="secondary-content"> <i class="material-icons">add_to_photos</i></a></td>
+						</c:if>
+						<c:if test="${Tetrimino.myFigures.size() == 4 }">
+							<td></td>
+						</c:if>
+
+						<td style="text-align: center;"><a
+							href="ListFiguresTetrimino?id=${Tetrimino.idTetrimino}"
+							class="secondary-content"> <i class="material-icons">library_books</i></a>
 						</td>
 					</tr>
 				</c:forEach>
