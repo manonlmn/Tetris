@@ -33,12 +33,7 @@ public class AddBlock extends ServletInChief {
 		block.setY(Integer.parseInt(req.getParameter("y")));
 
 		List<Block> myBlocks = (List<Block>) req.getSession().getAttribute("ListBlock");
-
-		//si la liste est vide/nulle, on l'initialise
-		if (myBlocks == null) {
-			myBlocks = new ArrayList<Block>();
-		}
-
+		
 		boolean blockExist = false;
 		//Pour chaque bloc de la liste de bloc
 		for(Block bloc : myBlocks) {

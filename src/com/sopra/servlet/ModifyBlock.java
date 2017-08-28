@@ -16,7 +16,7 @@ import com.sopra.model.Figure;
 
 
 @WebServlet("/modifyBlock")
-public class AddBlockFromModify extends ServletInChief {
+public class ModifyBlock extends ServletInChief {
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired

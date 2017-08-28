@@ -1,6 +1,7 @@
 package com.sopra.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -41,7 +42,16 @@ public class AddFigure extends ServletInChief {
 
 		//on le place en scope requete 
 		request.setAttribute("Tetrimino", myTetri);
+		
+		List<Block> myBlocks = (List<Block>) request.getSession().getAttribute("ListBlock");
 
+		//si la liste est vide/nulle, on l'initialise
+		if ((myBlocks == null) || (!request.getHeader("referer").contains("AddFigure"))) {
+			myBlocks = new ArrayList<Block>();
+		}
+		
+
+		request.getSession().setAttribute("ListBlock", myBlocks);
 		//on affiche la jsp
 		this.getServletContext().getRequestDispatcher("/WEB-INF/FigureAdd.jsp").forward(request, response);
 	}
