@@ -54,6 +54,7 @@
 					of rotation</label>
 			</div>
 		</div>
+		
 		<div class="figure" style="margin-left: auto; margin-right: auto;">
 				<c:forEach var="x" begin="0" end="4">
 					<c:forEach var="y" begin="0" end="4">

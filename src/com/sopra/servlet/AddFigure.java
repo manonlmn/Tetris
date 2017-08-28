@@ -76,7 +76,7 @@ public class AddFigure extends ServletInChief {
 
 			for(Block block : blocks) {
 				block.setFigure(figure);
-				block = blockDAO.modify(block);
+				block = blockDAO.add(block);
 			}
 
 			//on vide la liste de blocks

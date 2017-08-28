@@ -43,4 +43,6 @@ public class BlockDAOHibernate implements IBlockDAO {
 		return em.find(Block.class, id);
 	}
 	
+	
+	
 }
