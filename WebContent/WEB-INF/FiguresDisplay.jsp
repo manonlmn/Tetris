@@ -82,7 +82,7 @@
 												</c:if>
 											</c:forEach>
 											<td id="${x}_${y}" class="bloc a"
-												style="background-color: ${ color }; width: 40px; height: 40px">
+												style="background-color: ${ color }; width: 40px; height: 40px; border-radius:0px">
 											</td>
 										</c:forEach>
 									</tr>
