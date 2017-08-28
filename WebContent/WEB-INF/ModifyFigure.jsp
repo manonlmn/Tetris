@@ -28,6 +28,31 @@
 	</nav>
 
 	<!-- Corps du html -->
+	<!-- Affichage des informations de la figure à modifier -->
+
+	<div style="margin-left: auto; margin-right: auto; width: 900px">
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align: center;">Id</th>
+					<th style="text-align: center;">Tetrimino's Name</th>
+					<th style="text-align: center;">Coefficient</th>
+					<th style="text-align: center;">Color</th>
+					<th style="text-align: center;">Order of rotation</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center;">${Tetrimino.idTetrimino}</td>
+					<td style="text-align: center;">${Tetrimino.nameTetrimino}</td>
+					<td style="text-align: center;">${Tetrimino.coef}</td>
+					<td style="text-align: center;"><div class="chip z-depth-2"
+							style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
+					<td style="text-align: center;">${figure.rotationNumber}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 	<form method="POST">
 		<!-- Affichage de la forme -->
 		<div class="figure" style="margin-left: auto; margin-right: auto;">
@@ -59,7 +84,7 @@
 							Save<i class="material-icons right">save</i>
 						</button>
 					</td>
-					
+
 				</tr>
 			</table>
 		</div>
