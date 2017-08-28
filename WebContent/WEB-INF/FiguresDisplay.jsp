@@ -68,9 +68,9 @@
 			<table>
 				<tr>
 					<c:forEach items="${FiguresList }" var="figure">
-						<td>Rotation No.${figure.rotationNumber }
+						<td style="text-align:center">Rotation No.${figure.rotationNumber }
 							<table
-								style="padding: 5px; width: 200px; height: 200px; border: solid 1px #c8e6c9">
+								style="padding: 5px; margin-left: auto; margin-right: auto; width: 200px; height: 200px; border: solid 1px #c8e6c9">
 
 								<c:forEach var="x" begin="0" end="4">
 									<tr>

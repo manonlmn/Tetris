@@ -42,7 +42,6 @@
 					<th style="text-align: center;"></th>
 					<th style="text-align: center;"></th>
 					<th style="text-align: center;"></th>
-					<th style="text-align: center;"></th>
 				</tr>
 			</thead>
 
@@ -60,16 +59,6 @@
 						<td style="text-align: center;"><a
 							href="DeleteItem?id=${Tetrimino.idTetrimino}"
 							class="secondary-content"><i class="material-icons">delete</i></a></td>
-
-						<c:if test="${Tetrimino.myFigures.size() < 4 }">
-							<td style="text-align: center;"><a
-								href="AddFigure?id=${Tetrimino.idTetrimino}"
-								class="secondary-content"> <i class="material-icons">add_to_photos</i></a></td>
-						</c:if>
-						<c:if test="${Tetrimino.myFigures.size() == 4 }">
-							<td></td>
-						</c:if>
-
 						<td style="text-align: center;"><a
 							href="ListFiguresTetrimino?id=${Tetrimino.idTetrimino}"
 							class="secondary-content"> <i class="material-icons">library_books</i></a>
