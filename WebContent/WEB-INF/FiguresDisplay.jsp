@@ -88,21 +88,21 @@
 									</tr>
 								</c:forEach>
 								<tr>
-								
-								
-								
-									<td style="text-align: center;"><a
+
+									<td style="text-align: center; width: 40px; height: 40px;"><a
 										href="modifyFigure?id=${figure.idFigure}"
 										class="secondary-content"><i class="material-icons">mode_edit</i></a></td>
-									<td style="text-align: center;"><a
+									<td style="text-align: center; width: 40px; height: 40px;"><a
 										href="deleteFigure?id=${figure.idFigure}"
 										class="secondary-content"><i class="material-icons">delete</i></a></td>
-									<td></td>
-									<td></td>
-									<td></td>
-										
-										
-										
+									<td style="text-align: center; width: 40px; height: 40px;"></td>
+									<td style="text-align: center; width: 40px; height: 40px;"><a
+										href="leftOffsetFigure?id=${figure.idFigure}"
+										class="secondary-content"><i class="material-icons">navigate_before</i></a></td>
+									<td style="text-align: center; width: 40px; height: 40px;"><a
+										href="rightOffsetFigure?id=${figure.idFigure}"
+										class="secondary-content"><i class="material-icons">navigate_next</i></a></td>
+					
 								</tr>
 
 							</table>
