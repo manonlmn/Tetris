@@ -1,14 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <div style="margin-left: auto; margin-right: auto; width: 900px">
 	<table>
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>First name</th>
-				<th>Last name</th>
-				<th>Username</th>
-				<th>Ban</th>
+				<th><spring:message code="displayP.id"/></th>
+				<th><spring:message code="displayP.FN"/></th>
+				<th><spring:message code="displayP.LN"/></th>
+				<th><spring:message code="displayP.username"/></th>
+				<th><spring:message code="displayP.ban"/></th>
 				<th></th>
 			</tr>
 		</thead>

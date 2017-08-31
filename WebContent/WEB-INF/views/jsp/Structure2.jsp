@@ -20,13 +20,13 @@
 <body class="green lighten-5">
 <nav class="nav-extended z-depth-4">
 	<div class="nav-wrapper amber lighten-2">
-		<a href="/Tetris/home" class="brand-logo">Home Page</a>
+		<a href="/Tetris/home" class="brand-logo"><spring:message code="title.welcome"/></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="/Tetris/displayGamesList">Games list</a></li>
-			<li><a href="/Tetris/displayplayer">Players' list</a></li>
-			<li><a href="/Tetris/displaytetrimino">Tetriminos' list</a></li>
+			<li><a href="/Tetris/displayGamesList"><spring:message code="link1.header"/></a></li>
+			<li><a href="/Tetris/displayplayer"><spring:message code="link2.header"/></a></li>
+			<li><a href="/Tetris/displaytetrimino"><spring:message code="link3.header"/></a></li>
 			<li><a class="waves-effect waves-light btn z-depth-4"
-				href="/Tetris/disconnect">Quit<i class="material-icons right">exit_to_app</i></a></li>
+				href="/Tetris/disconnect"><spring:message code="button.header"/><i class="material-icons right">exit_to_app</i></a></li>
 		</ul>
 	</div>
 	<tiles:insertAttribute name="header" />
