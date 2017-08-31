@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
-</body>
-</html>
+
+	<div class="nav-content amber lighten-2">
+		<span class="nav-title"><spring:message code="displayF.title" /></span>
+		<a class="btn-floating btn-large halfway-fab waves-effect waves-light z-depth-3 teal"
+			href="!#" type="submit"> <i class="material-icons">add</i>
+		</a>
+	</div>
