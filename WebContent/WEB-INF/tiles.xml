@@ -30,4 +30,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/jsp/displayAdmin.jsp" />
 	</definition>
 	
+	<!-- Configuration de la vue "displayPlayer" -->
+	<definition name="displayPlayer" extends="base.definition2">
+		<put-attribute name="title" value="title.welcome" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/player/displayPlayer.jsp" />
+	</definition>
+	
 </tiles-definitions>

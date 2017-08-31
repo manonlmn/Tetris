@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sopra.dao.IPlayerDAO;
 
-@WebServlet("/displayplayer")
+//@WebServlet("/displayplayer")
 public class DisplayPlayer extends ServletInChief {
 
 	@Autowired
