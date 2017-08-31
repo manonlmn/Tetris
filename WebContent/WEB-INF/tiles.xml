@@ -47,8 +47,8 @@
 	
 	<!-- Configuration de la vue "displayTetrimino" -->
 	<definition name="displayTetrimino" extends="base.definition2">
-		<put-attribute name="title" value="title.welcome" />
-		<put-attribute name="header" value="" />
+		<put-attribute name="title" value="displayT.title" />
+		<put-attribute name="header" value="/WEB-INF/views/jsp/tetrimino/headerTetrimino.jsp" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/tetrimino/displayTetrimino.jsp" />
 	</definition>
 	
