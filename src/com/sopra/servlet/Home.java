@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.sopra.dao.IAdminDAO;
 import com.sopra.model.Admin;
 
-@WebServlet("/home")
+
 public class Home extends ServletInChief {
 
 	private static final long serialVersionUID = 1L;

@@ -35,6 +35,7 @@
 			</bean>
 		</property>
 	</bean>
+	
 	<!-- On crée le transactionManager pour JPA avec entityManagerFactory -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
@@ -48,5 +49,6 @@
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 		
 	<context:annotation-config />
+	
 	<context:component-scan base-package="com.sopra.dao.hibernate" />
 </beans>
