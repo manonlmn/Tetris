@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.sopra.dao.IPlayerDAO;
 
 //@WebServlet("/displayplayer")
-public class DisplayPlayer extends ServletInChief {
+public class DONE_DisplayPlayer extends ServletInChief {
 
 	@Autowired
 	private IPlayerDAO playerDAO;

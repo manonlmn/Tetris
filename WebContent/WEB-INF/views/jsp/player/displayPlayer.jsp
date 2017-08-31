@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <div style="margin-left: auto; margin-right: auto; width: 900px">
 	<table>
 		<thead>
@@ -21,10 +23,10 @@
 							test="${player.banned == true}">Yes</c:if></td>
 					<td><c:if test="${player.banned == false}">
 							<a href="BanPlayer?id=${player.idPerson}"
-								class="secondary-content"><i class="material-icons">block</i>
+								class="secondary-content"><i class="material-icons">block</i></a>
 						</c:if> <c:if test="${player.banned == true}">
 							<a href="BanPlayer?id=${player.idPerson}"
-								class="secondary-content"><i class="material-icons">check</i>
+								class="secondary-content"><i class="material-icons">check</i></a>
 						</c:if></td>
 				</tr>
 			</c:forEach>

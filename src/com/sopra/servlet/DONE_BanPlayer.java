@@ -17,8 +17,8 @@ import com.sopra.model.Player;
 /**
  * Servlet implementation class BanPlayer
  */
-@WebServlet("/BanPlayer")
-public class BanPlayer extends ServletInChief {
+//@WebServlet("/BanPlayer")
+public class DONE_BanPlayer extends ServletInChief {
 	
 	@Autowired
 	private IPlayerDAO playerDAO;
