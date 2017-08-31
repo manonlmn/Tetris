@@ -1,5 +1,7 @@
 package com.sopra.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sopra.dao.IFigureDAO;
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.exception.FormValidationException;
+import com.sopra.model.Figure;
 import com.sopra.model.Tetrimino;
 import com.sopra.validator.AddTetriminoValidator;
 
@@ -21,6 +25,9 @@ public class TetriminoController {
 	
 	@Autowired
 	private ITetriminoDAO myTetriminoDAO;
+	
+	@Autowired
+	private IFigureDAO myFigureDAO;
 
 	
 	
@@ -65,4 +72,21 @@ public class TetriminoController {
 		
 		return "redirect:/displaytetrimino";
 	}
+	
+	
+	
+	// Modification tetrimino
+	// Afficher la page de manipulation des figures
+	@RequestMapping(value="/ListFiguresTetrimino", method=RequestMethod.GET)
+	public String displayFigure(@RequestParam(value="id") int idTetriminoFigures,
+								Model model
+								) {
+		
+		Tetrimino myTetrimino = myTetriminoDAO.search(idTetriminoFigures);
+		model.addAttribute("Tetrimino", myTetrimino);
+		
+		return "displayFigure";
+	}
+	
+	
 }

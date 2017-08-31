@@ -13,8 +13,8 @@ import com.sopra.dao.IFigureDAO;
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.model.Tetrimino;
 
-@WebServlet("/ListFiguresTetrimino")
-public class ListFiguresTetrimino extends ServletInChief {
+//@WebServlet("/ListFiguresTetrimino")
+public class DONE_ListFiguresTetrimino extends ServletInChief {
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired

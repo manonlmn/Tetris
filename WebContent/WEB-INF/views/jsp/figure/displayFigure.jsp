@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
 <div style="margin-left: auto; margin-right: auto; width: 900px">
 
 	<table>
@@ -15,9 +18,7 @@
 				<td style="text-align: center;">${Tetrimino.idTetrimino}</td>
 				<td style="text-align: center;">${Tetrimino.nameTetrimino }</td>
 				<td style="text-align: center;">${Tetrimino.coef }</td>
-				<td style="text-align: center;"><div class="chip z-depth-2"
-						style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
-				</td>
+				<td style="text-align: center;"><div class="chip z-depth-2" style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
 			</tr>
 		</tbody>
 	</table>
@@ -29,7 +30,7 @@
 
 		<table>
 			<tr>
-				<c:forEach items="${FiguresList }" var="figure">
+				<c:forEach items="${Tetrimino.myFigures }" var="figure">
 					<td style="text-align: center">Rotation
 						No.${figure.rotationNumber }
 						<table
