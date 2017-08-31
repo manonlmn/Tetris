@@ -16,8 +16,8 @@ import com.sopra.dao.TetriminoDAO;
 import com.sopra.dao.hibernate.TetriminoDaoHibernate;
 import com.sopra.model.Tetrimino;
 
-@WebServlet("/DeleteItem")
-public class DeleteItem extends ServletInChief {
+//@WebServlet("/DeleteItem")
+public class DONE_DeleteItem extends ServletInChief {
 	
 	@Autowired
 	private ITetriminoDAO TetriDAO;

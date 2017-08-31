@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.exception.FormValidationException;
@@ -21,6 +22,8 @@ public class TetriminoController {
 	@Autowired
 	private ITetriminoDAO myTetriminoDAO;
 
+	
+	
 	@RequestMapping(value="/displaytetrimino", method=RequestMethod.GET)
 	public String displayTetrimino(	Model model
 									) {
@@ -51,10 +54,15 @@ public class TetriminoController {
 			}
 		
 		myTetriminoDAO.add(myNewTetrimino);
-
 		return "redirect:/displaytetrimino";
 	}
 	
 	// Supprimer Tetrimino
-	
+	@RequestMapping(value="/DeleteTetrimino", method=RequestMethod.GET)
+	public String deleteTetrimino(	@RequestParam(value="id") int idTetriminoToDelete
+									) {
+		myTetriminoDAO.delete(idTetriminoToDelete);
+		
+		return "redirect:/displaytetrimino";
+	}
 }
