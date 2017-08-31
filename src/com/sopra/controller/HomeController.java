@@ -1,5 +1,7 @@
 package com.sopra.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +13,6 @@ import com.sopra.dao.IAdminDAO;
 import com.sopra.model.Admin;
 
 @Controller
-
 public class HomeController {
 
 	@Autowired
@@ -25,14 +26,14 @@ public class HomeController {
 	}
 
 	@RequestMapping(value="/home", method=RequestMethod.POST)
-	public String home(@ModelAttribute("user") Admin admin, Model model) {
+	public String home(HttpSession session, @ModelAttribute("user") Admin admin, Model model) {
 		String myUserName = admin.getUsername();
 		String myPwd = admin.getPassword();
 
 		Admin adminSearched = adminDAO.searchbyUNandPWd(myUserName, myPwd);
 
 		if(adminSearched!=null) {
-			model.addAttribute("admin", adminSearched);
+			session.setAttribute("admin", adminSearched);
 			return "redirect:/admin/"+adminSearched.getUsername();
 		}
 		else {

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-@WebServlet("/welcome")
+//@WebServlet("/welcome")
 public class AdminWelcome extends ServletInChief {
 
 	@Override
