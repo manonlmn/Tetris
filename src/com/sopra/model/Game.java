@@ -34,7 +34,7 @@ public class Game implements Serializable{
 	private List<Score> myScores;
 
 	@Column(name ="GAM_STATUS")
-	private String status;
+	private boolean status;
 
 	/**
 	 * @return the player1
@@ -95,20 +95,20 @@ public class Game implements Serializable{
 		this.idGame = idGame;
 	}
 
+	
 	/**
 	 * @return the status
 	 */
-	public String getStatus() {
+	public boolean isStatus() {
 		return status;
 	}
 
 	/**
 	 * @param status the status to set
 	 */
-	public void setStatus(String status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
 
 
 
@@ -130,6 +130,8 @@ public class Game implements Serializable{
 		}
 		return null;
 	}
+
+	
 
 
 }

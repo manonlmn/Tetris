@@ -1,16 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <div style="margin-left: auto; margin-right: auto; width: 900px">
 	<table>
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>Player1</th>
-				<th>Score</th>
-				<th>VS</th>
-				<th>Player2</th>
-				<th>Score</th>
-				<th>Status</th>
+				<th><spring:message code="<spring:message code="displayG.id"/>"/></th>
+				<th><spring:message code="displayG.UsernameP1"/></th>
+				<th><spring:message code="displayG.scoreP1"/></th>
+				<th><spring:message code="displayG.VS"/></th>
+				<th><spring:message code="displayG.UsernameP2"/></th>
+				<th><spring:message code="displayG.scoreP2"/></th>
+				<th><spring:message code="displayG.status"/></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -25,7 +26,7 @@
 					</td>
 					<td><c:if test="${not empty Game.player2.username}">${Game.scoreB.points}</c:if>
 					</td>
-					<td>${Game.status}</td>
+					<td><c:if test="${Game.status == true}"><spring:message code="statusG.Over"/></c:if><c:if test="${Game.status == false }"><spring:message code="statusG.IP"/></c:if></td>
 				</tr>
 			</c:forEach>
 
