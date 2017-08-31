@@ -27,19 +27,19 @@ public class LeftOffsetFigure extends ServletInChief {
 		int myListFiguresSize = myFigure.getTetrimino().getMyFigures().size();
 		
 		for(Figure figure : myFigure.getTetrimino().getMyFigures()) {
-			if(figure.getRotationNumber() != myFigure.getRotationNumber()%myListFiguresSize+1) {
-				myFigure.setRotationNumber((myFigure.getRotationNumber())%myListFiguresSize+1);
+			if(figure.getRotationNumber() != ((myFigure.getRotationNumber()-1)%4)+1) {
+				myFigure.setRotationNumber(((myFigure.getRotationNumber()-1)%4)+1);
 				}
 			else {
 				int cpt;
 				cpt = figure.getRotationNumber();
-				figure.setRotationNumber(myFigure.getRotationNumber());
-				myFigure.setRotationNumber((myFigure.getRotationNumber())%myListFiguresSize+1);
+				figure.setRotationNumber(myFigure.getRotationNumber()-1);
+				myFigure.setRotationNumber(((myFigure.getRotationNumber()-1)%4)+1);
 				myFigureDAO.modify(figure);
 			}
 		}
 		myFigureDAO.modify(myFigure);
-		response.sendRedirect("/listFiguresTetrimino"); //+AJOUTER ID DU TETRIMINO
+		response.sendRedirect("/Tetris/ListFiguresTetrimino?id="+myFigure.getTetrimino().getIdTetrimino());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
