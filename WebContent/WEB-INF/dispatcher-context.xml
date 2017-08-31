@@ -12,7 +12,8 @@
 	<!-- On active la délégation des requêtes vers les contrôleurs -->
 	<mvc:annotation-driven />
 
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+<!-- declaration des ressources css, materialize, etc -->
+	<mvc:resources mapping="/Resources/**" location="/Resources/" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">

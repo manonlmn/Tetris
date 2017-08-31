@@ -8,10 +8,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!--Import materialize.css-->
 
-<link rel="stylesheet" href="Resources/materialize/css/materialize.min.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link rel="stylesheet"
+	href="/Tetris/Resources/materialize/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 
 <c:set var="titleCode" scope="request">
 	<tiles:insertAttribute name="title" ignore="true" />
@@ -21,11 +23,13 @@
 <body class="green lighten-5">
 	<nav class="z-depth-4">
 	<div class="nav-wrapper amber lighten-2">
-		<a href="home" class="brand-logo"><spring:message code="${ titleCode }" /></a>
-
+		<a href="home" class="brand-logo"><spring:message
+				code="${ titleCode }" /></a>
 	</div>
 	</nav>
 
-<tiles:insertAttribute name="body" />
+	<tiles:insertAttribute name="body" />
 </body>
+<script src="/Tetris/Resources/jquery-3.2.1.min.js"></script>
+<script src="/Tetris/Resources/materialize/js/materialize.min.js"></script>
 </html>
