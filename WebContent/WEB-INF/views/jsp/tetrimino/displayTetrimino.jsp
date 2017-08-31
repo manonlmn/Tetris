@@ -1,13 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <div style="margin-left: auto; margin-right: auto; width: 900px">
 	<table>
 		<thead>
 			<tr>
-				<th style="text-align: center;">Id</th>
-				<th style="text-align: center;">Tetrimino's Name</th>
-				<th style="text-align: center;">Coefficient</th>
-				<th style="text-align: center;">Color</th>
+				<th style="text-align: center;"><spring:message code="displayT.id"/></th>
+				<th style="text-align: center;"><spring:message code="displayT.name"/></th>
+				<th style="text-align: center;"><spring:message code="displayT.coef"/></th>
+				<th style="text-align: center;"><spring:message code="displayT.colour"/></th>
 				<th style="text-align: center;"></th>
 				<th style="text-align: center;"></th>
 				<th style="text-align: center;"></th>
