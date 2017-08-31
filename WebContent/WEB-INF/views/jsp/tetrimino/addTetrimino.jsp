@@ -8,17 +8,17 @@
 			<div class="input-field col s3">
 				<form:input path="nameTetrimino" id="name" type="text"/>
 				<form:label path="nameTetrimino"><spring:message code="addT.name"/></form:label>
-				<form:errors path="nameTetrimino"/>
+				<form:errors path="nameTetrimino" style="color :#d32f2f "/>
 			</div>
 			<div class="input-field col s3">
 				<form:input path="coef" id="coef" type="number" min="0"/>
 				<form:label path="coef"><spring:message code="addT.coef"/></form:label>
-				<form:errors path="coef"/>
+				<form:errors path="coef" style="color : #d32f2f"/>
 			</div>
 			<div class="input-field col s2">
 				<form:input path="colourTetrimino" id="color" type="color"/>
 				<form:label path="colourTetrimino"><spring:message code="addT.colour"/></form:label>
-				<form:errors path="colourTetrimino"/>
+				<form:errors path="colourTetrimino" style="color : #d32f2f"/>
 			</div>
 			<div class="input-field col s4">
 				<button class="btn waves-effect waves-light" type="submit">
