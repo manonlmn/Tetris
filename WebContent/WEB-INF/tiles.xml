@@ -61,8 +61,8 @@
 	
 		<!-- Configuration de la vue "displayFigure" -->
 	<definition name="displayFigure" extends="base.definition2">
-		<put-attribute name="title" value="addT.title" />
-		<put-attribute name="header" value="" />
+		<put-attribute name="title" value="displayF.title" />
+		<put-attribute name="header" value="/WEB-INF/views/jsp/figure/headerFigure.jsp" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/figure/displayFigure.jsp" />
 	</definition>
 	
