@@ -38,4 +38,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/jsp/player/displayPlayer.jsp" />
 	</definition>
 	
+	<!-- Configuration de la vue "displayGame" -->
+	<definition name="displayGamesList" extends="base.definition2">
+		<put-attribute name="title" value="title.welcome" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/game/displayGame.jsp" />
+	</definition>
+	
 </tiles-definitions>

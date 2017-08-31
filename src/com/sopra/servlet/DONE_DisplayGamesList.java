@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sopra.dao.IGameDAO;
 
-@WebServlet("/displayGamesList")
-public class DisplayGamesList extends ServletInChief {
+//@WebServlet("/displayGamesList")
+public class DONE_DisplayGamesList extends ServletInChief {
 	
 	@Autowired
 	private IGameDAO gameDAO;
