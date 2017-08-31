@@ -6,10 +6,10 @@
 	<table>
 		<thead>
 			<tr>
-				<th style="text-align: center;">Id</th>
-				<th style="text-align: center;">Tetrimino's Name</th>
-				<th style="text-align: center;">Coefficient</th>
-				<th style="text-align: center;">Color</th>
+				<th style="text-align: center;"><spring:message code="displayF.id"/></th>
+				<th style="text-align: center;"><spring:message code="displayF.name"/></th>
+				<th style="text-align: center;"><spring:message code="displayF.coef"/></th>
+				<th style="text-align: center;"><spring:message code="displayF.colour"/></th>
 			</tr>
 		</thead>
 
@@ -31,8 +31,7 @@
 		<table>
 			<tr>
 				<c:forEach items="${Tetrimino.myFigures }" var="figure">
-					<td style="text-align: center">Rotation
-						No.${figure.rotationNumber }
+					<td style="text-align: center"><spring:message code="displayF.Rotation"/>${figure.rotationNumber }
 						<table
 							style="padding: 5px; margin-left: auto; margin-right: auto; width: 200px; height: 200px; border: solid 1px #c8e6c9">
 
