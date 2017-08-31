@@ -1,5 +1,5 @@
 
-<div class="row" style="margin-left: auto; margin-right: auto; width: 900px">
+<div class="row" style="margin-left: auto; margin-right: auto; width: 1000px">
 		<form class="col s12" method="post">
 			<div class="row">
 				<div class="input-field col s5">
