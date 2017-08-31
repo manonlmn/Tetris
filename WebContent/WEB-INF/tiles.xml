@@ -27,12 +27,14 @@
 	<!-- Configuration de la vue "displayAdmin" -->
 	<definition name="displayAdmin" extends="base.definition2">
 		<put-attribute name="title" value="title.welcome" />
-		<put-attribute name="body" value="/WEB-INF/views/jsp/displayAdmin.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/jsp/displayAdmin.jsp" />
+		<put-attribute name="body" value="" />
 	</definition>
 	
 	<!-- Configuration de la vue "displayPlayer" -->
 	<definition name="displayPlayer" extends="base.definition2">
 		<put-attribute name="title" value="title.welcome" />
+		<put-attribute name="header" value="" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/player/displayPlayer.jsp" />
 	</definition>
 	

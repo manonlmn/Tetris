@@ -18,6 +18,19 @@
 <title><spring:message code="${ titleCode }" /></title>
 </head>
 <body class="green lighten-5">
+<nav class="nav-extended z-depth-4">
+	<div class="nav-wrapper amber lighten-2">
+		<a href="/Tetris/home" class="brand-logo">Home Page</a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="/Tetris/displayGamesList">Games list</a></li>
+			<li><a href="/Tetris/displayplayer">Players' list</a></li>
+			<li><a href="/Tetris/displaytetrimino">Tetriminos' list</a></li>
+			<li><a class="waves-effect waves-light btn z-depth-4"
+				href="/Tetris/disconnect">Quit<i class="material-icons right">exit_to_app</i></a></li>
+		</ul>
+	</div>
+	<tiles:insertAttribute name="header" />
+	</nav>
 	<tiles:insertAttribute name="body" />
 </body>
 <script src="/Tetris/Resources/jquery-3.2.1.min.js"></script>
