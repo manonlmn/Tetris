@@ -1,4 +1,3 @@
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <div class="row" style="margin-left: auto; margin-right: auto; width: 900px">
 		<form class="col s12" method="post">

@@ -11,11 +11,23 @@
 		<put-attribute name="body" value="" />
 	</definition>
 
+<!-- Configuration du layout n°2 -->
+	<definition name="base.definition2" template="/WEB-INF/views/jsp/Structure2.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="navigation" value="/WEB-INF/views/jsp/navigation.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
 
 	<!-- Configuration de la vue "home" -->
 	<definition name="home" extends="base.definition">
 		<put-attribute name="title" value="title.welcome" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp" />
+	</definition>
+	
+	<!-- Configuration de la vue "displayAdmin" -->
+	<definition name="displayAdmin" extends="base.definition2">
+		<put-attribute name="title" value="title.welcome" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/displayAdmin.jsp" />
 	</definition>
 	
 </tiles-definitions>
