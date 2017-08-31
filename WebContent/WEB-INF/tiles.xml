@@ -34,14 +34,14 @@
 	<!-- Configuration de la vue "displayPlayer" -->
 	<definition name="displayPlayer" extends="base.definition2">
 		<put-attribute name="title" value="displayP.title" />
-		<put-attribute name="header" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/jsp/player/headerPlayer.jsp" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/player/displayPlayer.jsp" />
 	</definition>
 	
 	<!-- Configuration de la vue "displayGame" -->
 	<definition name="displayGamesList" extends="base.definition2">
 		<put-attribute name="title" value="displayG.title" />
-		<put-attribute name="header" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/jsp/game/headerGame.jsp" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/game/displayGame.jsp" />
 	</definition>
 	

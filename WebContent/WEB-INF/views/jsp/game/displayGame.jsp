@@ -5,7 +5,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th><spring:message code="<spring:message code="displayG.id"/>"/></th>
+				<th><spring:message code="displayG.id"/></th>
 				<th><spring:message code="displayG.UsernameP1"/></th>
 				<th><spring:message code="displayG.scoreP1"/></th>
 				<th><spring:message code="displayG.VS"/></th>
