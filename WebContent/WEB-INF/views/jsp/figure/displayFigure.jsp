@@ -23,10 +23,10 @@
 		</tbody>
 	</table>
 
-	<c:if test="${empty FiguresList }">
+	<c:if test="${empty Tetrimino.myFigures }">
 		No figures were assigned to this tetrimino yet.<br />
 	</c:if>
-	<c:if test="${not empty FiguresList }">
+	<c:if test="${not empty Tetrimino.myFigures }">
 
 		<table>
 			<tr>

@@ -30,7 +30,7 @@
 						href="DeleteTetrimino?id=${Tetrimino.idTetrimino}"
 						class="secondary-content"><i class="material-icons">delete</i></a></td>
 					<td style="text-align: center;"><a
-						href="ListFiguresTetrimino?id=${Tetrimino.idTetrimino}"
+						href="/Tetris/ListFiguresTetrimino?id=${Tetrimino.idTetrimino}"
 						class="secondary-content"> <i class="material-icons">library_books</i></a>
 					</td>
 				</tr>
