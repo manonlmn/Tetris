@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <div style="margin-left: auto; margin-right: auto; width: 900px">
 	<table>
 		<thead>
@@ -21,10 +23,10 @@
 					<td style="text-align: center;"><div class="chip z-depth-2"
 							style="height:20px; width:100px; background-color:${Tetrimino.colourTetrimino};border-style: solid; border-width: 1px; border-color : #bdbdbd;"></div></td>
 					<td style="text-align: center;"><a
-						href="ModifyItem?id=${Tetrimino.idTetrimino}"
+						href="ModifyTetrimino?id=${Tetrimino.idTetrimino}"
 						class="secondary-content"><i class="material-icons">mode_edit</i></a></td>
 					<td style="text-align: center;"><a
-						href="DeleteItem?id=${Tetrimino.idTetrimino}"
+						href="DeleteTetrimino?id=${Tetrimino.idTetrimino}"
 						class="secondary-content"><i class="material-icons">delete</i></a></td>
 					<td style="text-align: center;"><a
 						href="ListFiguresTetrimino?id=${Tetrimino.idTetrimino}"

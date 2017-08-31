@@ -13,8 +13,8 @@ import com.sopra.exception.FormValidationException;
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.model.Tetrimino;
 
-@WebServlet("/newitem")
-public class AddItem extends ServletInChief {
+//@WebServlet("/newitem")
+public class DONE_AddItem extends ServletInChief {
 	//num�ro de s�rie pour �viter les warnings
 	private static final long serialVersionUID = 1L;
 

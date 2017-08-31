@@ -1,20 +1,20 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <div class="row" style="margin-left: auto; margin-right: auto; width: 900px">
-	<form class="col s12" method="post">
+	<form:form method="post" action="doAddTetrimino" modelAttribute="newTetrimino" class="col s12">
 		<div class="row">
 			<div class="input-field col s3">
-				<input id="name" type="text" name="nameNewTetrimino"
-					placeholder="${nameNewTetrimino.message}"> <label
-					for="name">Name of the Tetrimino</label>
+				<form:input path="nameTetrimino" id="name" type="text"/>
+				<form:label path="nameTetrimino">Name of the Tetrimino</form:label>
 			</div>
 			<div class="input-field col s3">
-				<input id="coef" type="number" min="0" name="coefNewTetrimino"
-					placeholder="${coefNewTetrimino.message}"> <label
-					for="name">Coefficient of the Tetrimino</label>
+				<form:input path="coef" id="coef" type="number" min="0"/>
+				<form:label path="coef">Coefficient of the Tetrimino</form:label>
 			</div>
 			<div class="input-field col s3">
-				<input id="color" type="color" name="colourNewTetrimino"
-					placeholder="${colourNewTetrimino.message}"> <label
-					for="color">Color of the Tetrimino</label>
+				<form:input path="colourTetrimino" id="color" type="color"/>
+				<form:label path="colourTetrimino">Color of the Tetrimino</form:label>
 			</div>
 			<div class="input-field col s3">
 				<button class="btn waves-effect waves-light" type="submit">
@@ -22,5 +22,5 @@
 				</button>
 			</div>
 		</div>
-	</form>
+	</form:form>
 </div>
