@@ -59,11 +59,18 @@
 		<put-attribute name="body" value="/WEB-INF/views/jsp/tetrimino/addTetrimino.jsp" />
 	</definition>
 	
-		<!-- Configuration de la vue "displayFigure" -->
+	<!-- Configuration de la vue "displayFigure" -->
 	<definition name="displayFigure" extends="base.definition2">
 		<put-attribute name="title" value="addT.title" />
 		<put-attribute name="header" value="" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/figure/displayFigure.jsp" />
+	</definition>
+	
+	<!-- Configuration de la vue "addFigure" -->
+	<definition name="addFigure" extends="base.definition2">
+		<put-attribute name="title" value="addT.title" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/figure/addFigure.jsp" />
 	</definition>
 	
 </tiles-definitions>

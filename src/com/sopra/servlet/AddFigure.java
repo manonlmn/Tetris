@@ -19,7 +19,7 @@ import com.sopra.model.Block;
 import com.sopra.model.Figure;
 import com.sopra.model.Tetrimino;
 
-@WebServlet("/AddFigure")
+//@WebServlet("/AddFigure")
 public class AddFigure extends ServletInChief {
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +34,7 @@ public class AddFigure extends ServletInChief {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//récupère id en paramètre
+		//rï¿½cupï¿½re id en paramï¿½tre
 		int id=Integer.parseInt(request.getParameter("id"));
 
 		//trouve le tetrimino via l'id

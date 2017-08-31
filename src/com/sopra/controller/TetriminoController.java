@@ -88,5 +88,18 @@ public class TetriminoController {
 		return "displayFigure";
 	}
 	
+	// Afficher la page d'ajout de figure
+	@RequestMapping(value="/AddFigure", method=RequestMethod.GET)
+	public String addFigure(@RequestParam(value="id") int idTetriminoFigures,
+							Model model
+							) {
+		model.addAttribute("Tetrimino", myTetriminoDAO.search(idTetriminoFigures));
+		
+		return "addFigure";
+	}
+	
+	
+	// Faire la manip d'ajouter une figure
+	
 	
 }
