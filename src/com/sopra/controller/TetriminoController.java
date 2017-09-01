@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sopra.dao.IBlockDAO;
 import com.sopra.dao.IFigureDAO;
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.exception.FormValidationException;
@@ -34,6 +35,9 @@ public class TetriminoController {
 	
 	@Autowired
 	private IFigureDAO myFigureDAO;
+	
+	@Autowired
+	private IBlockDAO myBlockDAO;
 
 	
 	
@@ -130,9 +134,12 @@ public class TetriminoController {
 	public String addFigure(@Valid @ModelAttribute("newFigure") Figure myNewFigure,
 							BindingResult result,
 							@RequestParam(value="id") int idTetrimino,
+							HttpSession session,
 							Model model
 							) {
+		
 		Tetrimino myTetrimino = myTetriminoDAO.search(idTetrimino);
+		List<Block> myListBlocks = (List<Block>)session.getAttribute("ListBlock");
 		
 		new AddFigureValidator().validate(myNewFigure, result);
 		
@@ -141,7 +148,15 @@ public class TetriminoController {
 			}
 		
 		myNewFigure.setTetrimino(myTetrimino);
-		myFigureDAO.add(myNewFigure);
+		myNewFigure = myFigureDAO.add(myNewFigure);
+		
+		
+		for(Block block : myListBlocks) {
+			block.setFigure(myNewFigure);
+			myBlockDAO.add(block);
+		}
+
+		myListBlocks.clear();
 		
 		return "redirect:/ListFiguresTetrimino?id="+idTetrimino;
 	}
@@ -156,6 +171,57 @@ public class TetriminoController {
 		myFigureDAO.delete(idFigureToDelete);
 		
 		return "redirect:/ListFiguresTetrimino?id="+ myFigure.getTetrimino().getIdTetrimino();
+	}
+	
+	
+	// Afficher la page de modification d'une figure
+	@RequestMapping(value="/modifyFigure", method=RequestMethod.GET)
+	public String modifyFigure(	@RequestParam(value="id") int idFigure,
+								HttpSession session,
+								Model model
+								) {
+		
+		model.addAttribute("Tetrimino", myFigureDAO.search(idFigure).getTetrimino());
+		model.addAttribute("ListBlock", (List<Block>)session.getAttribute("ListBlock"));
+		
+		return "modifyFigure";
+	}
+	
+	
+	
+	// Ajouter un bloc
+	@RequestMapping(value="/AddBlock", method=RequestMethod.GET)
+	public String addBlock(	@RequestParam(value="id") int idTetrimino,
+							@RequestParam(value="x") int xBlock,
+							@RequestParam(value="y") int yBlock,
+							HttpSession session,
+							Model model
+							) {
+		
+		List<Block> myListBlock = (List<Block>)session.getAttribute("ListBlock");
+		
+		boolean blockExist = false;
+
+		for(Block myBlock : myListBlock) {
+			if(myBlock.getX() == xBlock && myBlock.getY() == yBlock) {
+				myListBlock.remove(myBlock);
+				blockExist=true;
+				break;
+			}
+		}
+		
+		if(!blockExist) {
+			Block myBlockToAdd = new Block();
+			
+			myBlockToAdd.setX(xBlock);
+			myBlockToAdd.setY(yBlock);
+			
+			myListBlock.add(myBlockToAdd);
+		}
+		
+		session.setAttribute("ListBlock", myListBlock);
+		
+		return "redirect:/AddFigure?id="+idTetrimino;
 	}
 	
 	

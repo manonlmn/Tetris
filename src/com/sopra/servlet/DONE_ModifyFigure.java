@@ -19,8 +19,8 @@ import com.sopra.model.Block;
 import com.sopra.model.Figure;
 import com.sopra.model.Tetrimino;
 
-@WebServlet("/modifyFigure")
-public class ModifyFigure extends ServletInChief {
+//@WebServlet("/modifyFigure")
+public class DONE_ModifyFigure extends ServletInChief {
 
 	private static final long serialVersionUID = 1L;
 
@@ -67,7 +67,7 @@ public class ModifyFigure extends ServletInChief {
 		List<Block> blocks = (List<Block>) request.getSession().getAttribute("ListBlock");
 		int id=Integer.parseInt(request.getParameter("id"));
 
-		//on cherche la figure à modifier
+		//on cherche la figure ï¿½ modifier
 		Figure figure = figDAO.search(id);
 
 		for(Block block : figure.getMyBlocks()) {

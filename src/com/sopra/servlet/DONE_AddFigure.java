@@ -20,7 +20,7 @@ import com.sopra.model.Figure;
 import com.sopra.model.Tetrimino;
 
 //@WebServlet("/AddFigure")
-public class AddFigure extends ServletInChief {
+public class DONE_AddFigure extends ServletInChief {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired

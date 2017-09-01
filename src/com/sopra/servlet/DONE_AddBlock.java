@@ -14,9 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.sopra.dao.IBlockDAO;
 import com.sopra.model.Block;
 
-@WebServlet("/AddBlock")
-public class AddBlock extends ServletInChief {
-	//numéro de série
+//@WebServlet("/AddBlock")
+public class DONE_AddBlock extends ServletInChief {
+	//numï¿½ro de sï¿½rie
 	private static final long serialVersionUID = 1L;
 	//ajout de la DAO pour les blocks 
 	@Autowired 
@@ -26,7 +26,7 @@ public class AddBlock extends ServletInChief {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//l'id du tetrimino auquel on rajoute les formes 
 		int id = Integer.parseInt(req.getParameter("id"));
-		//création d'un block
+		//crï¿½ation d'un block
 		Block block = new Block();
 		//donner les valeurs de X et Y au block
 		block.setX(Integer.parseInt(req.getParameter("x")));
@@ -37,7 +37,7 @@ public class AddBlock extends ServletInChief {
 		boolean blockExist = false;
 		//Pour chaque bloc de la liste de bloc
 		for(Block bloc : myBlocks) {
-			//si le bloc existe déjà
+			//si le bloc existe dï¿½jï¿½
 			if(bloc.getX() == block.getX() && bloc.getY() == block.getY()) {
 				//on le supprime de la liste via son index
 				myBlocks.remove(bloc);
@@ -46,7 +46,7 @@ public class AddBlock extends ServletInChief {
 			}
 		}
 		if(blockExist==false) {
-			//ajout à une liste de block
+			//ajout ï¿½ une liste de block
 			myBlocks.add(block);
 		}
 
