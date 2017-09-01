@@ -20,8 +20,8 @@
 					<td style="text-align : center">${player.lastName}</td>
 					<td style="text-align : center">${player.name}</td>
 					<td style="text-align : center">${player.username}</td>
-					<td style="text-align : center"><c:if test="${player.banned == false}"><spring:message code="displayP.ban.N"/></c:if> <c:if
-							test="${player.banned == true}"><spring:message code="displayP.ban.Y"/></c:if></td>
+					<td style="text-align : center"><c:if test="${player.banned == false}"><spring:message code="displayP.ban.Y"/></c:if> <c:if
+							test="${player.banned == true}"><spring:message code="displayP.ban.N"/></c:if></td>
 					<td style="text-align : center"><c:if test="${player.banned == false}">
 							<a href="BanPlayer?id=${player.idPerson}"
 								class="secondary-content"><i class="material-icons">block</i></a>

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -14,14 +16,17 @@ public class Player extends Person{
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="PLA_BANNED")
-	private boolean banned;
+	private Boolean banned;
 
+	@JsonIgnore
 	@OneToMany(mappedBy="player1")
 	private List<Game> myGamesP1;
 
+	@JsonIgnore
 	@OneToMany(mappedBy="player2")
 	private List<Game> myGamesP2;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="player")
 	private List<Score> myScore;
 
@@ -67,11 +72,11 @@ public class Player extends Person{
 		this.myScore = myScore;
 	}
 
-	public boolean isBanned() {
+	public Boolean getBanned() {
 		return this.banned;
 	}
 
-	public void setBanned(boolean banned) {
+	public void setBanned(Boolean banned) {
 		this.banned = banned;
 	}
 	

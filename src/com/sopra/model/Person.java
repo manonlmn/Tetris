@@ -14,31 +14,31 @@ public class Person implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="PER_ID")
-	private int idPerson;
+	protected Integer idPerson;
 	
 	@Column(name="PER_USERNAME")
-	private String username;
+	protected String username;
 	
 	@Column(name="PER_PWD")
-	private String password;
+	protected String password;
 	
 	@Column(name="PER_LASTNAME")
-	private String lastName;
+	protected String lastName;
 	
 	@Column(name="PER_NAME")
-	private String name;
+	protected String name;
 
 	/**
 	 * @return the idPerson
 	 */
-	public int getIdPerson() {
+	public Integer getIdPerson() {
 		return idPerson;
 	}
 
 	/**
 	 * @param idPerson the idPerson to set
 	 */
-	public void setIdPerson(int idPerson) {
+	public void setIdPerson(Integer idPerson) {
 		this.idPerson = idPerson;
 	}
 
