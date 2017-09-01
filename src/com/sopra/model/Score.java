@@ -20,16 +20,16 @@ public class Score implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="SCO_ID")
-	private int idScore;
+	private Integer idScore;
 	
 	@Column(name="SCO_POINTS")
-	private int points;
+	private Integer points;
 	
 	@Column(name="SCO_LINES")
-	private int lines;
+	private Integer lines;
 	
 	@Column(name="SCO_LEVEL")
-	private int level;
+	private Integer level;
 	
 	@ManyToOne
 	@JoinColumn(name="SCO_GAME")
@@ -57,56 +57,56 @@ public class Score implements Serializable {
 	/**
 	 * @return the idScore
 	 */
-	public int getIdScore() {
+	public Integer getIdScore() {
 		return idScore;
 	}
 
 	/**
 	 * @param idScore the idScore to set
 	 */
-	public void setIdScore(int idScore) {
+	public void setIdScore(Integer idScore) {
 		this.idScore = idScore;
 	}
 
 	/**
 	 * @return the points
 	 */
-	public int getPoints() {
+	public Integer getPoints() {
 		return points;
 	}
 
 	/**
 	 * @param points the points to set
 	 */
-	public void setPoints(int points) {
+	public void setPoints(Integer points) {
 		this.points = points;
 	}
 
 	/**
 	 * @return the lines
 	 */
-	public int getLines() {
+	public Integer getLines() {
 		return lines;
 	}
 
 	/**
 	 * @param lines the lines to set
 	 */
-	public void setLines(int lines) {
+	public void setLines(Integer lines) {
 		this.lines = lines;
 	}
 
 	/**
 	 * @return the level
 	 */
-	public int getLevel() {
+	public Integer getLevel() {
 		return level;
 	}
 
 	/**
 	 * @param level the level to set
 	 */
-	public void setLevel(int level) {
+	public void setLevel(Integer level) {
 		this.level = level;
 	}
 

@@ -9,6 +9,8 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name="game")
@@ -19,7 +21,7 @@ public class Game implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "GAM_ID")
-	private int idGame;
+	private Integer idGame;
 
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER1")
@@ -30,11 +32,12 @@ public class Game implements Serializable{
 	@JoinColumn(name = "GAM_ID_PLAYER2")
 	private Player player2;
 
+	@JsonIgnore
 	@OneToMany(mappedBy="game")
 	private List<Score> myScores;
 
 	@Column(name ="GAM_STATUS")
-	private boolean status;
+	private Boolean status;
 
 	/**
 	 * @return the player1
@@ -84,14 +87,14 @@ public class Game implements Serializable{
 	/**
 	 * @return the idGame
 	 */
-	public int getIdGame() {
+	public Integer getIdGame() {
 		return idGame;
 	}
 
 	/**
 	 * @param idGame the idGame to set
 	 */
-	public void setIdGame(int idGame) {
+	public void setIdGame(Integer idGame) {
 		this.idGame = idGame;
 	}
 
@@ -99,19 +102,19 @@ public class Game implements Serializable{
 	/**
 	 * @return the status
 	 */
-	public boolean isStatus() {
+	public Boolean getStatus() {
 		return status;
 	}
 
 	/**
 	 * @param status the status to set
 	 */
-	public void setStatus(boolean status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 
 
-
+	@JsonIgnore
 	public Score getScoreA() {
 		for (Score score : myScores) {
 			if (score.getPlayer().getIdPerson() == player1.getIdPerson()) {
@@ -122,6 +125,7 @@ public class Game implements Serializable{
 		return null;
 	}
 
+	@JsonIgnore
 	public Score getScoreB() {
 		for (Score score : myScores) {
 			if (score.getPlayer().getIdPerson() == player2.getIdPerson()) {
