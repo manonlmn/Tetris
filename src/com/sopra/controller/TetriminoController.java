@@ -90,6 +90,14 @@ public class TetriminoController {
 	
 	
 	// MODIFICATION TETRIMINO
+	@RequestMapping(value="/ModifyTetrimino", method=RequestMethod.GET)
+	public String modifyTetrimino(@RequestParam(value="id") int idTetriminoToModify, Model model) {
+		Tetrimino tetriToModify = myTetriminoDAO.search(idTetriminoToModify);
+		model.addAttribute("tetritoModify", tetriToModify);
+		return "modifyTetrimino";
+	}
+	
+	
 	
 	// Afficher la page de manipulation des figures
 	@RequestMapping(value="/ListFiguresTetrimino", method=RequestMethod.GET)

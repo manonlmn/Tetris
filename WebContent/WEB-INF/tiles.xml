@@ -80,4 +80,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/jsp/figure/modifyFigure.jsp" />
 	</definition>
 	
+	<!-- Configuration de la vue "modifyTetrimino" -->
+	<definition name="modifyFigure" extends="base.definition2">
+		<put-attribute name="title" value="modT.title" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/figure/modifyTetrimino.jsp" />
+	</definition>
 </tiles-definitions>
