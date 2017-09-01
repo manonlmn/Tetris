@@ -13,6 +13,8 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="tetrimino")
 public class Tetrimino implements Serializable {
@@ -36,6 +38,7 @@ public class Tetrimino implements Serializable {
 	@Column(name="TET_COEF")
 	private Integer coef;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="tetrimino")
 	@OrderBy("rotationNumber ASC")
 	List<Figure> myFigures;

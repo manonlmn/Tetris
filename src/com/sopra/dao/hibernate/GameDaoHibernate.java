@@ -51,4 +51,18 @@ public class GameDaoHibernate implements IGameDAO {
 		return myGames;
 	}
 
+	@Override
+	public List<Game> listWithScoreSolo() {
+		List<Game> myGames = new ArrayList<Game>();
+		myGames = (List<Game>) em.createQuery("select distinct g from Game g left join fetch g.myScores where g.type='0'").getResultList();
+		return myGames;
+	}
+
+	@Override
+	public List<Game> listWithScoreMulti() {
+		List<Game> myGames = new ArrayList<Game>();
+		myGames = (List<Game>) em.createQuery("select distinct g from Game g left join fetch g.myScores where g.type='1'").getResultList();
+		return myGames;
+	}
+
 }

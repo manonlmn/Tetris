@@ -6,5 +6,7 @@ import com.sopra.model.Game;
 
 public interface IGameDAO extends IDAO<Game> {
 	public List<Game> listWithScore();
+	public List<Game> listWithScoreSolo();
+	public List<Game> listWithScoreMulti();
 
 }

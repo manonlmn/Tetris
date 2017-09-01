@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="figure")
 public class Figure implements Serializable{
@@ -14,11 +16,12 @@ public class Figure implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="FIG_ID")
-	private int idFigure;
+	private Integer idFigure;
 	
 	@Column(name="FIG_NUM_ROT")
-	private int rotationNumber;
+	private Integer rotationNumber;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="figure")
 	List<Block> myBlocks;
 	
@@ -29,14 +32,14 @@ public class Figure implements Serializable{
 	/**
 	 * @return the idFigure
 	 */
-	public int getIdFigure() {
+	public Integer getIdFigure() {
 		return idFigure;
 	}
 
 	/**
 	 * @param idFigure the idFigure to set
 	 */
-	public void setIdFigure(int idFigure) {
+	public void setIdFigure(Integer idFigure) {
 		this.idFigure = idFigure;
 	}
 
@@ -57,14 +60,14 @@ public class Figure implements Serializable{
 	/**
 	 * @return the rotationNumber
 	 */
-	public int getRotationNumber() {
+	public Integer getRotationNumber() {
 		return rotationNumber;
 	}
 
 	/**
 	 * @param rotationNumber the rotationNumber to set
 	 */
-	public void setRotationNumber(int rotationNumber) {
+	public void setRotationNumber(Integer rotationNumber) {
 		this.rotationNumber = rotationNumber;
 	}
 

@@ -20,13 +20,13 @@ public class Block implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="BLO_ID")
-	private int idBlock;
+	private Integer idBlock;
 	
 	@Column(name="x")
-	private int x;
+	private Integer x;
 	
 	@Column(name="y")
-	private int y;
+	private Integer y;
 	
 	@ManyToOne
 	@JoinColumn(name = "BLO_ID_FIG")
@@ -35,42 +35,42 @@ public class Block implements Serializable {
 	/**
 	 * @return the idBlock
 	 */
-	public int getIdBlock() {
+	public Integer getIdBlock() {
 		return idBlock;
 	}
 
 	/**
 	 * @param idBlock the idBlock to set
 	 */
-	public void setIdBlock(int idBlock) {
+	public void setIdBlock(Integer idBlock) {
 		this.idBlock = idBlock;
 	}
 
 	/**
 	 * @return the x
 	 */
-	public int getX() {
+	public Integer getX() {
 		return x;
 	}
 
 	/**
 	 * @param x the x to set
 	 */
-	public void setX(int x) {
+	public void setX(Integer x) {
 		this.x = x;
 	}
 
 	/**
 	 * @return the y
 	 */
-	public int getY() {
+	public Integer getY() {
 		return y;
 	}
 
 	/**
 	 * @param y the y to set
 	 */
-	public void setY(int y) {
+	public void setY(Integer y) {
 		this.y = y;
 	}
 

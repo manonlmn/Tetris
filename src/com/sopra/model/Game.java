@@ -21,24 +21,27 @@ public class Game implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "GAM_ID")
-	private Integer idGame;
+	protected Integer idGame;
 
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER1")
 	@NotNull
-	private Player player1;
+	protected Player player1;
 
 	@ManyToOne
 	@JoinColumn(name = "GAM_ID_PLAYER2")
-	private Player player2;
+	protected Player player2;
 
 	@JsonIgnore
 	@OneToMany(mappedBy="game")
-	private List<Score> myScores;
+	protected List<Score> myScores;
 
 	@Column(name ="GAM_STATUS")
-	private Boolean status;
-
+	protected Boolean status;
+	
+	@Column(name="GAM_TYPE")
+	protected Boolean type;
+	
 	/**
 	 * @return the player1
 	 */
@@ -133,6 +136,20 @@ public class Game implements Serializable{
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public Boolean getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(Boolean type) {
+		this.type = type;
 	}
 
 	
