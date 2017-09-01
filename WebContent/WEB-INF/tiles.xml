@@ -81,9 +81,9 @@
 	</definition>
 	
 	<!-- Configuration de la vue "modifyTetrimino" -->
-	<definition name="modifyFigure" extends="base.definition2">
+	<definition name="modifyTetrimino" extends="base.definition2">
 		<put-attribute name="title" value="modT.title" />
 		<put-attribute name="header" value="" />
-		<put-attribute name="body" value="/WEB-INF/views/jsp/figure/modifyTetrimino.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/tetrimino/modifyTetrimino.jsp" />
 	</definition>
 </tiles-definitions>

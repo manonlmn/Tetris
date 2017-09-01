@@ -1,33 +1,36 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
 <div class="row" style="margin-left: auto; margin-right: auto; width: 900px">
-	<form class="col s12" method="post">
+	<form:form class="col s12" method="post" action="doModifyTetri" modelAttribute="tetritoModify">
 		<div class="row">
 			<div class="input-field col s1">
-				<input disabled id="id" type="number" name="id"
-					value="${myTetri.idTetrimino}"> <label for="id">Id</label>
+				<form:input path="idTetrimino" id="name" type="text"/>
+				<form:label path="idTetrimino"><spring:message code="addT.id"/></form:label>
+				<form:errors path="idTetrimino" style="color :#d32f2f "/>
 			</div>
 
 			<div class="input-field col s3">
-				<input id="name" type="text" name="name"
-					value="${myTetri.nameTetrimino}"
-					placeholder="${nameNewTetrimino.message}"> <label
-					for="name">Name of the Tetrimino</label>
+				<form:input path="nameTetrimino" id="name" type="text"/>
+				<form:label path="nameTetrimino"><spring:message code="addT.name"/></form:label>
+				<form:errors path="nameTetrimino" style="color :#d32f2f "/>
 			</div>
 			<div class="input-field col s3">
-				<input id="coef" type="number" min="0" name="coef"
-					value="${myTetri.coef}" placeholder="${coefNewTetrimino.message}">
-				<label for="coef">Coefficient of the Tetrimino</label>
+				<form:input path="coef" id="coef" type="number" min="0"/>
+				<form:label path="coef"><spring:message code="addT.coef"/></form:label>
+				<form:errors path="coef" style="color : #d32f2f"/>
 			</div>
 			<div class="input-field col s2">
-				<input id="colour" type="color" name="colour"
-					value="${myTetri.colourTetrimino}"
-					placeholder="${colourNewTetrimino.message}"> <label
-					for="colour">Colour of the Tetrimino</label>
+				<form:input path="colourTetrimino" id="color" type="color"/>
+				<form:label path="colourTetrimino"><spring:message code="addT.colour"/></form:label>
+				<form:errors path="colourTetrimino" style="color : #d32f2f"/>
 			</div>
 			<div class="input-field col s3">
 				<button class="btn waves-effect waves-light" type="submit">
-					Modify<i class="material-icons right ">save</i>
+					<spring:message code="modT.button"/><i class="material-icons right ">save</i>
 				</button>
 			</div>
 		</div>
-	</form>
+	</form:form>
 </div>
