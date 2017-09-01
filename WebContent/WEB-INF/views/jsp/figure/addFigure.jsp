@@ -1,7 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
-<form method="POST">
+<form:form action="doAddFigure?id=${Tetrimino.idTetrimino }" method="POST" modelAttribute="newFigure">
 	<div class="row"
 		style="margin-left: auto; margin-right: auto; width: 900px">
 		<table>
@@ -44,10 +45,8 @@
 	<div class="row"
 		style="margin-left: auto; margin-right: auto; width: 250px;">
 		<div class="input-field col s12">
-			<input id="numberRotation" name="numberRotation" type="number"
-				min="1" max="4" placeholder="${numberRotation.message}"
-				class="validate"> <label for="numberRotation">Order
-				of rotation</label>
+			<form:input id="rotationNumber" path="rotationNumber" type="number" min="1" max="4" class="validate"/>
+			<form:label path="rotationNumber">Order of rotation</form:label>
 		</div>
 	</div>
 	<div class="row"
@@ -59,12 +58,12 @@
 						Save<i class="material-icons right">save</i>
 					</button>
 				</td>
-				<td style="width: 175px; text-align: center;"><a
-					href="resetFigure?id=${Tetrimino.idTetrimino}"><button
-							class="btn waves-effect waves-light" type="button">
-							Reset<i class="material-icons right">clear_all</i>
-						</button></a></td>
+				<td style="width: 175px; text-align: center;">
+					<a href="resetFigure?id=${Tetrimino.idTetrimino}">
+					<button class="btn waves-effect waves-light" type="button">Reset<i class="material-icons right">clear_all</i></button>
+					</a>
+				</td>
 			</tr>
 		</table>
 	</div>
-</form>
+</form:form>

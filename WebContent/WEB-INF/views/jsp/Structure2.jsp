@@ -11,6 +11,7 @@
 <!--Import materialize.css-->
 
 <link rel="stylesheet" href="/Tetris/Resources/materialize/css/materialize.min.css">
+<link rel="stylesheet" href="/Tetris/Resources/div.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <c:set var="titleCode" scope="request">
 	<tiles:insertAttribute name="title" ignore="true" />
