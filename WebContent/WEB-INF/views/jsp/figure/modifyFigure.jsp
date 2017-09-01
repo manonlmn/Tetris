@@ -6,11 +6,11 @@
 	<table>
 		<thead>
 			<tr>
-				<th style="text-align: center;">Id</th>
-				<th style="text-align: center;">Tetrimino's Name</th>
-				<th style="text-align: center;">Coefficient</th>
-				<th style="text-align: center;">Color</th>
-				<th style="text-align: center;">Order of rotation</th>
+				<th style="text-align: center;"><spring:message code="modF.id"/></th>
+				<th style="text-align: center;"><spring:message code="modF.name"/></th>
+				<th style="text-align: center;"><spring:message code="modF.coef"/></th>
+				<th style="text-align: center;"><spring:message code="modF.color"/></th>
+				<th style="text-align: center;"><spring:message code="modF.rotation"/></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -55,7 +55,7 @@
 			<tr>
 				<td style="width: 250px; text-align: center">
 					<button class="btn waves-effect waves-light" type="submit">
-						Save<i class="material-icons right">save</i>
+						<spring:message code="modF.save"/><i class="material-icons right">save</i>
 					</button>
 				</td>
 
