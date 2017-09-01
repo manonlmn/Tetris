@@ -89,7 +89,7 @@ public class TetriminoController {
 
 
 
-	//afichage du tetri à modifier
+	//afichage du tetri ï¿½ modifier
 	@RequestMapping(value="/ModifyTetrimino", method=RequestMethod.GET)
 	public String modifyTetrimino(@RequestParam(value="id") int idTetriminoToModify, Model model) {
 		Tetrimino tetriToModify = myTetriminoDAO.search(idTetriminoToModify);
@@ -166,12 +166,16 @@ public class TetriminoController {
 		new AddFigureValidator().validate(myNewFigure, myListFigure, result);
 
 		if(result.hasErrors()) {
+			//return this.addFigure(idTetrimino, session, "AddFigure", model);
+			model.addAttribute("Tetrimino", myTetrimino);
+			model.addAttribute("mySession", session);
+			//model.addAttribute("newFigure", new Figure());
+			
 			return "addFigure";
 		}
 
 		myNewFigure.setTetrimino(myTetrimino);
-
-
+		myNewFigure = myFigureDAO.add(myNewFigure);
 		for(Block block : myListBlocks) {
 			block.setFigure(myNewFigure);
 			myBlockDAO.add(block);

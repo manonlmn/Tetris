@@ -47,6 +47,7 @@
 		<div class="input-field col s12">
 			<form:input id="rotationNumber" path="rotationNumber" type="number" min="1" max="4" class="validate"/>
 			<form:label path="rotationNumber"><spring:message code="AddF.rotation"/></form:label>
+			<form:errors path="rotationNumber" style="color :#d32f2f "/>
 		</div>
 	</div>
 	<div class="row"
