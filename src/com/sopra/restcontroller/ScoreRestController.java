@@ -16,7 +16,6 @@ import com.sopra.model.Score;
 @RestController
 @RequestMapping(value="/score")
 public class ScoreRestController {
-	//methode PUT et GET
 	
 	@Autowired
 	private IScoreDAO scoreDAO;
