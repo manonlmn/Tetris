@@ -3,7 +3,7 @@
 
 <div class="row">
 	<div class="col s1"></div>
-	<div class="col s4">	
+	<div class="col s3">	
 	<h4 style="text-align : right"><spring:message code="displayG.tab2" /></h4>
 		<div class="divider"></div>
 		<table >
@@ -34,7 +34,7 @@
 	
 	</div>
 	<div class="col s1"></div>
-	<div class="col s4">
+	<div class="col s5">
 	<h4><spring:message code="displayG.tab1" /></h4>
 		<div class="divider"></div>
 		<table>
