@@ -8,8 +8,8 @@
 		<table>
 			<thead>
 				<tr>
-					<th style="text-align: center;">Name of the Tetrimino</th>
-					<th style="text-align: center;">Colour of the Tetrimino</th>
+					<th style="text-align: center;"><spring:message code="AddF.name"/></th>
+					<th style="text-align: center;"><spring:message code="AddF.color"/></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,21 +46,21 @@
 		style="margin-left: auto; margin-right: auto; width: 250px;">
 		<div class="input-field col s12">
 			<form:input id="rotationNumber" path="rotationNumber" type="number" min="1" max="4" class="validate"/>
-			<form:label path="rotationNumber">Order of rotation</form:label>
+			<form:label path="rotationNumber"><spring:message code="AddF.rotation"/></form:label>
 		</div>
 	</div>
 	<div class="row"
-		style="margin-left: auto; margin-right: auto; width: 350px;">
+		style="margin-left: auto; margin-right: auto; width: 420px;">
 		<table>
 			<tr>
-				<td style="width: 175px; text-align: center">
+				<td style="width: 210px; text-align: center">
 					<button class="btn waves-effect waves-light" type="submit">
-						Save<i class="material-icons right">save</i>
+						<spring:message code="AddF.save"/><i class="material-icons right">save</i>
 					</button>
 				</td>
-				<td style="width: 175px; text-align: center;">
+				<td style="width: 210px; text-align: center;">
 					<a href="resetFigure?id=${Tetrimino.idTetrimino}">
-					<button class="btn waves-effect waves-light" type="button">Reset<i class="material-icons right">clear_all</i></button>
+					<button class="btn waves-effect waves-light" type="button"><spring:message code="AddF.reset"/><i class="material-icons right">clear_all</i></button>
 					</a>
 				</td>
 			</tr>
