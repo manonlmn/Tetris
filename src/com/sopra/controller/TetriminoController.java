@@ -178,13 +178,48 @@ public class TetriminoController {
 	@RequestMapping(value="/modifyFigure", method=RequestMethod.GET)
 	public String modifyFigure(	@RequestParam(value="id") int idFigure,
 								HttpSession session,
+								@RequestHeader(value="Referer", required=false) String referer,
 								Model model
 								) {
 		
-		model.addAttribute("Tetrimino", myFigureDAO.search(idFigure).getTetrimino());
-		model.addAttribute("ListBlock", (List<Block>)session.getAttribute("ListBlock"));
+		Figure myFigureToModify = myFigureDAO.search(idFigure);
+		Tetrimino myTetrimino = myFigureToModify.getTetrimino();
+		List<Block> myListBlock = (List<Block>)session.getAttribute("ListBlock");
+		
+		if ((myListBlock == null) || referer == null || !referer.contains("modifyFigure")) {
+			myListBlock = myFigureToModify.getMyBlocks();
+			session.setAttribute("ListBlock", myListBlock);
+		}
+		
+		model.addAttribute("Tetrimino", myTetrimino);
+		model.addAttribute("figure", myFigureToModify);
+		//model.addAttribute("ListBlock", myListBlock);
 		
 		return "modifyFigure";
+	}
+	
+	
+	// Faire la modification d'une figure
+	@RequestMapping(value="/doModifyFigure", method=RequestMethod.POST)
+	public String modifyFigure(	@RequestParam(value="id") int idFigure,
+								HttpSession session
+								) {
+		
+		List<Block> myListBlock = (List<Block>)session.getAttribute("ListBlock");
+		Figure myFigure = myFigureDAO.search(idFigure);
+
+		for(Block myBlock : myFigure.getMyBlocks()) {
+			myBlockDAO.delete(myBlock.getIdBlock());
+		}
+		
+		for(Block myBlock : myListBlock) {
+			myBlock.setFigure(myFigure);
+			myBlock = myBlockDAO.modify(myBlock);
+		}
+		
+		session.removeAttribute("ListBlock");
+		
+		return "redirect:/ListFiguresTetrimino?id="+myFigure.getTetrimino().getIdTetrimino();
 	}
 	
 	
@@ -224,5 +259,41 @@ public class TetriminoController {
 		return "redirect:/AddFigure?id="+idTetrimino;
 	}
 	
+	
+	
+		// Modifier un bloc
+		@RequestMapping(value="/modifyBlock", method=RequestMethod.GET)
+		public String modifyBlock(	HttpSession session,
+									@RequestParam(value="id") int idFigure,
+									@RequestParam(value="x") int xBlock,
+									@RequestParam(value="y") int yBlock
+									) {
+			
+			Figure myFigure = myFigureDAO.search(idFigure);
+			Tetrimino myTetrimino = myFigure.getTetrimino();
+			List<Block> myListBlock = (List<Block>)session.getAttribute("ListBlock");
+
+			boolean blockExist = false;
+
+			for(Block myBlock : myListBlock ) {
+				if(myBlock.getX() == xBlock && myBlock.getY() == yBlock) {
+					myListBlock.remove(myBlock);
+					blockExist=true;
+					break;
+				}
+			}
+			if(!blockExist) {
+				Block myBlockToModify = new Block();
+				myBlockToModify.setX(xBlock);
+				myBlockToModify.setY(yBlock);
+				myListBlock.add(myBlockToModify);
+			
+			}
+
+			session.setAttribute("ListBlock", myListBlock);
+			
+			return "redirect:/modifyFigure?id="+idFigure;
+		}
+
 	
 }

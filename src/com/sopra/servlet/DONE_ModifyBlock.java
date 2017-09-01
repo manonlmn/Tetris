@@ -15,8 +15,8 @@ import com.sopra.model.Block;
 import com.sopra.model.Figure;
 
 
-@WebServlet("/modifyBlock")
-public class ModifyBlock extends ServletInChief {
+//@WebServlet("/modifyBlock")
+public class DONE_ModifyBlock extends ServletInChief {
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired
@@ -25,7 +25,7 @@ public class ModifyBlock extends ServletInChief {
 	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 			//l'id de la figure que l'on modifie
 				int id = Integer.parseInt(req.getParameter("id"));
-				//création d'un block
+				//crï¿½ation d'un block
 				Block block = new Block();
 				//donner les valeurs de X et Y au block
 				block.setX(Integer.parseInt(req.getParameter("x")));
@@ -36,7 +36,7 @@ public class ModifyBlock extends ServletInChief {
 				boolean blockExist = false;
 				//Pour chaque bloc de la liste de bloc
 				for(Block bloc : myBlocks ) {
-					//si le bloc existe déjà
+					//si le bloc existe dï¿½jï¿½
 					if(bloc.getX() == block.getX() && bloc.getY() == block.getY()) {
 						//on le supprime de la liste
 						myBlocks.remove(bloc);
@@ -45,7 +45,7 @@ public class ModifyBlock extends ServletInChief {
 					}
 				}
 				if(blockExist==false) {
-					//ajout à une liste de block
+					//ajout ï¿½ une liste de block
 					myBlocks.add(block);
 				}
 

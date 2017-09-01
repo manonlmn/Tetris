@@ -25,7 +25,9 @@
 		</tbody>
 	</table>
 </div>
-<form method="POST">
+
+
+<form:form action="doModifyFigure?id=${figure.idFigure }" method="POST">
 	<!-- Affichage de la forme -->
 	<div class="figure" style="margin-left: auto; margin-right: auto;">
 		<c:forEach var="x" begin="0" end="4">
@@ -60,4 +62,4 @@
 			</tr>
 		</table>
 	</div>
-</form>
+</form:form>
