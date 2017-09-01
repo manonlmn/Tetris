@@ -139,16 +139,16 @@ public class TetriminoController {
 							) {
 		
 		Tetrimino myTetrimino = myTetriminoDAO.search(idTetrimino);
+		List<Figure> myListFigure = myTetrimino.getMyFigures();
 		List<Block> myListBlocks = (List<Block>)session.getAttribute("ListBlock");
 		
-		new AddFigureValidator().validate(myNewFigure, result);
+		new AddFigureValidator().validate(myNewFigure, myListFigure, result);
 		
 		if(result.hasErrors()) {
 			return "addFigure";
 			}
 		
 		myNewFigure.setTetrimino(myTetrimino);
-		myNewFigure = myFigureDAO.add(myNewFigure);
 		
 		
 		for(Block block : myListBlocks) {
