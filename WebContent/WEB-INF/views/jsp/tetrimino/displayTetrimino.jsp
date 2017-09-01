@@ -28,7 +28,7 @@
 						class="secondary-content"><i class="material-icons">mode_edit</i></a></td>
 					<td style="text-align: center;"><a
 						href="DeleteTetrimino?id=${Tetrimino.idTetrimino}"
-						class="secondary-content"><i class="material-icons">delete</i></a></td>
+						class="secondary-content "><i class="material-icons">delete</i></a></td>
 					<td style="text-align: center;"><a
 						href="/Tetris/ListFiguresTetrimino?id=${Tetrimino.idTetrimino}"
 						class="secondary-content"> <i class="material-icons">library_books</i></a>

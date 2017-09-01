@@ -18,7 +18,8 @@ public class GameController {
 	public String listGame(	Model model
 							) {
 		
-		model.addAttribute("GamesList", myGameDAO.list());
+		model.addAttribute("GamesListSolo", myGameDAO.listWithScoreSolo());
+		model.addAttribute("GamesListMulti", myGameDAO.listWithScoreMulti());
 		return "displayGamesList";
 	}
 }
