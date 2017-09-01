@@ -75,7 +75,8 @@ public class TetriminoController {
 	
 	
 	
-	// Modification tetrimino
+	// MODIFICATION TETRIMINO
+	
 	// Afficher la page de manipulation des figures
 	@RequestMapping(value="/ListFiguresTetrimino", method=RequestMethod.GET)
 	public String displayFigure(@RequestParam(value="id") int idTetriminoFigures,
@@ -100,6 +101,18 @@ public class TetriminoController {
 	
 	
 	// Faire la manip d'ajouter une figure
+	
+	
+	
+	// Supprimer une figure
+	@RequestMapping(value="/deleteFigure", method=RequestMethod.GET)
+	public String deleteFigure(	@RequestParam(value="id") int idFigureToDelete
+									) {
+		Figure myFigure = myFigureDAO.search(idFigureToDelete);
+		myFigureDAO.delete(idFigureToDelete);
+		
+		return "redirect:/ListFiguresTetrimino?id="+ myFigure.getTetrimino().getIdTetrimino();
+	}
 	
 	
 }

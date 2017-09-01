@@ -13,8 +13,8 @@ import com.sopra.dao.IFigureDAO;
 import com.sopra.model.Figure;
 import com.sopra.model.Tetrimino;
 
-@WebServlet("/deleteFigure")
-public class DeleteFigure extends ServletInChief {
+//@WebServlet("/deleteFigure")
+public class DONE_DeleteFigure extends ServletInChief {
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired
