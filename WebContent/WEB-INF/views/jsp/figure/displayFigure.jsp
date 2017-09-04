@@ -59,11 +59,11 @@
 									href="deleteFigure?id=${figure.idFigure}"
 									class="secondary-content"><i class="material-icons">delete</i></a></td>
 								<td style="text-align: center; width: 40px; height: 40px;"></td>
-								<td style="text-align: center; width: 40px; height: 40px;"><a
-									href="leftOffsetFigure?id=${figure.idFigure}"
+								<td style="text-align: center; width: 40px; height: 40px;" ><a
+									href="switchFigureLeft?id=${figure.idFigure}"
 									class="secondary-content"><i class="material-icons">navigate_before</i></a></td>
 								<td style="text-align: center; width: 40px; height: 40px;"><a
-									href="rightOffsetFigure?id=${figure.idFigure}"
+									href="/switchFigureRight?id=${figure.idFigure}"
 									class="secondary-content"><i class="material-icons">navigate_next</i></a></td>
 
 							</tr>

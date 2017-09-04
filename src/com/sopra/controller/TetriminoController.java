@@ -319,6 +319,29 @@ public class TetriminoController {
 
 		return "redirect:/modifyFigure?id="+idFigure;
 	}
+	
+	//switch de figure 
+	
+	@RequestMapping(value="/switchFigureRight", method = RequestMethod.GET)
+	public String switchFigures(@RequestParam int id, @RequestParam int sens, Model model ) {
+		Figure figure = myFigureDAO.search(id);
+		Tetrimino tetrimino = figure.getTetrimino();
+		
+		int newOrder;
+		
+		newOrder = figure.getRotationNumber()+1;
+		
+		//verfier que l'ordre n'existe pas dans la liste
+		
+		//si ordre existant, inversion avec l'ancien ordre
+		
+		//on sauvegarde grâce à la dao dans la bdd
+		
+		
+		return "displayFigure";
+	}
+	
+	//meme chose mais sens inverse
 
 
 }
