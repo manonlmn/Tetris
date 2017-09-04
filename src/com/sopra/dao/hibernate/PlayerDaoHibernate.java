@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sopra.dao.IPlayerDAO;
+import com.sopra.model.Admin;
 import com.sopra.model.Player;
 
 @Repository
@@ -43,6 +45,23 @@ public class PlayerDaoHibernate implements IPlayerDAO {
 	@Override
 	public Player search(int id) {
 		return em.find(Player.class, id);
+	}
+	
+	@Override
+	public Player searchbyUNandPWd(String username, String password) {
+		Query myQuery = em.createQuery("select a from Player p where p.username= :username and p.password= :password");
+
+		//On ins�re les param�tres
+		myQuery.setParameter("username", username);
+		myQuery.setParameter("password", password);
+
+		try {
+			return (Player) myQuery.getSingleResult();
+		}
+		catch(Exception e) {
+			return null;
+		}
+
 	}
 
 }

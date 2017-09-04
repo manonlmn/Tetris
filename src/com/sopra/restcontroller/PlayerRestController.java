@@ -62,4 +62,19 @@ public class PlayerRestController {
 		}
 	}
 	
+	// login d'un joueur
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<Player> login(@RequestBody Player player) {
+		player = playDAO.searchbyUNandPWd(player.getUsername(), player.getPassword());
+		
+		if(player==null) {
+			return new ResponseEntity<Player>(HttpStatus.FORBIDDEN);
+		}
+		else
+		{
+			return new ResponseEntity<Player>(player, HttpStatus.OK);
+		}
+	}
+	
 }
