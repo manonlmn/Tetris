@@ -32,4 +32,10 @@ public class PlayerDAO implements IPlayerDAO {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public Player searchbyUNandPWd(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
