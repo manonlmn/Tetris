@@ -323,25 +323,71 @@ public class TetriminoController {
 	//switch de figure 
 	
 	@RequestMapping(value="/switchFigureRight", method = RequestMethod.GET)
-	public String switchFigures(@RequestParam int id, @RequestParam int sens, Model model ) {
+	public String switchFiguresRight(@RequestParam int id) {
+		//on cherche la figure en fonction de son id
 		Figure figure = myFigureDAO.search(id);
+		//on récupère le tetrimino correspondant
 		Tetrimino tetrimino = figure.getTetrimino();
 		
 		int newOrder;
-		
 		newOrder = figure.getRotationNumber()+1;
-		
-		//verfier que l'ordre n'existe pas dans la liste
-		
-		//si ordre existant, inversion avec l'ancien ordre
-		
-		//on sauvegarde grâce à la dao dans la bdd
-		
-		
-		return "displayFigure";
+				
+		if(newOrder<1) {
+			newOrder = 4;
+		}
+		else if(newOrder>4) {
+			newOrder=1;
+		}
+		//verifier que l'ordre n'existe pas dans la liste
+		for(Figure figureDTE : tetrimino.getMyFigures()) {
+			//si ordre existant, inversion avec l'ancien ordre
+			if(figureDTE.getRotationNumber() == newOrder) {
+				figureDTE.setRotationNumber(figure.getRotationNumber());
+				//on sauvegarde grâce à la dao dans la bdd
+				figureDTE = myFigureDAO.modify(figureDTE);
+				
+				//on quitte la boucle
+				break;
+			}
+		}
+		figure.setRotationNumber(newOrder);
+		figure = myFigureDAO.modify(figure);
+		//on retourne vers la liste des figures
+		return "redirect:/ListFiguresTetrimino?id="+figure.getTetrimino().getIdTetrimino();
 	}
 	
-	//meme chose mais sens inverse
-
+	@RequestMapping(value="/switchFigureLeft", method = RequestMethod.GET)
+	public String switchFiguresLeft(@RequestParam int id) {
+		//on cherche la figure en fonction de son id
+		Figure figure = myFigureDAO.search(id);
+		//on récupère le tetrimino correspondant
+		Tetrimino tetrimino = figure.getTetrimino();
+		
+		int newOrder;
+		newOrder = figure.getRotationNumber()-1;
+				
+		if(newOrder<1) {
+			newOrder = 4;
+		}
+		else if(newOrder>4) {
+			newOrder=1;
+		}
+		//verifier que l'ordre n'existe pas dans la liste
+		for(Figure figureDTE : tetrimino.getMyFigures()) {
+			//si ordre existant, inversion avec l'ancien ordre
+			if(figureDTE.getRotationNumber() == newOrder) {
+				figureDTE.setRotationNumber(figure.getRotationNumber());
+				//on sauvegarde grâce à la dao dans la bdd
+				figureDTE = myFigureDAO.modify(figureDTE);
+				
+				//on quitte la boucle
+				break;
+			}
+		}
+		figure.setRotationNumber(newOrder);
+		figure = myFigureDAO.modify(figure);
+		//on retourne vers la liste des figures
+		return "redirect:/ListFiguresTetrimino?id="+figure.getTetrimino().getIdTetrimino();
+	}
 
 }

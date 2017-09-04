@@ -63,7 +63,7 @@
 									href="switchFigureLeft?id=${figure.idFigure}"
 									class="secondary-content"><i class="material-icons">navigate_before</i></a></td>
 								<td style="text-align: center; width: 40px; height: 40px;"><a
-									href="/switchFigureRight?id=${figure.idFigure}"
+									href="switchFigureRight?id=${figure.idFigure}"
 									class="secondary-content"><i class="material-icons">navigate_next</i></a></td>
 
 							</tr>
