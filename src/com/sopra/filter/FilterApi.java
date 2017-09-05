@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter("/api/*")
+//@WebFilter("/api/*")
 public class FilterApi implements javax.servlet.Filter{
 	@Override
 	public void destroy() {
