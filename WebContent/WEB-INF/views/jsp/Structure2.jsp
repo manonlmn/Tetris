@@ -10,28 +10,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!--Import materialize.css-->
 
-<link rel="stylesheet" href="/Tetris/Resources/materialize/css/materialize.min.css">
+<link rel="stylesheet"
+	href="/Tetris/Resources/materialize/css/materialize.min.css">
 <link rel="stylesheet" href="/Tetris/Resources/div.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 <c:set var="titleCode" scope="request">
 	<tiles:insertAttribute name="title" ignore="true" />
 </c:set>
 <title><spring:message code="${ titleCode }" /></title>
 </head>
 <body class="green lighten-5">
-<nav class="nav-extended z-depth-4">
+	<nav class="nav-extended z-depth-4">
 	<div class="nav-wrapper amber lighten-2">
-		<a href="/Tetris/home" class="brand-logo"><spring:message code="title.welcome"/></a>
+		<a href="/Tetris/home" class="brand-logo"><spring:message
+				code="title.welcome" /></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="/Tetris/displayGamesList"><spring:message code="link1.header"/></a></li>
-			<li><a href="/Tetris/displayplayer"><spring:message code="link2.header"/></a></li>
-			<li><a href="/Tetris/displaytetrimino"><spring:message code="link3.header"/></a></li>
+		
+			<li>
+				<!-- Dropdown Trigger -->
+				<a class='dropdown-button' href='#' data-activates='dropdown1'><img src="Resources/img/earth.png" />Language</a>
+				
+				<!-- Dropdown Structure -->
+				<ul id='dropdown1' class='dropdown-content'>
+					<li><a href="?lang=en"><img src="Resources/img/flag_en.png"/> EN</a></li>
+					<li><a href="?lang=fr"><img src="Resources/img/flag_fr.png"/> FR</a></li>
+				</ul>
+			</li>
+		
+			<li><a href="/Tetris/displayGamesList"><spring:message
+						code="link1.header" /></a></li>
+			<li><a href="/Tetris/displayplayer"><spring:message
+						code="link2.header" /></a></li>
+			<li><a href="/Tetris/displaytetrimino"><spring:message
+						code="link3.header" /></a></li>
 			<li><a class="waves-effect waves-light btn z-depth-4"
-				href="/Tetris/disconnect"><spring:message code="button.header"/><i class="material-icons right">exit_to_app</i></a></li>
+				href="/Tetris/disconnect"><spring:message code="button.header" /><i
+					class="material-icons right">exit_to_app</i></a></li>
 		</ul>
 	</div>
-	<tiles:insertAttribute name="header" />
-	</nav>
+	<tiles:insertAttribute name="header" /> </nav>
 	<tiles:insertAttribute name="body" />
 </body>
 <script src="/Tetris/Resources/jquery-3.2.1.min.js"></script>
