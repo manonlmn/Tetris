@@ -2,6 +2,8 @@ package com.sopra.restcontroller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -65,7 +67,7 @@ public class PlayerRestController {
 	// login d'un joueur
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<Player> login(@RequestBody Player player) {
+	public ResponseEntity<Player> login(@RequestBody Player player, HttpSession session) {
 		player = playDAO.searchbyUNandPWd(player.getUsername(), player.getPassword());
 		
 		if(player==null) {
@@ -73,6 +75,7 @@ public class PlayerRestController {
 		}
 		else
 		{
+			session.setAttribute("username", player.getUsername());
 			return new ResponseEntity<Player>(player, HttpStatus.OK);
 		}
 	}
