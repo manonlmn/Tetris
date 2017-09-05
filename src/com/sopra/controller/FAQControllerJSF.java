@@ -26,8 +26,14 @@ public class FAQControllerJSF {
 	private IFAQDAO myFAQDAO;
 
 	// Afficher la FAQ
+<<<<<<< HEAD:src/com/sopra/controller/FAQControllerJSF.java
 	public String displayFAQ() {
 		
+=======
+	
+	public String displayFAQ() {
+		//creation d'une fonction pour lister les FAQ
+>>>>>>> master:src/com/sopra/controller/FAQController.java
 		return "displayFAQ";
 	}
 	

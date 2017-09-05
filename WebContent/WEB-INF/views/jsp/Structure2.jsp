@@ -46,6 +46,8 @@
 						code="link2.header" /></a></li>
 			<li><a href="/Tetris/displaytetrimino"><spring:message
 						code="link3.header" /></a></li>
+			<li><a href="/Tetris/displayFAQ.xhtml"><spring:message
+						code="link4.header" /></a></li>
 			<li><a class="waves-effect waves-light btn z-depth-4"
 				href="/Tetris/disconnect"><spring:message code="button.header" /><i
 					class="material-icons right">exit_to_app</i></a></li>

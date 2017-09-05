@@ -97,17 +97,6 @@
 
 
 
-
-	<filter>
-		<filter-name>filterApi</filter-name>
-		<filter-class>com.sopra.filter.FilterApi</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>filterApi</filter-name>
-		<url-pattern>/api/*</url-pattern>
-	</filter-mapping>
-
-
 	<context-param> <!-- autres noms possibles : STATE_SAVING_METHOD, INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL 
 			... -->
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
