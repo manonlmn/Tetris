@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/template.xhtml">
+
+	<ui:define name="titre">FAQs' List</ui:define>
+
+	<ui:define name="contenu">
+		<table>
+			<ui:repeat var="FAQ" value="#{fAQControllerJSF.displayFAQ()}">
+				<tr>
+					<td>#{FAQ.idLangue.code}</td>
+					<td>#{FAQ.question}</td>
+					<td>#{FAQ.reponse}</td>
+				</tr>
+			</ui:repeat>
+		</table>
+	</ui:define>
+</ui:composition>

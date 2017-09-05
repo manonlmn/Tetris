@@ -42,7 +42,7 @@ public class FAQLanguage {
 	
 	@ManyToOne
 	@JoinColumn(name="FAQL_IDFAQ")
-	protected Language myFAQ;
+	protected FAQ myFAQ;
 	
 	
 	//GETTERS & SETTERS
@@ -70,11 +70,11 @@ public class FAQLanguage {
 		this.myLanguage = myLanguage;
 	}
 
-	public Language getMyFAQ() {
+	public FAQ getMyFAQ() {
 		return myFAQ;
 	}
 
-	public void setMyFAQ(Language myFAQ) {
+	public void setMyFAQ(FAQ myFAQ) {
 		this.myFAQ = myFAQ;
 	}
 }
