@@ -8,14 +8,34 @@
 	<ui:define name="titre">FAQs' List</ui:define>
 
 	<ui:define name="contenu">
+	<div class="row">
+	<div class="col s8 offset-s2">
 		<table>
-			<ui:repeat var="FAQ" value="#{fAQControllerJSF.displayFAQ()}">
+		<thead>
+		<tr>
+			<th style="text-align : center">Language</th>
+			<th style="text-align : center">Question</th>
+			<th style="text-align : center">Response</th>
+			<th ></th>
+			<th></th>
+		</tr>
+		</thead>
+			<ui:repeat var="FAQ" value="#{myListFAQ}">
 				<tr>
-					<td>#{FAQ.myLanguage.code}</td>
-					<td>#{FAQ.question}</td>
-					<td>#{FAQ.reponse}</td>
+					<td style="text-align : center">nckls#{FAQ.myLanguage.code}</td>
+					<td style="text-align : center">vsdv#{FAQ.question}</td>
+					<td style="text-align : center">vdsdvs#{FAQ.reponse}</td>
+					<td style="text-align : center"><a href="modifyFAQ?id=#{FAQ.idFAQ}" class="secondary-content">
+						<i class="material-icons">mode_edit</i>
+					</a></td>
+					<td style="text-align : center"><a href="deleteFAQ?id=${FAQ.idFAQ}" class="secondary-content">
+						<i class="material-icons">delete</i>
+					</a></td>
 				</tr>
-			</ui:repeat>
+			
+		 </ui:repeat>
 		</table>
+		</div>
+	 </div>
 	</ui:define>
 </ui:composition>
