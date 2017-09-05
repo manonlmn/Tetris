@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sopra.dao.IBlockDAO;
 import com.sopra.dao.IFigureDAO;
 import com.sopra.dao.ITetriminoDAO;
-import com.sopra.exception.FormValidationException;
 import com.sopra.model.Block;
 import com.sopra.model.Figure;
 import com.sopra.model.Tetrimino;
