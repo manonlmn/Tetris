@@ -29,7 +29,7 @@
 		
 			<li>
 				<!-- Dropdown Trigger -->
-				<a class='dropdown-button' href='#' data-activates='dropdown1'><img src="Resources/img/earth.png" />Language</a>
+				<a class='dropdown-button' href='#' data-activates='dropdown1'><img src="Resources/img/earth.png" />Change language</a>
 				
 				<!-- Dropdown Structure -->
 				<ul id='dropdown1' class='dropdown-content'>
