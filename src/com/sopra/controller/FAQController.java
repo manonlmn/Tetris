@@ -22,8 +22,9 @@ public class FAQController {
 	private IFAQDAO myFAQDAO;
 
 	// Afficher la FAQ
-	@RequestMapping(value="/faq", method=RequestMethod.GET)
+	
 	public String displayFAQ() {
+		//creation d'une fonction pour lister les FAQ
 		return "displayFAQ";
 	}
 	
