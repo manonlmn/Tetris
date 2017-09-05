@@ -48,7 +48,7 @@ public class FAQControllerJSF {
 		myFAQLanguage.setMyLanguage(myLanguage);
 		myFAQLanguage.setQuestionFAQLanguage(question);
 		myFAQLanguage.setResponseFAQLanguage(response);
-		myFAQLanguage.setMyFAQ(   /* La FAQ */  );
+		myFAQLanguage.setMyFAQ(   /* L'id de FAQ incrémentée de 1? */  );
 		this.myFAQLanguageDAO.add(myFAQLanguage);
 		
 		return "displayFAQ?faces-redirect=true";
