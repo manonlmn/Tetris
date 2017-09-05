@@ -1,8 +1,11 @@
 package com.sopra.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,19 +16,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sopra.dao.IFAQDAO;
 import com.sopra.model.FAQ;
-import com.sopra.validator.AddFAQValidator;
+import com.sopra.validator.AddFAQValidatorJSF;
 
 @Controller
-public class FAQController {
+@Scope("request")
+public class FAQControllerJSF {
 	
 	@Autowired
 	private IFAQDAO myFAQDAO;
 
 	// Afficher la FAQ
-	@RequestMapping(value="/faq", method=RequestMethod.GET)
 	public String displayFAQ() {
+		
 		return "displayFAQ";
 	}
+	
+	
+	
+	public List<FAQ> listFAQ() {
+		List<FAQ> myListFAQ = myFAQDAO.list();
+		return myListFAQ;
+	}
+	
+	
+	
 	
 	
 	// Afficher la page d'ajout de FAQ
@@ -43,7 +57,7 @@ public class FAQController {
 							Model model
 							) {
 		
-		new AddFAQValidator().validate(myNewFAQ, result);
+		new AddFAQValidatorJSF().validate(myNewFAQ, result);
 		if(result.hasErrors()) {
 			return "addFAQ";
 		}
@@ -77,7 +91,7 @@ public class FAQController {
 							BindingResult result,
 							Model model
 							) {
-		new AddFAQValidator().validate(FAQToModify, result);
+		new AddFAQValidatorJSF().validate(FAQToModify, result);
 		if(result.hasErrors()) {
 			return "modifyFAQ";
 		}
