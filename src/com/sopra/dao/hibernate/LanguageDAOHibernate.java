@@ -43,5 +43,16 @@ public class LanguageDAOHibernate implements ILanguageDAO {
 	public Language search(int id) {
 		return em.find(Language.class, id);
 	}
+	
+	@Override
+	public Language searchByCode(String code) {
+		Language language = null;
+		try {
+		language = (Language)em.createQuery("select l from Language l where l.code = "+code).getSingleResult();
+		}
+		catch(Exception e) {
+		}
+		return language;
+	}
 
 }

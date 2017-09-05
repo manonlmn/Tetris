@@ -8,6 +8,41 @@
 	<ui:define name="titre">Adding a question/response</ui:define>
 
 	<ui:define name="contenu">
-	
+
+
+		<div style="margin-left: auto; margin-right: auto; width: 1000px">
+			<h:form>
+			
+				<h:outputLabel>Language</h:outputLabel><br />
+				<h:inputText id="language" value="#{fAQControllerJSF.languageCode}" class="validate" required="true" requiredMessage="Please mention the language">
+					<f:validator validatorId="com.sopra.validator" />
+				</h:inputText>
+				<h:message id="mess" for="language" errorClass="error" />
+			
+				<br />
+				
+				<h:outputLabel>Question</h:outputLabel><br />
+				<h:inputText id="question" value="#{fAQControllerJSF.question}" class="validate" required="true" requiredMessage="Please type a question">
+					<f:validator validatorId="com.sopra.validator" />
+				</h:inputText>
+				<h:message id="mess" for="question" errorClass="error" />
+			
+				<br />
+				
+				<h:outputLabel>Response</h:outputLabel><br />
+				<h:inputText id="response" value="#{fAQControllerJSF.response}" class="validate" required="true" requiredMessage="Please type an answer">
+					<f:validator validatorId="com.sopra.validator" />
+				</h:inputText>
+				<h:message id="mess2" for="response" errorClass="error2" />
+
+				<br />
+				<h:commandButton value="Add" action="#{fAQController.addFAQLanguage()}"></h:commandButton>
+			</h:form>
+		</div>
+
+
+
+
+
 	</ui:define>
-	</ui:composition>
+</ui:composition>

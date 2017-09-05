@@ -20,15 +20,15 @@
 			<th></th>
 		</tr>
 		</thead>
-			<ui:repeat var="FAQ" value="#{myListFAQ}">
+			<ui:repeat var="FAQ" value="#{fAQControllerJSF.listFAQLanguage()}">
 				<tr>
-					<td style="text-align : center">nckls#{FAQ.myLanguage.code}</td>
-					<td style="text-align : center">vsdv#{FAQ.question}</td>
-					<td style="text-align : center">vdsdvs#{FAQ.reponse}</td>
-					<td style="text-align : center"><a href="modifyFAQ?id=#{FAQ.idFAQ}" class="secondary-content">
+					<td style="text-align : center">#{FAQ.myLanguage.code}</td>
+					<td style="text-align : center">#{FAQ.question}</td>
+					<td style="text-align : center">#{FAQ.reponse}</td>
+					<td style="text-align : center"><a href="modifyFAQLanguage?id=#{FAQ.idFAQ}" class="secondary-content">
 						<i class="material-icons">mode_edit</i>
 					</a></td>
-					<td style="text-align : center"><a href="deleteFAQ?id=${FAQ.idFAQ}" class="secondary-content">
+					<td style="text-align : center"><a href="deleteFAQLanguage?id=${FAQ.idFAQ}" class="secondary-content">
 						<i class="material-icons">delete</i>
 					</a></td>
 				</tr>

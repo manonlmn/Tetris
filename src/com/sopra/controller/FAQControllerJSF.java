@@ -15,98 +15,54 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sopra.dao.IFAQDAO;
+import com.sopra.dao.IFAQLanguageDAO;
+import com.sopra.dao.ILanguageDAO;
 import com.sopra.model.FAQ;
+import com.sopra.model.FAQLanguage;
+import com.sopra.model.Language;
 import com.sopra.validator.AddFAQValidatorJSF;
 
 @Controller
 @Scope("request")
 public class FAQControllerJSF {
 	
-	@Autowired
-	private IFAQDAO myFAQDAO;
-
-	// Afficher la FAQ
-<<<<<<< HEAD:src/com/sopra/controller/FAQControllerJSF.java
-	public String displayFAQ() {
+	private String question = "";
+	private String response = "";
+	private String languageCode = null;
+	@Autowired private IFAQLanguageDAO myFAQLanguageDAO;
+	@Autowired private ILanguageDAO myLanguageDAO;
+	
+	// Lister FAQ
+	public List<FAQLanguage> listFAQLanguage() {
+		List<FAQLanguage> myListFAQLanguage = this.myFAQLanguageDAO.list();
+		return myListFAQLanguage;
+	}
+	
+	// Ajouter FAQ
+	public String addFAQLanguage() {
 		
-=======
-	
-	public String displayFAQ() {
-		//creation d'une fonction pour lister les FAQ
->>>>>>> master:src/com/sopra/controller/FAQController.java
-		return "displayFAQ";
-	}
-	
-	
-	
-	public List<FAQ> listFAQ() {
-		List<FAQ> myListFAQ = myFAQDAO.list();
-		return myListFAQ;
-	}
-	
-	
-	
-	
-	
-	// Afficher la page d'ajout de FAQ
-	@RequestMapping(value="/addFaq", method=RequestMethod.GET)
-	public String addFAQ(Model model) {
-		model.addAttribute("myNewFAQ");
-		return "addFAQ";
-	}
-	
-	
-	// Ajouter une FAQ
-	@RequestMapping(value="/doAddFaq", method=RequestMethod.POST)
-	public String addFAQ(	@Valid @ModelAttribute("myNewFAQ") FAQ myNewFAQ,
-							BindingResult result,
-							Model model
-							) {
+		// Création de l'entité FAQ
+		FAQLanguage myFAQLanguage = new FAQLanguage();
+		Language myLanguage = myLanguageDAO.searchByCode(languageCode);
 		
-		new AddFAQValidatorJSF().validate(myNewFAQ, result);
-		if(result.hasErrors()) {
-			return "addFAQ";
-		}
-		myNewFAQ = this.myFAQDAO.add(myNewFAQ);
-		return "redirect:/faq";
+		myFAQLanguage.setMyLanguage(myLanguage);
+		myFAQLanguage.setQuestionFAQLanguage(question);
+		myFAQLanguage.setResponseFAQLanguage(response);
+		myFAQLanguage.setMyFAQ(   /* La FAQ */  );
+		this.myFAQLanguageDAO.add(myFAQLanguage);
+		
+		return "displayFAQ?faces-redirect=true";
 	}
 	
-	
-	// Supprimer une FAQ
-	@RequestMapping(value="/deleteFAQ", method=RequestMethod.GET)
-	public String deleteFAQ(	@RequestParam(value="id") int idFAQ
-			) {
-		myFAQDAO.delete(idFAQ);
-
-		return "redirect:/faq";
+	// Supprimer FAQ
+	public String deleteFAQ(int idFAQ) {
+		myFAQLanguageDAO.delete(myFAQLanguageDAO.search(idFAQ).getIdFAQLanguage());
+		return "displayFAQ?faces-redirect=true";
 	}
 	
-	
-	// Afficher la page de modification de FAQ
-	@RequestMapping(value="/modifyFAQ", method=RequestMethod.GET)
-	public String modifyFAQ(@RequestParam(value="id") int idFAQToModify, Model model) {
-		FAQ FAQToModify = myFAQDAO.search(idFAQToModify);
-		model.addAttribute("FAQToModify", FAQToModify);
-		return "modifyFAQ";
+	// Modifier FAQ
+	public String modifyFAQ(FAQLanguage myFAQ) {
+		myFAQLanguageDAO.modify(myFAQ);
+		return "displayFAQ?faces-redirect=true";
 	}
-	
-	
-	// Modifier une FAQ
-	@RequestMapping(value="/doModifyFAQ", method=RequestMethod.POST)
-	public String modifyFAQ(@Valid @ModelAttribute("FAQToModify") FAQ FAQToModify,
-							BindingResult result,
-							Model model
-							) {
-		new AddFAQValidatorJSF().validate(FAQToModify, result);
-		if(result.hasErrors()) {
-			return "modifyFAQ";
-		}
-
-		myFAQDAO.modify(FAQToModify);
-		return "redirect:/faq";
-	}
-	
-	
-	
-	
 }

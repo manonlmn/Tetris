@@ -16,20 +16,11 @@ public class AddFAQValidatorJSF implements Validator {
 	@Override
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
 		FacesMessage myFacesMessage = null;
-		
-		
-		
-	/*	if() {
-			myFacesMessage = new FacesMessage("Echec de la vérification", "The FAQ is incorrect");
-			myFacesMessage.setSeverity(FacesMessage.SEVERITY_ERROR);
-			
+
+	if(value.equals("")) {
+		myFacesMessage = new FacesMessage("verification failed", "The FAQ is incorrect");
+		myFacesMessage.setSeverity(FacesMessage.SEVERITY_ERROR);
 		throw new ValidatorException(myFacesMessage);
-		}
-		
+		}	
 	}
-	
-	*/
-
-
-
 }
