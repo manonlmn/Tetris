@@ -12,7 +12,7 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
+
 	<!-- Chargement du contexte Spring (application-context.xml) -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -60,8 +60,8 @@
 		<servlet-name>api</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<!-- Déclaration de la Servlet DispatcherServlet (String MVC) -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
@@ -82,5 +82,21 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
+	<context-param> <!-- autres noms possibles : STATE_SAVING_METHOD, INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL 
+			... -->
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>FacesServlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FacesServlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
 
 </web-app>
