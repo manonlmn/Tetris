@@ -34,6 +34,7 @@ public class HomeController {
 
 		if(adminSearched!=null) {
 			session.setAttribute("admin", adminSearched);
+			session.setAttribute("username", adminSearched.getUsername());
 			return "redirect:/admin/"+adminSearched.getUsername();
 		}
 		else {
