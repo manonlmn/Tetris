@@ -10,7 +10,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 public class Filter implements javax.servlet.Filter {
 
 	@Override
@@ -29,13 +29,13 @@ public class Filter implements javax.servlet.Filter {
 		HttpServletResponse response = (HttpServletResponse)resp;
 				
 
-		if(request.getSession().getAttribute("username")==null && (request.getRequestURI().equals("/Tetris/home") ||  request.getRequestURI().contains("Resources"))) {
+		if(request.getSession().getAttribute("3username")==null && (request.getRequestURI().equals("/Tetris/home") ||  request.getRequestURI().contains("Resources"))) {
 			chain.doFilter(request, response);
 		}
-		else if(request.getSession().getAttribute("username")==null && (!request.getRequestURI().equals("/Tetris/home"))){
+		else if(request.getSession().getAttribute("3username")==null && (!request.getRequestURI().equals("/Tetris/home"))){
 			response.sendRedirect("/Tetris/home");
 		}
-		else if(request.getSession().getAttribute("username")!=null) {
+		else if(request.getSession().getAttribute("3username")!=null) {
 			chain.doFilter(request, response);
 		}
 		

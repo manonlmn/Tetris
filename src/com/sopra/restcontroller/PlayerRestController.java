@@ -75,7 +75,7 @@ public class PlayerRestController {
 		}
 		else
 		{
-			session.setAttribute("username", player.getUsername());
+			session.setAttribute("2username", player.getUsername());
 			return new ResponseEntity<Player>(player, HttpStatus.OK);
 		}
 	}
