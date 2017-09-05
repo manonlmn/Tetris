@@ -29,11 +29,8 @@ public class FilterApi implements javax.servlet.Filter{
 		HttpServletRequest request = (HttpServletRequest)req;
 		HttpServletResponse response = (HttpServletResponse)resp;
 		
-		if(request.getSession().getAttribute("username")==null && (request.getRequestURI().equals("player"))) {
+		if(request.getSession().getAttribute("username")==null && (request.getRequestURI().equals("/Tetris/api/player/login"))) {
 			chain.doFilter(request, response);
-		}
-		else if(request.getSession().getAttribute("username")==null && (!request.getRequestURI().equals("player"))){
-			response.sendRedirect("player");
 		}
 		else if(request.getSession().getAttribute("username")!=null) {
 			chain.doFilter(request, response);
