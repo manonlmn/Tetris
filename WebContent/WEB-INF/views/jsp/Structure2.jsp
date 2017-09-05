@@ -36,6 +36,7 @@
 				<ul id='dropdown1' class='dropdown-content'>
 					<li><a href="?lang=en"><img src="Resources/img/flag_en.png"/> EN</a></li>
 					<li><a href="?lang=fr"><img src="Resources/img/flag_fr.png"/> FR</a></li>
+					<li><a href="?lang=zh"><img src="Resources/img/flag_zh.png"/> 中文</a></li>
 				</ul>
 			</li>
 		
