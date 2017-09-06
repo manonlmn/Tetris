@@ -71,7 +71,7 @@ public class FaqControllerJsf {
 		}
 		else {
 			myLanguage.setCodeLanguage(languageCode);
-			myLanguageDAO.add(myLanguage);
+			myLanguage = myLanguageDAO.add(myLanguage);
 		}
 
 		// Affectation des attributs de FAQLanguage et ajout dans la BDD
