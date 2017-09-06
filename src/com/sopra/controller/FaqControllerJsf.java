@@ -99,7 +99,7 @@ public class FaqControllerJsf {
 
 
 	// Supprimer FAQ
-	public String deleteFAQ(int idFAQ) {
+	public String deleteFAQLanguage(int idFAQ) {
 		myFAQLanguageDAO.delete(myFAQLanguageDAO.search(idFAQ).getIdFAQLanguage());
 		return "displayFAQ?faces-redirect=true";
 	}
@@ -107,7 +107,7 @@ public class FaqControllerJsf {
 
 
 	// Modifier FAQ
-	public String modifyFAQ(int id) {
+	public String modifyFAQLanguage(int id) {
 		// Récupération de l'entité FAQLanguage
 		
 		// Création des attributs
