@@ -7,7 +7,7 @@
 </div>
 <div class="col s3 pull-s3" style="margin-top : 150px">
 <a class="waves-effect waves-light btn-large" href="/Tetris/addTetrimino" style="width : 300px">
-<i class="material-icons right">add</i><spring:message code="admin.addT" /></a>
+<i class="material-icons right">add_circle_outline</i><spring:message code="admin.addT" /></a>
 </div>
 <div class="col s6 offset-s3" style="margin-top : 15px">
 <a class="waves-effect waves-light btn-large" href="/Tetris/displayplayer" style="width : 300px"> <i class="material-icons right">group</i><spring:message code="link2.header" /></a>
@@ -23,6 +23,6 @@
 </div>
 <div class="col s3 pull-s3" style="margin-top : 15px">
 <a class="waves-effect waves-light btn-large" href="/Tetris/addFAQ.xhtml" style="width : 300px">
-<i class="material-icons right">add</i><spring:message code="admin.addFAQ" /></a>
+<i class="material-icons right">add_circle_outline</i><spring:message code="admin.addFAQ" /></a>
 </div>
 </div>
