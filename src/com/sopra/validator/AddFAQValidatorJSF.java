@@ -8,9 +8,8 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-import com.sopra.model.FAQ;
 
-@FacesValidator("com.sopra.validator")
+@FacesValidator("com.sopra.validator.AddFAQValidatorJSF")
 public class AddFAQValidatorJSF implements Validator {
 
 	@Override
