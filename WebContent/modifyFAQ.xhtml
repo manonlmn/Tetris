@@ -45,7 +45,7 @@
 
 					<div class="input-field">
 						<h:outputLabel>FAQ's number</h:outputLabel>
-						<h:inputText id="faqNumber" value="#{faqControllerJsf.refFAQ}"
+						<h:inputText onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" id="faqNumber" value="#{faqControllerJsf.refFAQ}"
 							class="validate" required="true"
 							requiredMessage="Please type a FAQ's number">
 							<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
