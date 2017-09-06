@@ -45,6 +45,8 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+
+
 	<!-- Déclaration de la Servlet DispatcherServlet REST (String MVC) -->
 	<servlet>
 		<servlet-name>api</servlet-name>
@@ -63,6 +65,8 @@
 		<servlet-name>api</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
+	
+	
 
 
 	<!-- Déclaration de la Servlet DispatcherServlet (String MVC) -->
@@ -88,7 +92,6 @@
 
 
 
-
 	<filter>
 		<filter-name>filter</filter-name>
 		<filter-class>com.sopra.filter.Filter</filter-class>
@@ -97,7 +100,6 @@
 		<filter-name>filter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
 
 
 	<context-param> <!-- autres noms possibles : STATE_SAVING_METHOD, INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL 

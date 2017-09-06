@@ -2,6 +2,8 @@ package com.sopra.dao;
 
 import java.util.List;
 
+import com.sopra.model.FAQ;
+
 public interface IDAO<T> {
 
 	public T add(T obj);

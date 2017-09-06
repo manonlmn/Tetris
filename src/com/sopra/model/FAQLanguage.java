@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="faqlanguage")
 public class FAQLanguage {
@@ -40,6 +42,7 @@ public class FAQLanguage {
 	@JoinColumn(name="FAQL_IDLANGUAGE")
 	protected Language myLanguage;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="FAQL_IDFAQ")
 	protected FAQ myFAQ;

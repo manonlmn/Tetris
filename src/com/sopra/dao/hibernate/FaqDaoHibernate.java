@@ -38,6 +38,11 @@ public class FaqDaoHibernate implements IFAQDAO{
 	public List<FAQ> list() {
 		return em.createQuery("select f from FAQ f").getResultList();
 	}
+	
+	@Override
+	public List<FAQ> listByLanguage(String lang) {
+		return em.createQuery("select distinct f from FAQ f left join fetch f.listFAQLanguage fl left join fetch fl.myLanguage l where l.codeLanguage = '"+lang+"'").getResultList();
+	}
 
 	@Override
 	public FAQ search(int id) {
