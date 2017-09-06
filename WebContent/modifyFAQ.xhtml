@@ -41,24 +41,14 @@
 						<h:message id="mess2" for="response" errorClass="error2" />
 					</div>
 
-					<div>
+					<div class="input-field">
 						<h:outputLabel>FAQ's number</h:outputLabel>
-
-						<!-- Script JS pour affichage d'une liste déroulante pour sélection de l'id de la FAQ -->
-						<ui:define name="script">
-							<script type="text/javascript">
-								$(document).ready(function() {
-									$('select').material_select();
-								});
-							</script>
-						</ui:define>
-
-						<h:selectOneMenu id="refFAQ" value="#{faqControllerJsf.listFAQ()}"
-							var="faq">
-							<f:selectItems value="#{faqControllerJsf.listFAQ()}" var="faq"
-								itemValue="#{faq.idFAQ}"></f:selectItems>
+						<h:inputText id="faqNumber" value="#{faqControllerJsf.refFAQ}"
+							class="validate" required="true"
+							requiredMessage="Please type a FAQ's number">
 							<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
-						</h:selectOneMenu>
+						</h:inputText>
+						<h:message id="mess3" for="faqNumber" errorClass="error3" />
 					</div>
 					<div class="input-field">
 						<h:commandButton value="Modify"
@@ -71,5 +61,14 @@
 
 
 
+	</ui:define>
+
+	<!-- Script JS pour affichage d'une liste déroulante pour sélection de l'id de la FAQ -->
+	<ui:define name="script">
+		<script type="text/javascript">
+								$(document).ready(function() {
+									$('select').material_select();
+								});
+							</script>
 	</ui:define>
 </ui:composition>
