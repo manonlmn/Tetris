@@ -24,11 +24,15 @@ public class FaqControllerJsf {
 	private String response = "";
 	private String refFAQ = "";
 	private String languageCode = null;
-	
-	
+
+
 	@Autowired private IFAQLanguageDAO myFAQLanguageDAO;
 	@Autowired private ILanguageDAO myLanguageDAO;
 	@Autowired private IFAQDAO myFAQDAO;
+
+
+	boolean languageExist = false;
+	boolean faqExist = false;
 
 
 
@@ -42,7 +46,7 @@ public class FaqControllerJsf {
 
 	// Lister FAQLanguage
 	public List<FAQLanguage> listFAQLanguage() {
-		System.out.println("pass� par l�");
+		System.out.println("pass� par l�");
 		List<FAQLanguage> myListFAQLanguage = this.myFAQLanguageDAO.list();
 		return myListFAQLanguage;
 	}
@@ -60,6 +64,7 @@ public class FaqControllerJsf {
 		// Si la FAQ existe déjà (i.e. dans un autre langage) on l'affecte, si ç'en est une nouvelle on la crée
 		if(this.myFAQDAO.search(Integer.parseInt(this.refFAQ)) != null) {
 			myFAQ = myFAQDAO.search(Integer.parseInt(this.refFAQ));
+			this.faqExist = true;
 		}
 		else {
 			myFAQ = myFAQDAO.add(myFAQ);
@@ -68,20 +73,27 @@ public class FaqControllerJsf {
 		// Si la langue existe déjà (i.e. via une autre FAQ) on l'affecte, si ç'en est une nouvelle on la crée
 		if(this.myLanguageDAO.searchByCode(this.languageCode) != null) {
 			myLanguage = myLanguageDAO.searchByCode(this.languageCode);
+			this.languageExist = true;
 		}
 		else {
 			myLanguage.setCodeLanguage(languageCode);
 			myLanguage = myLanguageDAO.add(myLanguage);
 		}
 
-		// Affectation des attributs de FAQLanguage et ajout dans la BDD
-		myFAQLanguage.setQuestionFAQLanguage(this.question);
-		myFAQLanguage.setResponseFAQLanguage(this.response);
-		myFAQLanguage.setMyLanguage(myLanguage);
-		myFAQLanguage.setMyFAQ(myFAQ);
-		this.myFAQLanguageDAO.add(myFAQLanguage);
+		// Si la FAQLanguage n'existe pas encore, affectation des attributs et ajout dans la BDD
+		if(!faqExist || !languageExist) {
+			myFAQLanguage.setQuestionFAQLanguage(this.question);
+			myFAQLanguage.setResponseFAQLanguage(this.response);
+			myFAQLanguage.setMyLanguage(myLanguage);
+			myFAQLanguage.setMyFAQ(myFAQ);
+			this.myFAQLanguageDAO.add(myFAQLanguage);
 
-		return "displayFAQ?faces-redirect=true";
+			return "displayFAQ?faces-redirect=true";
+		}
+		else {
+			return "addFAQ";
+		}
+
 	}
 
 
@@ -96,17 +108,17 @@ public class FaqControllerJsf {
 
 	// Modifier FAQ
 	public String modifyFAQ(int id) {
-
 		// Récupération de l'entité FAQLanguage
-		FAQLanguage myFAQLanguage = this.myFAQLanguageDAO.search(id);
 		
-		// Création des nouveaux objets attributs
+		// Création des attributs
+		FAQLanguage myFAQLanguage = myFAQLanguageDAO.search(id);
 		Language myLanguage = new Language();
 		FAQ myFAQ = new FAQ();
 
 		// Si la FAQ existe déjà (i.e. dans un autre langage) on l'affecte, si ç'en est une nouvelle on la crée
 		if(this.myFAQDAO.search(Integer.parseInt(this.refFAQ)) != null) {
 			myFAQ = myFAQDAO.search(Integer.parseInt(this.refFAQ));
+			this.faqExist = true;
 		}
 		else {
 			myFAQ = myFAQDAO.add(myFAQ);
@@ -115,20 +127,26 @@ public class FaqControllerJsf {
 		// Si la langue existe déjà (i.e. via une autre FAQ) on l'affecte, si ç'en est une nouvelle on la crée
 		if(this.myLanguageDAO.searchByCode(this.languageCode) != null) {
 			myLanguage = myLanguageDAO.searchByCode(this.languageCode);
+			this.languageExist = true;
 		}
 		else {
 			myLanguage.setCodeLanguage(languageCode);
-			myLanguageDAO.add(myLanguage);
+			myLanguage = myLanguageDAO.add(myLanguage);
 		}
 
-		// Affectation des attributs de FAQLanguage et modification dans la BDD
-		myFAQLanguage.setQuestionFAQLanguage(this.question);
-		myFAQLanguage.setResponseFAQLanguage(this.response);
-		myFAQLanguage.setMyLanguage(myLanguage);
-		myFAQLanguage.setMyFAQ(myFAQ);
-		this.myFAQLanguageDAO.modify(myFAQLanguage);
+		// Si la FAQLanguage n'existe pas encore, affectation des attributs et ajout dans la BDD
+		if(!faqExist || !languageExist) {
+			myFAQLanguage.setQuestionFAQLanguage(this.question);
+			myFAQLanguage.setResponseFAQLanguage(this.response);
+			myFAQLanguage.setMyLanguage(myLanguage);
+			myFAQLanguage.setMyFAQ(myFAQ);
+			this.myFAQLanguageDAO.modify(myFAQLanguage);
 
-		return "displayFAQ?faces-redirect=true";
+			return "displayFAQ?faces-redirect=true";
+		}
+		else {
+			return "modifyFAQ";
+		}
 	}
 
 
@@ -163,6 +181,6 @@ public class FaqControllerJsf {
 	public void setLanguageCode(String languageCode) {
 		this.languageCode = languageCode;
 	}
-	
-	
+
+
 }
