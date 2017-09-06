@@ -24,14 +24,14 @@
 	<nav class="nav-extended z-depth-4">
 	<div class="nav-wrapper amber lighten-2">
 		<a href="/Tetris/admin/${username}" class="brand-logo"><i
-			class="material-icons left" style="font-size: 50px">home</i>
-		<spring:message code="title.welcome" /></a>
+			class="material-icons left" style="font-size: 50px">home</i> <spring:message
+				code="title.welcome" /></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 
 			<li>
 				<!-- Dropdown Trigger --> <a class='dropdown-button' href='#'
 				data-activates='dropdown1'><i class="material-icons left">language</i>
-				<spring:message code="title.language" /></a> <!-- Dropdown Structure -->
+					<spring:message code="title.language" /></a> <!-- Dropdown Structure -->
 				<ul id='dropdown1' class='dropdown-content'>
 					<li><a href="?lang=en"><img
 							src="Resources/img/flag_en.png" /> EN</a></li>
@@ -43,17 +43,17 @@
 			</li>
 
 			<li><a href="/Tetris/displayGamesList"><i
-					class="material-icons left">games</i>
-				<spring:message code="link1.header" /></a></li>
+					class="material-icons left">games</i> <spring:message
+						code="link1.header" /></a></li>
 			<li><a href="/Tetris/displayplayer"><i
-					class="material-icons left">group</i>
-				<spring:message code="link2.header" /></a></li>
+					class="material-icons left">group</i> <spring:message
+						code="link2.header" /></a></li>
 			<li><a href="/Tetris/displaytetrimino"><i
-					class="material-icons left">reorder</i>
-				<spring:message code="link3.header" /></a></li>
+					class="material-icons left">reorder</i> <spring:message
+						code="link3.header" /></a></li>
 			<li><a href="/Tetris/displayFAQ.xhtml"><i
-					class="material-icons left">question_answer</i>
-				<spring:message code="link4.header" /></a></li>
+					class="material-icons left">question_answer</i> <spring:message
+						code="link4.header" /></a></li>
 			<li><a class="waves-effect waves-light btn z-depth-4"
 				href="/Tetris/disconnect"><spring:message code="button.header" /><i
 					class="material-icons right">exit_to_app</i></a></li>
@@ -61,7 +61,8 @@
 	</div>
 	<tiles:insertAttribute name="header" /> </nav>
 	<tiles:insertAttribute name="body" />
+	<script src="/Tetris/Resources/jquery-3.2.1.min.js"></script>
+	<script src="/Tetris/Resources/materialize/js/materialize.min.js"></script>
 </body>
-<script src="/Tetris/Resources/jquery-3.2.1.min.js"></script>
-<script src="/Tetris/Resources/materialize/js/materialize.min.js"></script>
+
 </html>

@@ -29,7 +29,7 @@
 	</nav>
 
 	<tiles:insertAttribute name="body" />
+	<script src="/Tetris/Resources/jquery-3.2.1.min.js"></script>
+	<script src="/Tetris/Resources/materialize/js/materialize.min.js"></script>
 </body>
-<script src="/Tetris/Resources/jquery-3.2.1.min.js"></script>
-<script src="/Tetris/Resources/materialize/js/materialize.min.js"></script>
 </html>
