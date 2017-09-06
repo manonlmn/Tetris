@@ -15,7 +15,7 @@
 	</h:head>
 	<h:body class="green lighten-5">
 	
-	<nav class="z-depth-4">
+	<nav class="nav-extended z-depth-4">
 	<div class="nav-wrapper amber lighten-2">
 		<a href="home" class="brand-logo">Home Page</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -39,12 +39,17 @@
 				href="/Tetris/disconnect"><i class="material-icons right">exit_to_app</i>Quit</a></li>
 		</ul>
 	</div>
+	<div class="nav-content amber lighten-2">
+		<span class="nav-title">FAQ</span>
+		<a class="btn-floating btn-large halfway-fab waves-effect waves-light z-depth-3 teal"
+			href="addFAQLanguage" type="submit"> <i class="material-icons">add</i></a>
+	</div>
 	</nav>
 		
 		<div>
 			<ui:insert name="contenu" />
 		</div>
-
+<ui:insert name="script" />
 	</h:body>
 
 	<script src="/Tetris/Resources/jquery-3.2.1.min.js"></script>
