@@ -48,9 +48,12 @@ public class LanguageDAOHibernate implements ILanguageDAO {
 	public Language searchByCode(String code) {
 		Language language = null;
 		try {
-		language = (Language)em.createQuery("select l from Language l where l.code = "+code).getSingleResult();
+		language = (Language)em.createQuery("select l from Language l where l.codeLanguage = :code")
+								.setParameter("code", code)
+								.getResultList().get(0);
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 		}
 		return language;
 	}

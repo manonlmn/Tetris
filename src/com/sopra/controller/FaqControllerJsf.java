@@ -119,7 +119,8 @@ public class FaqControllerJsf {
 
 
 	// Supprimer FAQ
-	public String deleteFAQLanguage() {
+	public String deleteFAQLanguage(int id) {
+		System.out.println("on est là!");
 		myFAQLanguageDAO.delete(id);
 		return "displayFAQ?faces-redirect=true";
 	}

@@ -40,13 +40,13 @@
 				</ul>
 			</li>
 		
-			<li><a href="/Tetris/displayGamesList"><spring:message
+			<li><a href="/Tetris/displayGamesList"><i class="material-icons left">games</i><spring:message
 						code="link1.header" /></a></li>
-			<li><a href="/Tetris/displayplayer"><spring:message
+			<li><a href="/Tetris/displayplayer"><i class="material-icons left">group</i><spring:message
 						code="link2.header" /></a></li>
-			<li><a href="/Tetris/displaytetrimino"><spring:message
+			<li><a href="/Tetris/displaytetrimino"><i class="material-icons left">reorder</i><spring:message
 						code="link3.header" /></a></li>
-			<li><a href="/Tetris/displayFAQ.xhtml"><spring:message
+			<li><a href="/Tetris/displayFAQ.xhtml"><i class="material-icons left">question_answer</i><spring:message
 						code="link4.header" /></a></li>
 			<li><a class="waves-effect waves-light btn z-depth-4"
 				href="/Tetris/disconnect"><spring:message code="button.header" /><i
