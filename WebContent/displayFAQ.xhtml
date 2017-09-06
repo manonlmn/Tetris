@@ -28,9 +28,9 @@
 					</thead>
 					<ui:repeat var="faqL" value="#{faqControllerJsf.listFAQLanguage()}">
 						<tr>
-							<td style="text-align: center"></td>
-							<td style="text-align: center">#{faqL.question}</td>
-							<td style="text-align: center">#{faqL.reponse}</td>
+							<td style="text-align: center">#{faqL.myLanguage.codeLanguage}</td>
+							<td style="text-align: center">#{faqL.questionFAQLanguage}</td>
+							<td style="text-align: center">#{faqL.responseFAQLanguage}</td>
 							<td style="text-align: center">#{faqL.myFAQ.idFAQ}</td>
 							<td style="text-align: center"><a
 								href="modifyFAQLanguage?id=#{faqL.idFAQLanguage}"

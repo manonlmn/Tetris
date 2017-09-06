@@ -13,18 +13,18 @@
 		<div style="margin-left: auto; margin-right: auto; width: 1000px">
 			<h:form>
 				<h:outputLabel>Language</h:outputLabel>				
-				<h:inputText id="language" value="#{fAQControllerJSF.languageCode}"
+				<h:inputText id="languageCode" value="#{faqControllerJsf.languageCode}"
 					class="validate" required="true"
 					requiredMessage="Please mention the language">
 					<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
 				</h:inputText>
-				<h:message id="mess" for="language" errorClass="error" />
+				<h:message id="mess" for="languageCode" errorClass="error" />
 
 				<br />
 
 				<h:outputLabel>Question</h:outputLabel>
 				<br />
-				<h:inputText id="question" value="#{fAQControllerJSF.question}"
+				<h:inputText id="question" value="#{faqControllerJsf.question}"
 					class="validate" required="true"
 					requiredMessage="Please type a question">
 					<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
@@ -35,7 +35,7 @@
 
 				<h:outputLabel>Response</h:outputLabel>
 				<br />
-				<h:inputText id="response" value="#{fAQControllerJSF.response}"
+				<h:inputText id="response" value="#{faqControllerJsf.response}"
 					class="validate" required="true"
 					requiredMessage="Please type an answer">
 					<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
@@ -46,7 +46,7 @@
 
 				<h:outputLabel>FAQ's number</h:outputLabel>
 				<br />
-				<h:inputText id="faqNumber" value="#{fAQControllerJSF.refFAQ}"
+				<h:inputText id="faqNumber" value="#{faqControllerJsf.refFAQ}"
 					class="validate" required="true"
 					requiredMessage="Please type a FAQ's number">
 					<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />

@@ -24,6 +24,8 @@ public class FaqControllerJsf {
 	private String response = "";
 	private String refFAQ = "";
 	private String languageCode = null;
+	
+	
 	@Autowired private IFAQLanguageDAO myFAQLanguageDAO;
 	@Autowired private ILanguageDAO myLanguageDAO;
 	@Autowired private IFAQDAO myFAQDAO;
@@ -128,4 +130,39 @@ public class FaqControllerJsf {
 
 		return "displayFAQ?faces-redirect=true";
 	}
+
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public String getResponse() {
+		return response;
+	}
+
+	public void setResponse(String response) {
+		this.response = response;
+	}
+
+	public String getRefFAQ() {
+		return refFAQ;
+	}
+
+	public void setRefFAQ(String refFAQ) {
+		this.refFAQ = refFAQ;
+	}
+
+	public String getLanguageCode() {
+		return languageCode;
+	}
+
+	public void setLanguageCode(String languageCode) {
+		this.languageCode = languageCode;
+	}
+	
+	
 }
