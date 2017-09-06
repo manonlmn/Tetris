@@ -145,7 +145,7 @@ public class FaqControllerJsf {
 			return "displayFAQ?faces-redirect=true";
 		}
 		else {
-			return "modifyFAQ";
+			return "modifyFAQ?id="+id;
 		}
 	}
 
