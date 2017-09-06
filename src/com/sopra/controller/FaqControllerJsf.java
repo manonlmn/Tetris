@@ -25,7 +25,7 @@ public class FaqControllerJsf {
 	private String response = "";
 	private Integer refFAQ = 0;
 	private String languageCode = null;
-	
+
 	private int id;
 
 
@@ -36,17 +36,17 @@ public class FaqControllerJsf {
 
 	boolean languageExist = false;
 	boolean faqExist = false;
-	
-	
+
+
 	@PostConstruct
 	public void init() {
 		HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-		
+
 		if (req.getParameter("id") != null) {
 			this.id = Integer.parseInt(req.getParameter("id"));
-			
+
 			FAQLanguage faqLanguage = myFAQLanguageDAO.search(id);
-			
+
 			this.question = faqLanguage.getQuestionFAQLanguage();
 			this.response = faqLanguage.getResponseFAQLanguage();
 			this.refFAQ = faqLanguage.getMyFAQ().getIdFAQ();
@@ -66,7 +66,6 @@ public class FaqControllerJsf {
 
 	// Lister FAQLanguage
 	public List<FAQLanguage> listFAQLanguage() {
-		System.out.println("pass� par l�");
 		List<FAQLanguage> myListFAQLanguage = this.myFAQLanguageDAO.list();
 		return myListFAQLanguage;
 	}
@@ -120,7 +119,6 @@ public class FaqControllerJsf {
 
 	// Supprimer FAQ
 	public String deleteFAQLanguage(int id) {
-		System.out.println("on est l�!");
 		myFAQLanguageDAO.delete(id);
 		return "displayFAQ?faces-redirect=true";
 	}
@@ -130,7 +128,7 @@ public class FaqControllerJsf {
 	// Modifier FAQ
 	public String modifyFAQLanguage() {
 		// Récupération de l'entité FAQLanguage
-		
+
 		// Création des attributs
 		FAQLanguage myFAQLanguage = myFAQLanguageDAO.search(id);
 		Language myLanguage = new Language();
@@ -139,7 +137,6 @@ public class FaqControllerJsf {
 		// Si la FAQ existe déjà (i.e. dans un autre langage) on l'affecte, si ç'en est une nouvelle on la crée
 		if(this.myFAQDAO.search(this.refFAQ) != null) {
 			myFAQ = myFAQDAO.search(this.refFAQ);
-			this.faqExist = true;
 		}
 		else {
 			myFAQ = myFAQDAO.add(myFAQ);
@@ -148,26 +145,21 @@ public class FaqControllerJsf {
 		// Si la langue existe déjà (i.e. via une autre FAQ) on l'affecte, si ç'en est une nouvelle on la crée
 		if(this.myLanguageDAO.searchByCode(this.languageCode) != null) {
 			myLanguage = myLanguageDAO.searchByCode(this.languageCode);
-			this.languageExist = true;
 		}
 		else {
 			myLanguage.setCodeLanguage(languageCode);
 			myLanguage = myLanguageDAO.add(myLanguage);
 		}
 
-		// Si la FAQLanguage n'existe pas encore, affectation des attributs et ajout dans la BDD
-		if(!faqExist || !languageExist) {
-			myFAQLanguage.setQuestionFAQLanguage(this.question);
-			myFAQLanguage.setResponseFAQLanguage(this.response);
-			myFAQLanguage.setMyLanguage(myLanguage);
-			myFAQLanguage.setMyFAQ(myFAQ);
-			this.myFAQLanguageDAO.modify(myFAQLanguage);
 
-			return "displayFAQ?faces-redirect=true";
-		}
-		else {
-			return "modifyFAQ?id="+id;
-		}
+		myFAQLanguage.setQuestionFAQLanguage(this.question);
+		myFAQLanguage.setResponseFAQLanguage(this.response);
+		myFAQLanguage.setMyLanguage(myLanguage);
+		myFAQLanguage.setMyFAQ(myFAQ);
+		this.myFAQLanguageDAO.modify(myFAQLanguage);
+
+		return "displayFAQ?faces-redirect=true";
+
 	}
 
 
