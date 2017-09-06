@@ -9,50 +9,64 @@
 
 	<ui:define name="contenu">
 
+		<div class="row">
+			<div class="col s8 offset-s2">
+				<h:form>
+					<div class="input-field">
+						<h:outputLabel>Language</h:outputLabel>
+						<h:inputText id="language"
+							value="#{faqControllerJsf.languageCode}" class="validate"
+							required="true" requiredMessage="Please mention the language">
+							<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
+						</h:inputText>
+						<h:message id="mess" for="language" errorClass="error" />
+					</div>
+					<div class="input-field">
+						<h:outputLabel>Question</h:outputLabel>
+						<h:inputText id="question" value="#{faqControllerJsf.question}"
+							class="validate" required="true"
+							requiredMessage="Please type a question">
+							<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
+						</h:inputText>
+						<h:message id="mess1" for="question" errorClass="error1" />
+					</div>
+					<div class="input-field">
 
-		<div style="margin-left: auto; margin-right: auto; width: 1000px">
-			<h:form>
-			
-				<h:outputLabel>Language</h:outputLabel><br />
-				<h:inputText id="language" value="#{fAQControllerJSF.languageCode}" class="validate" required="true" requiredMessage="Please mention the language">
-					<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
-				</h:inputText>
-				<h:message id="mess" for="language" errorClass="error" />
-			
-				<br />
-				
-				<h:outputLabel>Question</h:outputLabel>
-				<br />
-				<h:inputText id="question" value="#{fAQControllerJSF.question}" class="validate" required="true" requiredMessage="Please type a question">
-					<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
-				</h:inputText>
-				<h:message id="mess1" for="question" errorClass="error1" />
+						<h:outputLabel>Response</h:outputLabel>
+						<h:inputText id="response" value="#{faqControllerJsf.response}"
+							class="validate" required="true"
+							requiredMessage="Please type an answer">
+							<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
+						</h:inputText>
+						<h:message id="mess2" for="response" errorClass="error2" />
+					</div>
 
-				<br />
+					<div>
+						<h:outputLabel>FAQ's number</h:outputLabel>
 
-				<h:outputLabel>Response</h:outputLabel>
-				<br />
-				<h:inputText id="response" value="#{fAQControllerJSF.response}" class="validate" required="true" requiredMessage="Please type an answer">
-					<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
-				</h:inputText>
-				<h:message id="mess2" for="response" errorClass="error2" />
+						<!-- Script JS pour affichage d'une liste déroulante pour sélection de l'id de la FAQ -->
+						<ui:define name="script">
+							<script type="text/javascript">
+								$(document).ready(function() {
+									$('select').material_select();
+								});
+							</script>
+						</ui:define>
 
-				<br />
-				
-				<h:outputLabel>FAQ's number</h:outputLabel><br />
-				<ui:define name="script">
-					<script type="text/javascript"> $(document).ready(function() {
-					    $('select').material_select();
-					  });</script>
-				</ui:define>
-				
-				<h:selectOneMenu id="refFAQ" value="#{fAQControllerJSF.listFAQ()}" var="faq">
-					<f:selectItems value="#{fAQControllerJSF.listFAQ()}" var="faq" itemValue="#{faq.idFAQ}"></f:selectItems>
-					<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
-				</h:selectOneMenu>
-				<br/>
-				<h:commandButton value="Modify" action="#{fAQController.modifyFAQLanguage()}"></h:commandButton>
-			</h:form>
+						<h:selectOneMenu id="refFAQ" value="#{faqControllerJsf.listFAQ()}"
+							var="faq">
+							<f:selectItems value="#{faqControllerJsf.listFAQ()}" var="faq"
+								itemValue="#{faq.idFAQ}"></f:selectItems>
+							<f:validator validatorId="com.sopra.validator.AddFAQValidatorJSF" />
+						</h:selectOneMenu>
+					</div>
+					<div class="input-field">
+						<h:commandButton value="Modify"
+							action="#{faqControllerJsf.modifyFAQLanguage()}"
+							class="waves-effect waves-light btn z-depth-4"></h:commandButton>
+					</div>
+				</h:form>
+			</div>
 		</div>
 
 

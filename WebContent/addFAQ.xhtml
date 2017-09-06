@@ -10,7 +10,8 @@
 
 	<ui:define name="contenu">
 
-		<div style="margin-left: auto; margin-right: auto; width: 1000px">
+		<div class="row">
+			<div class="col s8 offset-s2">
 			<h:form>
 				<h:outputLabel>Language</h:outputLabel>				
 				<h:inputText id="languageCode" value="#{faqControllerJsf.languageCode}"
@@ -57,6 +58,7 @@
 					action="#{faqControllerJsf.addFAQLanguage()}"
 					class="waves-effect waves-light btn z-depth-4"></h:commandButton>
 			</h:form>
+		</div>
 		</div>
 	</ui:define>
 	
