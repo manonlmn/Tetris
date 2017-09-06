@@ -6,38 +6,45 @@
 	template="/WEB-INF/template.xhtml">
 
 	<ui:define name="titre">FAQs' List</ui:define>
+	<ui:define name="header">
+		<span class="nav-title">FAQs' List</span>
 
+		<a class="btn-floating btn-large halfway-fab waves-effect waves-light z-depth-3 teal"
+			href="addFAQ.xhtml" type="submit"> <i class="material-icons">add</i></a>
+	</ui:define>
 	<ui:define name="contenu">
-	<div class="row">
-	<div class="col s8 offset-s2">
-		<table>
-		<thead>
-		<tr>
-			<th style="text-align : center">Language</th>
-			<th style="text-align : center">Question</th>
-			<th style="text-align : center">Response</th>
-			<th style="text-align : center">FAQ's number</th>
-			<th ></th>
-			<th></th>
-		</tr>
-		</thead>
-			<ui:repeat var="faqL" value="#{fAQControllerJSF.listFAQLanguage()}">
-				<tr>
-					<td style="text-align : center">#{faqL.myLanguage.code}</td>
-					<td style="text-align : center">#{faqL.question}</td>
-					<td style="text-align : center">#{faqL.reponse}</td>
-					<td style="text-align : center">#{faqL.myFAQ.idFAQ}</td>
-					<td style="text-align : center"><a href="modifyFAQLanguage?id=#{faqL.idFAQLanguage}" class="secondary-content">
-						<i class="material-icons">mode_edit</i>
-					</a></td>
-					<td style="text-align : center"><a href="deleteFAQLanguage?id=${faqL.idFAQLanguage}" class="secondary-content">
-						<i class="material-icons">delete</i>
-					</a></td>
-				</tr>
-			
-		 </ui:repeat>
-		</table>
+		<div class="row">
+			<div class="col s8 offset-s2">
+				<table>
+					<thead>
+						<tr>
+							<th style="text-align: center">Language</th>
+							<th style="text-align: center">Question</th>
+							<th style="text-align: center">Response</th>
+							<th style="text-align: center">FAQ's number</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<ui:repeat var="faqL" value="#{faqControllerJsf.listFAQLanguage()}">
+						<tr>
+							<td style="text-align: center"></td>
+							<td style="text-align: center">#{faqL.question}</td>
+							<td style="text-align: center">#{faqL.reponse}</td>
+							<td style="text-align: center">#{faqL.myFAQ.idFAQ}</td>
+							<td style="text-align: center"><a
+								href="modifyFAQLanguage?id=#{faqL.idFAQLanguage}"
+								class="secondary-content"> <i class="material-icons">mode_edit</i>
+							</a></td>
+							<td style="text-align: center"><a
+								href="deleteFAQLanguage?id=${faqL.idFAQLanguage}"
+								class="secondary-content"> <i class="material-icons">delete</i>
+							</a></td>
+						</tr>
+
+					</ui:repeat>
+				</table>
+			</div>
 		</div>
-	 </div>
 	</ui:define>
 </ui:composition>

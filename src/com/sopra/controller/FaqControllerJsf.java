@@ -18,7 +18,7 @@ import com.sopra.model.Language;
 
 @Controller
 @Scope("request")
-public class FAQControllerJSF {
+public class FaqControllerJsf {
 
 	private String question = "";
 	private String response = "";
@@ -40,6 +40,7 @@ public class FAQControllerJSF {
 
 	// Lister FAQLanguage
 	public List<FAQLanguage> listFAQLanguage() {
+		System.out.println("passé par là");
 		List<FAQLanguage> myListFAQLanguage = this.myFAQLanguageDAO.list();
 		return myListFAQLanguage;
 	}
