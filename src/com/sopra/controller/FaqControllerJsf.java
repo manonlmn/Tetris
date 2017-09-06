@@ -1,9 +1,10 @@
 package com.sopra.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.Valid;
+import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -22,8 +23,10 @@ public class FaqControllerJsf {
 
 	private String question = "";
 	private String response = "";
-	private String refFAQ = "";
+	private Integer refFAQ = 0;
 	private String languageCode = null;
+	
+	private int id;
 
 
 	@Autowired private IFAQLanguageDAO myFAQLanguageDAO;
@@ -33,6 +36,23 @@ public class FaqControllerJsf {
 
 	boolean languageExist = false;
 	boolean faqExist = false;
+	
+	
+	@PostConstruct
+	public void init() {
+		HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		
+		if (req.getParameter("id") != null) {
+			this.id = Integer.parseInt(req.getParameter("id"));
+			
+			FAQLanguage faqLanguage = myFAQLanguageDAO.search(id);
+			
+			this.question = faqLanguage.getQuestionFAQLanguage();
+			this.response = faqLanguage.getResponseFAQLanguage();
+			this.refFAQ = faqLanguage.getMyFAQ().getIdFAQ();
+			this.languageCode = faqLanguage.getMyLanguage().getCodeLanguage();
+		}
+	}
 
 
 
@@ -62,8 +82,8 @@ public class FaqControllerJsf {
 		FAQ myFAQ = new FAQ();
 
 		// Si la FAQ existe déjà (i.e. dans un autre langage) on l'affecte, si ç'en est une nouvelle on la crée
-		if(this.myFAQDAO.search(Integer.parseInt(this.refFAQ)) != null) {
-			myFAQ = myFAQDAO.search(Integer.parseInt(this.refFAQ));
+		if(this.myFAQDAO.search(this.refFAQ) != null) {
+			myFAQ = myFAQDAO.search(this.refFAQ);
 			this.faqExist = true;
 		}
 		else {
@@ -99,15 +119,15 @@ public class FaqControllerJsf {
 
 
 	// Supprimer FAQ
-	public String deleteFAQLanguage(int idFAQ) {
-		myFAQLanguageDAO.delete(myFAQLanguageDAO.search(idFAQ).getIdFAQLanguage());
+	public String deleteFAQLanguage() {
+		myFAQLanguageDAO.delete(id);
 		return "displayFAQ?faces-redirect=true";
 	}
 
 
 
 	// Modifier FAQ
-	public String modifyFAQLanguage(int id) {
+	public String modifyFAQLanguage() {
 		// Récupération de l'entité FAQLanguage
 		
 		// Création des attributs
@@ -116,8 +136,8 @@ public class FaqControllerJsf {
 		FAQ myFAQ = new FAQ();
 
 		// Si la FAQ existe déjà (i.e. dans un autre langage) on l'affecte, si ç'en est une nouvelle on la crée
-		if(this.myFAQDAO.search(Integer.parseInt(this.refFAQ)) != null) {
-			myFAQ = myFAQDAO.search(Integer.parseInt(this.refFAQ));
+		if(this.myFAQDAO.search(this.refFAQ) != null) {
+			myFAQ = myFAQDAO.search(this.refFAQ);
 			this.faqExist = true;
 		}
 		else {
@@ -166,11 +186,11 @@ public class FaqControllerJsf {
 		this.response = response;
 	}
 
-	public String getRefFAQ() {
+	public Integer getRefFAQ() {
 		return refFAQ;
 	}
 
-	public void setRefFAQ(String refFAQ) {
+	public void setRefFAQ(Integer refFAQ) {
 		this.refFAQ = refFAQ;
 	}
 
@@ -183,4 +203,20 @@ public class FaqControllerJsf {
 	}
 
 
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 }
