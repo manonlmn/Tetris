@@ -27,8 +27,8 @@
 	<!-- Configuration de la vue "displayAdmin" -->
 	<definition name="displayAdmin" extends="base.definition2">
 		<put-attribute name="title" value="admin.title" />
-		<put-attribute name="header" value="/WEB-INF/views/jsp/displayAdmin.jsp" />
-		<put-attribute name="body" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/jsp/headerAdmin.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/displayAdmin.jsp" />
 	</definition>
 	
 	<!-- Configuration de la vue "displayPlayer" -->

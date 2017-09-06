@@ -12,6 +12,7 @@
 			</div>
 
 			<div class="input-field col s4">
+			<i class="material-icons prefix">lock</i>
 				<input id="password" type="password" class="validate"
 					name="password"> <label for="password"><spring:message
 						code="home.pwd" /></label>
