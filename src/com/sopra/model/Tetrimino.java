@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name="tetrimino")
@@ -31,6 +32,7 @@ public class Tetrimino implements Serializable {
 	@NotNull
 	private String nameTetrimino;
 	
+	@JsonProperty("couleur")
 	@Column(name="TET_COLOUR")
 	@NotNull
 	private String colourTetrimino;
@@ -38,6 +40,7 @@ public class Tetrimino implements Serializable {
 	@Column(name="TET_COEF")
 	private Integer coef;
 	
+	@JsonProperty("figures")
 	@JsonIgnore
 	@OneToMany(mappedBy="tetrimino")
 	@OrderBy("rotationNumber ASC")

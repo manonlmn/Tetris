@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name="figure")
@@ -18,9 +19,11 @@ public class Figure implements Serializable{
 	@Column(name="FIG_ID")
 	private Integer idFigure;
 	
+	@JsonProperty("ordre")
 	@Column(name="FIG_NUM_ROT")
 	private Integer rotationNumber;
 	
+	@JsonProperty("blocs")
 	@JsonIgnore
 	@OneToMany(mappedBy="figure")
 	List<Block> myBlocks;
