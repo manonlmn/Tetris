@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
@@ -24,14 +25,15 @@ public class Block implements Serializable {
 	@Column(name="BLO_ID")
 	private Integer idBlock;
 	
-	@JsonProperty("positionX")
+	@JsonProperty("positionY")
 	@Column(name="x")
 	private Integer x;
 	
-	@JsonProperty("positionY")
+	@JsonProperty("positionX")
 	@Column(name="y")
 	private Integer y;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "BLO_ID_FIG")
 	private Figure figure;

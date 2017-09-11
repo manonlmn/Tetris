@@ -24,10 +24,10 @@ public class Figure implements Serializable{
 	private Integer rotationNumber;
 	
 	@JsonProperty("blocs")
-	@JsonIgnore
 	@OneToMany(mappedBy="figure")
 	List<Block> myBlocks;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "FIG_ID_TETRI")
 	private Tetrimino tetrimino;

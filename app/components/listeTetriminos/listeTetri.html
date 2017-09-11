@@ -8,12 +8,13 @@
   </thead>
   <tbody>
   <tr ng-repeat="tetri in tetriminos | orderBy :'coef'">
+    <td style="position : relative; width : 65px; height : 65px;"><div ng-repeat="bloc in tetri.figures[0].blocs" class="bloc affichage" style="background-color : {{tetri.couleur}}; top :{{bloc.positionY*10}}; left : {{bloc.positionX*10}}"></div></td>
     <td>{{tetri.nameTetrimino}}</td>
     <td><div class="chip z-depth-2"
 							style="
                 height:20px;
                 width:100px;
-                background-color:{{tetri.colourTetrimino}};
+                background-color:{{tetri.couleur}};
                 border-style: solid;
                 border-width: 1px;
                 border-color : #bdbdbd;"></div></td>

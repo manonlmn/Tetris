@@ -90,6 +90,11 @@
 	transition: all 0.25s ease;
 }
 
+.bloc.affichage{
+	width: 10px;
+	height: 10px;
+}
+
 
 .bloc.removing {
 	animation: removing 0.25s;

@@ -41,7 +41,6 @@ public class Tetrimino implements Serializable {
 	private Integer coef;
 	
 	@JsonProperty("figures")
-	@JsonIgnore
 	@OneToMany(mappedBy="tetrimino")
 	@OrderBy("rotationNumber ASC")
 	List<Figure> myFigures;
