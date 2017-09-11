@@ -1,12 +1,16 @@
 <table>
+	<thead>
 	<tr>
-		<td>Joueur</td>
-		<td>Score</td>
-		<td>Type de partie</td>
+		<th>Joueur</th>
+		<th>Score</th>
+		<th>Type de partie</th>
 	</tr>
+</thead>
+<tbody>
 	<tr ng-repeat="highscore in topscores | orderBy: '-points' | limitTo: 10">
 		<td>{{highscore.player.username}}</td>
 		<td>{{highscore.points}}</td>
 		<td ng-show="{{highscore.game.type}}">VS</td><td ng-show="{{!highscore.game.type}}">Solo</td>
 	</tr>
+</tbody>
 	</table>
