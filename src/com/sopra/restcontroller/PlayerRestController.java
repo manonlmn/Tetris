@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import com.sopra.dao.IPlayerDAO;
 import com.sopra.generic.Tools;
 import com.sopra.model.Player;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value="/player")
 public class PlayerRestController {
