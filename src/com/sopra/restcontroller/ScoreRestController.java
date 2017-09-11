@@ -1,5 +1,7 @@
 package com.sopra.restcontroller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,13 @@ public class ScoreRestController {
 	public ResponseEntity<Score> getById(@PathVariable Integer id){
 		Score score = this.scoreDAO.search(id);
 		return new ResponseEntity<Score> (score, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="", method=RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<List<Score>> getAll(){
+		List<Score> listScore = this.scoreDAO.list();
+		return new ResponseEntity<List<Score>> (listScore, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="", method=RequestMethod.PUT)
