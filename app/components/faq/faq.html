@@ -1,12 +1,14 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Question</th>
       <th>Réponse</th>
     </tr>
     </thead>
   <tbody>
-  <tr ng-repeat="faq in faqList | orderBy :'idFAQ'">
+  <tr ng-repeat="faq in faqList">
+    <td>{{faq.idFAQ}}</td>
     <td>{{faq.questionFAQLanguage}}</td>
     <td>{{faq.responseFAQLanguage}}</td>
   </tr>

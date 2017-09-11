@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sopra.dao.IFAQLanguageDAO;
+import com.sopra.model.FAQ;
 import com.sopra.model.FAQLanguage;
 
 
@@ -38,6 +39,8 @@ public class FAQLanquageDAOHibernate implements IFAQLanguageDAO {
 	public List<FAQLanguage> list() {
 		return em.createQuery("select fl from FAQLanguage fl").getResultList();
 	}
+	
+	
 
 	@Override
 	public FAQLanguage search(int id) {

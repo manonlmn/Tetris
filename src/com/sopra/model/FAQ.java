@@ -12,6 +12,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="faq")
 public class FAQ {
@@ -23,6 +25,7 @@ public class FAQ {
 	protected Integer idFAQ;
 
 	@OneToMany(mappedBy="myFAQ")
+	@JsonIgnore
 	protected List<FAQLanguage> listFAQLanguage;
 	
 	//GETTERS & SETTERS
@@ -44,4 +47,11 @@ public class FAQ {
 
 
 
+	public String getQuestionFAQLanguage() {
+		return this.listFAQLanguage.get(0).questionFAQLanguage;
+	}
+	
+	public String getResponseFAQLanguage() {
+		return this.listFAQLanguage.get(0).responseFAQLanguage;
+	}
 }

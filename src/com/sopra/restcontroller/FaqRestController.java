@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sopra.dao.IFAQDAO;
+import com.sopra.dao.IFAQLanguageDAO;
 import com.sopra.model.FAQ;
 
 @CrossOrigin("*")
