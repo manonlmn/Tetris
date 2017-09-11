@@ -1,1 +1,22 @@
-<h4>feuozgheohghieognpieanpg</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Nom du Tetrimino</th>
+      <th>Couleur</th>
+      <th>Coefficient du tetrimino</th>
+  </thead>
+  <tbody>
+  <tr ng-repeat="tetri in tetriminos | orderBy :'coef'">
+    <td>{{tetri.nameTetrimino}}</td>
+    <td><div class="chip z-depth-2"
+							style="
+                height:20px;
+                width:100px;
+                background-color:{{tetri.colourTetrimino}};
+                border-style: solid;
+                border-width: 1px;
+                border-color : #bdbdbd;"></div></td>
+    <td>{{tetri.coef}}</td>
+  </tr>
+</tbody>
+</table>
