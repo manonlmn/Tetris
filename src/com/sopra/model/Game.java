@@ -130,9 +130,11 @@ public class Game implements Serializable{
 
 	@JsonIgnore
 	public Score getScoreB() {
-		for (Score score : myScores) {
-			if (score.getPlayer().getIdPerson() == player2.getIdPerson()) {
-				return score;
+		if (player2 != null) {
+			for (Score score : myScores) {
+				if (score.getPlayer().getIdPerson() == player2.getIdPerson()) {
+					return score;
+				}
 			}
 		}
 		return null;

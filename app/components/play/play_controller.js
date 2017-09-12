@@ -1,21 +1,21 @@
 var app = angular.module("tpAngular");
 
-app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore, playResources, gameResources, playerResources) {
+app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore, playResources, gameResources, playerResources, loginResources) {
 
 		Page.setTitle("Jouer");
 
-		var game = null;
+		var game = {};
 		$scope.isHidden = true;
 		$scope.isActiv = false;
 		$scope.isChoiceVS = false;
-		$scope.games = gameResources.query();
+		$scope.games = gameResources.query(function() {
+			setTimeout(function() {
+				$('select').material_select();
+			}, 100);
+		});
 
-		var joueur = playerResources.recuperer();
+		var joueur = loginResources.player;
 
-		//initialisation pour les selects :
-		$(document).ready(function() {
-	    $('select').material_select();
-	 	});
 
 
 		/*
@@ -56,19 +56,20 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		$scope.onGameOver = function() {
 			angular.element(tetrisBoard).off('gameOver', this.onGameOver);
 			game.status = true;
-			gameResources.save({id:game.idGame}, game);
+			gameResources.save({id:game.idGame}, game);//modification de la partie -> changement du status en true + récupération de l'idpour modifs,
 			//ajout du score dans la bdd
 			playResources.add({
 			level : tetrisScore.level,
 			lines : tetrisScore.lines,
 			points : tetrisScore.points,
-			game : game, //modification de la partie -> changement du status en true + récupération de l'idée pour modifs,
+			game : game,
 			player : joueur});
 			alert("Game Over !");
 
-			game = null;
+			game = {};
 			$scope.isHidden = true;
 			$scope.isActiv = false;
+			//trouver un moyen de reinit le board de tetris
 		};
 
 		$scope.choiceVS = function(){
@@ -76,15 +77,10 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			$scope.isChoiceVS = true;
 		}
 
-		$scope.secondPlayerVS() = function(){
-			//modification de la partie
-
-			game = $scope.selectedGame;
-			//a voir avec Jérémy
-			gameResources.save({id:game.idGame}, {
-				player2 : joueur
-			});
-
+		$scope.secondPlayerVS = function(){
+			game.idGame = $scope.selectedGame;
+			game.player2 = joueur;
+			gameResources.save({id:game.idGame}, game);
 			$scope.isChoiceVS = false;
 			$scope.isActiv = true;
 		}
