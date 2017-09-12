@@ -1,22 +1,27 @@
 <div class="col s12">
 <div class="row">
-	<div class="input-field col s6 offset-s3">
+	<div class="input-field col s6 offset-s2">
+		<i class="material-icons prefix">account_circle</i>
 		<input type="text" id = "username" ng-model="newplayer.username" />
 		<label for="username">Nom d'utilisateur</label>
 	</div>
-	<div class ="input-field col s6 offset-s3">
-			<input type="password" id="password" ng-model="newplayer.password" />
-			<label for="password">Mot de passe</label>
-	</div>
-	<div class ="input-field col s6 offset-s3">
+
+	<div class ="input-field col s6 offset-s2">
+		<i class="material-icons prefix">face</i>
 		<input type="text" id="lastname" ng-model="newplayer.lastName" />
 		<label for="lastname">Nom de famille</label>
 	</div>
-	<div class ="input-field col s6 offset-s3">
+	<div class ="input-field col s6 offset-s2">
+		<i class="material-icons prefix">child_care</i>
 		<input type="text" id="Prénom" ng-model="newplayer.name" />
 		<label for="Prénom">Prénom</label>
 	</div>
-	<div class ="input-field col s6 offset-s3">
+	<div class ="input-field col s6 offset-s2">
+		<i class="material-icons prefix">lock</i>
+			<input type="password" id="password" ng-model="newplayer.password" />
+			<label for="password">Mot de passe</label>
+	</div>
+	<div class ="input-field col s6 offset-s4">
 		<input type="submit" class="btn waves-effect waves-light" ng-click="sinscrire()" />
 	</div>
 </div>
