@@ -62,3 +62,12 @@ app.config(function($routeProvider){
 			controller : "bonusController"
 		});
 });
+
+
+app.config(function($routeProvider){
+	$routeProvider
+		.when("/Register", {
+			templateUrl : "./app/components/registration/register.html",
+			controller : "registerController"
+		});
+});
