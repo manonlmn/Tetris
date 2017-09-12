@@ -31,16 +31,36 @@ app.run(['$rootScope', '$location', 'loginResources', function($rootScope, $loca
 		var veutSeLogger = true;
 		var veutSinscrire = true;
 		var veutLive = true;
+		var veutJouer = true;
+		var veutListeTetri = true;
+		var veutAccueil = true;
+		var veutTopScore = true;
+		var veutFaq = true;
 
 		if (nextRoute.originalPath) {
 			veutSeLogger = nextRoute.originalPath.indexOf('/Login') !== -1;
 			veutSinscrire = nextRoute.originalPath.indexOf('/Register') !== -1;
 			veutLive = nextRoute.originalPath.indexOf('/Bonus') !== -1;
+			veutJouer = nextRoute.originalPath.indexOf('/Play') !== -1;
+			veutListeTetri = nextRoute.originalPath.indexOf('/Tetrimino_List') !== -1;
+			veutAccueil = nextRoute.originalPath.indexOf('/') !== -1;
+			veutTopScore = nextRoute.originalPath.indexOf('/Top_Scores') !== -1;
+			veutFAQ = nextRoute.originalPath.indexOf('/FAQ') !== -1;
 		}
 
-		if (!veutSeLogger && !veutSinscrire && !veutLive && !loginResources.isConnected()) {
-			event.preventDefault(); $location.path('/Login');
+		if (!veutSeLogger && !veutSinscrire && !veutLive && !veutJouer && !veutListeTetri && !veutAccueil && !veutTopScore && !veutFaq && !loginResources.isConnected()) {
+			event.preventDefault();
+			$location.path('/Login');
 		}
+		else if (!veutSeLogger && !veutSinscrire && !veutLive && !veutJouer && !veutListeTetri && !veutAccueil && !veutTopScore && !veutFaq && loginResources.isConnected()) {
+			event.preventDefault();
+			$location.path('/');
+		}
+		else if (!veutSeLogger && !veutSinscrire && !veutLive && !loginResources.isConnected()) {
+			event.preventDefault();
+			$location.path('/Login');
+		}	
+		
 	});
 }]);
 // Ca marche maintenant?

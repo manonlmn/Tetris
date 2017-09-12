@@ -49,7 +49,7 @@ public class PlayerDaoHibernate implements IPlayerDAO {
 	
 	@Override
 	public Player searchbyUNandPWd(String username, String password) {
-		Query myQuery = em.createQuery("select p from Player p where p.username= :username and p.password= :password");
+		Query myQuery = em.createQuery("select p from Player p where p.username= :username and p.password= :password and p.banned=false");
 
 		//On ins�re les param�tres
 		myQuery.setParameter("username", username);

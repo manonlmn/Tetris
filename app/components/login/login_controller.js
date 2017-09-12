@@ -11,7 +11,9 @@ app.controller("loginController", function($scope, $resource, Page, playerResour
 	
 	$scope.login = function() 
 	{
+		
 		loginResources.player = playerResources.recuperer($scope.player, function() {
+			
 			$location.path("/");
 		});
 	};
