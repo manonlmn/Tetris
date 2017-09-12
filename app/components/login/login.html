@@ -1,13 +1,20 @@
+
 <table>
 	<tr>
 		<td>
+			<div class="input-field col s5">
+				<i class="material-icons prefix">account_circle</i>
 			<input type="text" placeholder="Nom d'utilisateur" ng-model="player.username" />
+		</div>
 		</td>
 		<td>
+			<div class="input-field col s5">
+				<i class="material-icons prefix">lock</i>
 			<input type="password" placeholder="Mot de passe" ng-model="player.password" />
+		</div>
 		</td>
 		<td>
-			<input type="submit" ng-click="login()" />
+			<input class="btn waves-effect waves-light" type="submit" ng-click="login()" />
 		</td>
 	</tr>
 </table>
