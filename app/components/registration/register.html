@@ -1,22 +1,23 @@
-<table ng-controller="registerController">
-	<tr>
-		<td>Nom d'utilisateur :</td>
-		<td><input type="text" ng-model="newplayer.username" /></td>
-	</tr>
-		<tr>
-		<td>Mot de passe :</td>
-		<td><input type="password" ng-model="newplayer.password" /></td>
-	</tr>
-		<tr>
-		<td>Nom de famille :</td>
-		<td><input type="text" ng-model="newplayer.lastName" /></td>
-	</tr>
-		<tr>
-		<td>Prénom :</td>
-		<td><input type="text" ng-model="newplayer.name" /></td>
-	</tr>
-		<tr>
-		<td></td>
-		<td><input type="submit" ng-click="sinscrire()" /></td>
-	</tr>
-</table>
+<div class="col s12">
+<div class="row">
+	<div class="input-field col s6 offset-s3">
+		<input type="text" id = "username" ng-model="newplayer.username" />
+		<label for="username">Nom d'utilisateur</label>
+	</div>
+	<div class ="input-field col s6 offset-s3">
+			<input type="password" id="password" ng-model="newplayer.password" />
+			<label for="password">Mot de passe</label>
+	</div>
+	<div class ="input-field col s6 offset-s3">
+		<input type="text" id="lastname" ng-model="newplayer.lastName" />
+		<label for="lastname">Nom de famille</label>
+	</div>
+	<div class ="input-field col s6 offset-s3">
+		<input type="text" id="Prénom" ng-model="newplayer.name" />
+		<label for="Prénom">Prénom</label>
+	</div>
+	<div class ="input-field col s6 offset-s3">
+		<input type="submit" class="btn waves-effect waves-light" ng-click="sinscrire()" />
+	</div>
+</div>
+</div>
