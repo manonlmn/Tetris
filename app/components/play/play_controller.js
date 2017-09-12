@@ -1,6 +1,6 @@
 var app = angular.module("tpAngular");
 
-app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore) {
+app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore, playResources) {
 
 		Page.setTitle("Jouer");
 
@@ -21,8 +21,11 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		 */
 		$scope.onGameOver = function() {
 			angular.element(tetrisBoard).off('gameOver', this.onGameOver);
-
-
-			alert('Game Over ! (débrouillez-vous ...)');
+			playResources.add({
+			level : tetrisScore.level,
+			lines : tetrisScore.lines,
+			points : tetrisScore.points,
+			game : {idGame : 2},
+			player : {idPerson : 7}});
 		}
 	});
