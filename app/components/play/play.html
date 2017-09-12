@@ -1,6 +1,6 @@
-<button ng-click="start()">Commencer</button>
+<button class="waves-effect waves-light btn z-depth-4" style="margin-top : 10px; margin-bottom : 10px" ng-click="start()" ng-show="isActiv">Commencer</button>
 
-<div>
+<div ng-show="isActiv">
 	<div class="board"></div>
 
 	<div class="score">
@@ -9,3 +9,10 @@
 		<small><span>0</span> lignes</small>
 	</div>
 </div>
+
+
+<button class="waves-effect waves-light btn-large z-depth-4" style="width : 300px; margin-top : 20px" ng-click="newSolo()" ng-show="isHidden">
+	<i class="material-icons right">looks_one</i>Partie Solo</button>
+<br/>
+<button class="waves-effect waves-light btn-large z-depth-4" style="width : 300px; margin-top : 20px" ng-click="start()" ng-show="isHidden">
+	<i class="material-icons right">looks_two</i>Duel</button>

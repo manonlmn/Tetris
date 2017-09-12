@@ -26,6 +26,7 @@ public class GamesRestController {
 	@Autowired
 	private IGameDAO gameDAO;
 	
+	//recuperation de la liste des parties 
 	@RequestMapping(value="", method=RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<List<Game>> getAll(){
@@ -39,6 +40,7 @@ public class GamesRestController {
 		return new ResponseEntity<List<Game>>(myGames, HttpStatus.OK);
 	}
 	
+	//ajout d'une partie
 	@RequestMapping(value="", method=RequestMethod.PUT)
 	@ResponseBody
 	public ResponseEntity<Game> add(@RequestBody Game game){
