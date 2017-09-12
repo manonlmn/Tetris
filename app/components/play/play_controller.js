@@ -5,7 +5,8 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		Page.setTitle("Jouer");
 
 		var game = null;
-
+		$scope.isHidden = true;
+		$scope.isActiv = false;
 		/*
 		 * Fonction de démarrage de la partie
 		 */
@@ -18,12 +19,12 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		//creation partie solo
 		$scope.newSolo = function(){
       gameResources.add(
-				this.game = {
-        player1 : {idPerson : 7},
-				status : false, //statut de la partie true pour finie et false pour en cours
-				type : false //boolean pour le type de partie : false = solo & true = vs
-			};
-		);
+				this.game : {
+	        player1 : {idPerson : 7},
+					status : false, //statut de la partie true pour finie et false pour en cours
+					type : false //boolean pour le type de partie : false = solo & true = vs
+				};
+		)};
 
 		/*
 		 * Fonction de game over
@@ -35,9 +36,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			level : tetrisScore.level,
 			lines : tetrisScore.lines,
 			points : tetrisScore.points,
-			game : {idGame : 2}, //modification de la partie -> changement du status en true + récupération de l'idée pour modifs,
+			gameResources.save({ id: this.game.idGame },), //modification de la partie -> changement du status en true + récupération de l'idée pour modifs,
 			player : {idPerson : 7}});
-
-
 		}
 	});

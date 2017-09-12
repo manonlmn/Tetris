@@ -62,12 +62,3 @@ app.config(function($routeProvider){
 			controller : "bonusController"
 		});
 });
-
-
-app.config(function($routeProvider){
-	$routeProvider
-		.when("/choice", {
-			templateUrl : "./app/components/gameChoice/gameChoice.html",
-			controller : "choiceController"
-		});
-});
