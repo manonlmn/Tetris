@@ -10,3 +10,16 @@ app.config(function(tetrisProvider, tetriminosProvider, API_URL) {
 
 	tetriminosProvider.setApiUrl(API_URL + "/tetrimino");
 });
+
+
+app.run(['$rootScope', '$location', 'Auth', function($rootScope, $location, Auth) {
+	$rootScope.$on('$routeChangeStart', function(event, nextRoute, previousRoute) {
+		var toLogin = true;
+		if (nextRoute.originalPath) {
+			toLogin = nextRoute.originalPath.indexOf('/account/login') !== -1;
+		}
+		if (!toLogin && !Auth.isLogged()) {
+			event.preventDefault(); $location.path('/account/login');
+		}
+	});
+}]);

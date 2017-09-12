@@ -1,18 +1,22 @@
-<button class="waves-effect waves-light btn z-depth-4" style="margin-top : 10px; margin-bottom : 10px" ng-click="start()" ng-show="isActiv">Commencer</button>
-
-<div ng-show="isActiv">
-	<div class="board"></div>
-
-	<div class="score">
-		<span>0</span>
-		<div class="next-tetrimino"></div>
-		<small><span>0</span> lignes</small>
-	</div>
-</div>
-
-
-<button class="waves-effect waves-light btn-large z-depth-4" style="width : 300px; margin-top : 20px" ng-click="newSolo()" ng-show="isHidden">
-	<i class="material-icons right">looks_one</i>Partie Solo</button>
-<br/>
-<button class="waves-effect waves-light btn-large z-depth-4" style="width : 300px; margin-top : 20px" ng-click="start()" ng-show="isHidden">
-	<i class="material-icons right">looks_two</i>Duel</button>
+<table ng-controller="registerController">
+	<tr>
+		<td>Nom d'utilisateur :</td>
+		<td><input type="text" ng-model="newplayer.username" /></td>
+	</tr>
+		<tr>
+		<td>Mot de passe :</td>
+		<td><input type="password" ng-model="newplayer.password" /></td>
+	</tr>
+		<tr>
+		<td>Nom de famille :</td>
+		<td><input type="text" ng-model="newplayer.lastName" /></td>
+	</tr>
+		<tr>
+		<td>Prénom :</td>
+		<td><input type="text" ng-model="newplayer.name" /></td>
+	</tr>
+		<tr>
+		<td></td>
+		<td><input type="submit" ng-click="sinscrire()" /></td>
+	</tr>
+</table>
