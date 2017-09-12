@@ -9,7 +9,7 @@ app.factory('playResources', ['$resource', 'API_URL', function($resource, API_UR
 
 //creation d'une factory pour récupérer les parties et en créer une
 app.factory('gameResources', ['$resource', 'API_URL', function($resource, API_URL) {
-  return $resource(API_URL + '/games', null, {
+  return $resource(API_URL + '/games/:id', null, {
     'add': { method:'PUT' }
   });
 }]);
