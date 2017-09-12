@@ -12,14 +12,20 @@ app.config(function(tetrisProvider, tetriminosProvider, API_URL) {
 });
 
 
-app.run(['$rootScope', '$location', 'Auth', function($rootScope, $location, Auth) {
+app.run(['$rootScope', '$location', 'loginResources', function($rootScope, $location, loginResources) {
 	$rootScope.$on('$routeChangeStart', function(event, nextRoute, previousRoute) {
-		var toLogin = true;
+		var veutSeLogger = true;
+		var veutSinscrire = true;
+		var veutLive = true;
+		
 		if (nextRoute.originalPath) {
-			toLogin = nextRoute.originalPath.indexOf('/account/login') !== -1;
+			veutSeLogger = nextRoute.originalPath.indexOf('/Login') !== -1;
+			veutSinscrire = nextRoute.originalPath.indexOf('/Register') !== -1;
+			veutLive = nextRoute.originalPath.indexOf('/Bonus') !== -1;
 		}
-		if (!toLogin && !Auth.isLogged()) {
-			event.preventDefault(); $location.path('/account/login');
+		
+		if (!veutSeLogger && !veutSinscrire && !veutLive && !loginResources.isConnected()) {
+			event.preventDefault(); $location.path('/Login');
 		}
 	});
 }]);
