@@ -1,4 +1,4 @@
-<button class="waves-effect waves-light btn z-depth-4" style="margin-top : 10px; margin-bottom : 10px" ng-click="start()" ng-show="isActiv">Commencer</button>
+<button class="waves-effect waves-light btn" style="margin-top : 10px; margin-bottom : 10px" ng-click="start()" ng-show="isActiv">Commencer</button>
 
 <div ng-show="isActiv">
 	<div class="board"></div>
@@ -10,9 +10,21 @@
 	</div>
 </div>
 
+<div ng-show="isHidden">
+	<button class="waves-effect waves-light btn-large" style="width : 300px; margin-top : 20px" ng-click="newSolo()" >
+		<i class="material-icons right">looks_one</i>Partie Solo</button>
+	<br/>
+	<button class="waves-effect waves-light btn-large" style="width : 300px; margin-top : 20px" ng-click="choiceVS()">
+		<i class="material-icons right">looks_two</i>Duel</button>
+</div>
 
-<button class="waves-effect waves-light btn-large z-depth-4" style="width : 300px; margin-top : 20px" ng-click="newSolo()" ng-show="isHidden">
-	<i class="material-icons right">looks_one</i>Partie Solo</button>
-<br/>
-<button class="waves-effect waves-light btn-large z-depth-4" style="width : 300px; margin-top : 20px" ng-click="start()" ng-show="isHidden">
-	<i class="material-icons right">looks_two</i>Duel</button>
+
+<div ng-show="isChoiceVS">
+	<button class="waves-effect waves-light btn-large" style="margin-top : 20px" ng-click="newVS()">
+		<i class="material-icons right">fiber_new</i>Nouvelle Partie</button>
+
+	<select style="margin-top : 20px">
+		<option ng-repeat="game in games | filter: { type: true } | filter: { status: false }" value="{{game.idGame}}">{{game.idGame}} - {{game.player1.username}} - {{game.scoreA.points}}</option>
+</select>
+
+</div>
