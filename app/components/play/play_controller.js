@@ -4,6 +4,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 
 		Page.setTitle("Jouer");
 
+		var game = null;
 
 		/*
 		 * Fonction de démarrage de la partie
@@ -14,7 +15,15 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			angular.element(tetrisBoard).on('gameOver', this.onGameOver);
 		};
 
-
+		//creation partie solo
+		$scope.newSolo = function(){
+      gameResources.add(
+				this.game = {
+        player1 : {idPerson : 7},
+				status : false, //statut de la partie true pour finie et false pour en cours
+				type : false //boolean pour le type de partie : false = solo & true = vs
+			};
+		);
 
 		/*
 		 * Fonction de game over
