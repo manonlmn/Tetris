@@ -8,6 +8,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		$scope.isHidden = true;
 		$scope.isActiv = false;
 		$scope.isChoiceVS = false;
+		$scope.isUnseen = false;
 		$scope.games = gameResources.query(function() {
 			setTimeout(function() {
 				$('select').material_select();
@@ -48,6 +49,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 				});
 				$scope.isHidden = false;
 				$scope.isActiv = true;
+				$scope.start();
 			};
 
 			$scope.newVS = function(){
@@ -59,6 +61,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 					});
 					$scope.isChoiceVS = false;
 					$scope.isActiv = true;
+					$scope.start();
 				};
 
 		/*
@@ -94,5 +97,6 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			gameResources.save({id:game.idGame}, game);
 			$scope.isChoiceVS = false;
 			$scope.isActiv = true;
+			$scope.start();
 		}
 	});
