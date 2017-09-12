@@ -7,7 +7,7 @@ app.controller("choiceController", function($scope, Page, tetrisBoard, tetrisSco
       gameResources.add({
         player1 : {idPerson : 7},
         status : true,
-        type : 0
+        type : false //boolean pour le type de partie : false = solo & true = vs
       });
 
     }

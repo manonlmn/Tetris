@@ -26,7 +26,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			level : tetrisScore.level,
 			lines : tetrisScore.lines,
 			points : tetrisScore.points,
-			game : {idGame : 2} //modification de la partie -> changement du status en true + récupération de l'idée pour modifs,
+			game : {idGame : 2}, //modification de la partie -> changement du status en true + récupération de l'idée pour modifs,
 			player : {idPerson : 7}});
 
 
