@@ -23,8 +23,9 @@
 	<button class="waves-effect waves-light btn-large" style="margin-top : 20px" ng-click="newVS()">
 		<i class="material-icons right">fiber_new</i>Nouvelle Partie</button>
 
-	<select style="margin-top : 20px">
+	<select style="margin-top : 20px" ng-model="selectedGame">
 		<option ng-repeat="game in games | filter: { type: true } | filter: { status: false }" value="{{game.idGame}}">{{game.idGame}} - {{game.player1.username}} - {{game.scoreA.points}}</option>
-</select>
+	</select>
+	<button class="waves-effect waves-light btn-large" style="margin-top : 20px" ng-click="secondPlayerVS()">Rejoindre cette Partie</button>
 
 </div>

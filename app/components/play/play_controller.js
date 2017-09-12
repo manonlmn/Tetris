@@ -1,6 +1,6 @@
 var app = angular.module("tpAngular");
 
-app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore, playResources, gameResources) {
+app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore, playResources, gameResources, playerResources) {
 
 		Page.setTitle("Jouer");
 
@@ -10,10 +10,14 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		$scope.isChoiceVS = false;
 		$scope.games = gameResources.query();
 
-	//initialisation pour les selects :
-	$(document).ready(function() {
+		var joueur = playerResources.recuperer();
+
+		//initialisation pour les selects :
+		$(document).ready(function() {
 	    $('select').material_select();
-	 });
+	 	});
+
+
 		/*
 		 * Fonction de démarrage de la partie
 		 */
@@ -27,7 +31,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		$scope.newSolo = function(){
 			game = gameResources.add(
 				{
-	        player1 : {idPerson : 7},
+	        player1 : joueur,
 					status : false, //statut de la partie true pour finie et false pour en cours
 					type : false //boolean pour le type de partie : false = solo & true = vs
 				});
@@ -38,7 +42,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			$scope.newVS = function(){
 				game = gameResources.add(
 					{
-		        player1 : {idPerson : 7},
+		        player1 : joueur,
 						status : false, //statut de la partie true pour finie et false pour en cours
 						type : true //boolean pour le type de partie : false = solo & true = vs
 					});
@@ -59,7 +63,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			lines : tetrisScore.lines,
 			points : tetrisScore.points,
 			game : game, //modification de la partie -> changement du status en true + récupération de l'idée pour modifs,
-			player : {idPerson : 7}});
+			player : joueur});
 			alert("Game Over !");
 
 			game = null;
@@ -70,5 +74,18 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		$scope.choiceVS = function(){
 			$scope.isHidden = false;
 			$scope.isChoiceVS = true;
+		}
+
+		$scope.secondPlayerVS() = function(){
+			//modification de la partie
+
+			game = $scope.selectedGame;
+			//a voir avec Jérémy
+			gameResources.save({id:game.idGame}, {
+				player2 : joueur
+			});
+
+			$scope.isChoiceVS = false;
+			$scope.isActiv = true;
 		}
 	});
