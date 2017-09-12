@@ -29,3 +29,4 @@ app.run(['$rootScope', '$location', 'loginResources', function($rootScope, $loca
 		}
 	});
 }]);
+// Ca marche maintenant?
