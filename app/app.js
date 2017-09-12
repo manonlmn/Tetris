@@ -45,7 +45,7 @@ app.run(['$rootScope', '$location', 'loginResources', function($rootScope, $loca
 			veutListeTetri = nextRoute.originalPath.indexOf('/Tetrimino_List') !== -1;
 			veutAccueil = nextRoute.originalPath.indexOf('/') !== -1;
 			veutTopScore = nextRoute.originalPath.indexOf('/Top_Scores') !== -1;
-			veutFAQ = nextRoute.originalPath.indexOf('/FAQ') !== -1;
+			veutFaq = nextRoute.originalPath.indexOf('/FAQ') !== -1;
 		}
 
 		if (!veutSeLogger && !veutSinscrire && !veutLive && !veutJouer && !veutListeTetri && !veutAccueil && !veutTopScore && !veutFaq && !loginResources.isConnected()) {
