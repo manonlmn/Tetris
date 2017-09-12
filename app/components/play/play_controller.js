@@ -14,7 +14,18 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			}, 100);
 		});
 
+		$scope.joueur = loginResources.player;
 		var joueur = loginResources.player;
+
+
+
+		$scope.playerFilter = function(game) {
+			if (joueur && game.player1.idPerson == joueur.idPerson) {
+				return false;
+			}
+			return true;
+		}
+
 
 
 
@@ -42,7 +53,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 			$scope.newVS = function(){
 				game = gameResources.add(
 					{
-		        player1 : joueur,
+		        player1 : $scope.joueur,
 						status : false, //statut de la partie true pour finie et false pour en cours
 						type : true //boolean pour le type de partie : false = solo & true = vs
 					});
@@ -56,14 +67,14 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 		$scope.onGameOver = function() {
 			angular.element(tetrisBoard).off('gameOver', this.onGameOver);
 			game.status = true;
-			gameResources.save({id:game.idGame}, game);//modification de la partie -> changement du status en true + récupération de l'idpour modifs,
+			gameResources.save({id:game.idGame}, game);//modification de la partie -> changement du status en true + récupération de l'id pour modifs,
 			//ajout du score dans la bdd
 			playResources.add({
 			level : tetrisScore.level,
 			lines : tetrisScore.lines,
 			points : tetrisScore.points,
 			game : game,
-			player : joueur});
+			player : $scope.joueur});
 			alert("Game Over !");
 
 			game = {};
@@ -79,7 +90,7 @@ app.controller("playController", function($scope, Page, tetrisBoard, tetrisScore
 
 		$scope.secondPlayerVS = function(){
 			game.idGame = $scope.selectedGame;
-			game.player2 = joueur;
+			game.player2 = $scope.joueur;
 			gameResources.save({id:game.idGame}, game);
 			$scope.isChoiceVS = false;
 			$scope.isActiv = true;

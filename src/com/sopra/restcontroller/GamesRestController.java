@@ -58,6 +58,11 @@ public class GamesRestController {
 		
 		try {
 			Tools.copy(game, myGame);
+			//a vérifier ! 
+			boolean typeG = myGame.getType();
+			if(typeG && myGame.getPlayer2()==null) {
+				myGame.setStatus(false);
+			}
 			myGame = this.gameDAO.modify(myGame);
 			return new ResponseEntity<Game>(myGame, HttpStatus.OK);
 		} catch (Exception e) {
